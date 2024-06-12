@@ -1,7 +1,17 @@
+@font-face {
+  /* https://fonts.google.com/specimen/Montserrat */
+  font-family: "Montserrat";
+  src: url(./font/Montserrat-VariableFont_wght.ttf) format("TrueType");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.test {
-  @apply text-white;
+@layer components {
+  .montserrat {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
 }

@@ -27,7 +27,7 @@
   }
 
   main {
-    @apply w-full px-7 md:px-14 pb-14 mt-14;
+    @apply w-full px-7 md:px-14 mt-14;
   }
 
   section {
@@ -52,6 +52,14 @@
 
   .bg-theme {
     @apply bg-red-400;
+  }
+
+  .bg-theme-2 {
+    @apply bg-yellow-300;
+  }
+
+  .bg-theme-3 {
+    @apply bg-gray-400;
   }
 
   .bg-light {
@@ -137,7 +145,7 @@
   }
 
   .highlight-h:after {
-    @apply h-[40%] w-0 bg-theme opacity-80 absolute top-[30%] left-[-15px] -z-10;
+    @apply h-[40%] w-0 opacity-80 absolute top-[30%] left-[-15px] -z-10;
     content: "";
     transition: width 500ms ease;
   }

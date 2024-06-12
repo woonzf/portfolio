@@ -11,18 +11,19 @@ const menu = (() => {
 
   function _initBtnMenuL() {
     btnMenuL.onclick = () => {
-      btnMenuL.classList.toggle("show");
-      btnMenuLClose.classList.toggle("show");
-      aside.classList.toggle("move");
-      main.classList.toggle("move");
+      _toggleMenuL();
     };
 
     btnMenuLClose.onclick = () => {
-      btnMenuL.classList.toggle("show");
-      btnMenuLClose.classList.toggle("show");
-      aside.classList.toggle("move");
-      main.classList.toggle("move");
+      _toggleMenuL();
     };
+  }
+
+  function _toggleMenuL() {
+    btnMenuL.classList.toggle("show");
+    btnMenuLClose.classList.toggle("show");
+    aside.classList.toggle("move");
+    main.classList.toggle("move");
   }
 
   return { init };

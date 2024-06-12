@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WZF | Web Developer</title>
     <link rel="icon" type="image/png" href="873f3c305999838ffcd7.png" />
   </head>
-  <body class="text-sm md:text-lg">
+  <body class="text-sm md:text-lg overflow-x-hidden">
     <header class="flex justify-between items-center fixed top-0">
       <div class="text-xl md:text-2xl text-theme montserrat font-extrabold">
         WZF
@@ -15,10 +15,68 @@
         <div class="dark-mode-ball"></div>
       </button>
     </header>
+    <div class="fixed top-[50vh] left-[-156px] animate-menu z-50">
+      <button class="show" id="btn-menu-l">
+        <div class="flex flex-col items-center gap-5">
+          <div class="h-10 w-7 aspect-square -scale-x-100 relative">
+            <img
+              class="h-10 w-7 icon-mode-dark"
+              src="4d8aed824bc8afe6bca7.png"
+            />
+            <img class="h-10 w-7 icon-mode" src="f20aa6171e22e91ae131.png" />
+          </div>
+          <div class="montserrat font-bold underline-h">MENU</div>
+        </div>
+      </button>
+    </div>
+    <div class="fixed top-[50vh] left-[-120px] -translate-y-1/2 z-50">
+      <div class="flex items-center">
+        <button id="btn-menu-l-close">
+          <div class="h-10 aspect-square relative">
+            <img
+              class="h-10 aspect-square icon-mode-dark"
+              src="30385db2f1e6e679c9a3.png"
+            />
+            <img
+              class="h-10 aspect-square icon-mode"
+              src="374c99d734a5edb033d5.png"
+            />
+          </div>
+        </button>
+      </div>
+    </div>
+    <aside
+      class="flex items-center fixed top-0 translate-x-[-800px] z-40"
+      id="bg-aside"
+    >
+      <nav class="flex flex-col gap-5 monserrat font-extrabold text-4xl">
+        <button class="text-start">
+          <span class="highlight-h">ABOUT</span>
+        </button>
+        <button class="text-start">
+          <span class="highlight-h">PROJECTS</span>
+        </button>
+        <button class="text-start">
+          <span class="highlight-h">CONTACT</span>
+        </button>
+      </nav>
+    </aside>
     <main class="flex flex-col gap-14">
-      <section class="flex">
-        <div class="h-full w-full bg-theme">test</div>
-        <div class="h-full w-full bg-light dark:bg-dark">test</div>
+      <section class="flex relative">
+        <div class="h-full w-full bg-theme"></div>
+        <div class="h-full w-full bg-light dark:bg-dark"></div>
+        <div
+          class="montserrat font-extrabold leading-[0.8] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        >
+          <div class="overflow-hidden">
+            <h1 class="animate-slide-up">HE</h1>
+          </div>
+          <div class="overflow-hidden">
+            <h1 class="animate-slide-up">
+              LLO<span class="text-theme">.</span>
+            </h1>
+          </div>
+        </div>
       </section>
       <section class="bg-theme">test</section>
     </main>

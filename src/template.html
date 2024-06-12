@@ -45,13 +45,19 @@
       <div class="font-extrabold text-6xl">
         MENU<span class="text-theme">.</span>
       </div>
-      <nav class="flex flex-col gap-5 font-bold text-4xl">
-        <button class="w-fit text-start">
-          <span class="highlight-h">ABOUT</span>
-        </button>
-        <button class="w-fit text-start">
-          <span class="highlight-h">PROJECTS</span>
-        </button>
+      <nav class="font-bold text-4xl">
+        <ul class="w-fit text-start flex flex-col gap-5">
+          <li>
+            <button>
+              <span class="highlight-h">ABOUT</span>
+            </button>
+          </li>
+          <li>
+            <button>
+              <span class="highlight-h">PROJECTS</span>
+            </button>
+          </li>
+        </ul>
       </nav>
       <section class="h-fit">
         <div class="font-extrabold text-2xl">
@@ -120,6 +126,14 @@
             </h1>
           </div>
         </div>
+        <button
+          class="absolute bottom-0 left-1/2 -translate-x-1/2 btn-next animate-chevron-down"
+        >
+          <div class="icon-next relative">
+            <img class="icon-mode-dark img-next-dark" />
+            <img class="icon-mode img-next" title="Next" />
+          </div>
+        </button>
       </section>
       <section class="bg-theme">test</section>
     </main>

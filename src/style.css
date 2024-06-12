@@ -112,6 +112,15 @@
     @apply h-[30px] sm:h-[40px] text-[30px] sm:text-[40px] aspect-square;
   }
 
+  .icon-next {
+    @apply h-[70px] aspect-square;
+    transition: transform 500ms ease;
+  }
+
+  button:hover .icon-next {
+    @apply scale-110;
+  }
+
   .underline-h,
   .highlight-h {
     @apply relative;
@@ -145,28 +154,45 @@
   }
 
   @keyframes slide-up {
-    from {
+    0% {
       transform: translateY(100%);
     }
-
-    to {
-      transform: translateY(0%);
+    100% {
+      transform: translateY(0);
     }
   }
 
   .animate-menu {
     will-change: animation;
-    animation: bounce 1.5s infinite;
+    animation: bounce-menu 3s infinite;
   }
 
-  @keyframes bounce {
+  @keyframes bounce-menu {
     0%,
+    50%,
     100% {
       transform: translateY(-50%) rotate(-90deg) translateY(0);
       animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
     }
-    50% {
+    25% {
       transform: translateY(-50%) rotate(-90deg) translateY(25%);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
+
+  .animate-chevron-down {
+    will-change: animation;
+    animation: bounce-chevron-down 1s infinite;
+  }
+
+  @keyframes bounce-chevron-down {
+    0%,
+    100% {
+      transform: translateX(-50%) translateY(-25%);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: translateX(-50%) translateY(0);
       animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
     }
   }

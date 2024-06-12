@@ -10,12 +10,16 @@
 
 @layer base {
   body {
-    @apply bg-light;
+    @apply bg-light dark:bg-dark text-light dark:text-dark;
+  }
+
+  body * {
+    @apply transition-colors duration-75;
   }
 
   header,
   footer {
-    @apply h-14 w-full px-7 md:px-14 bg-light;
+    @apply h-14 w-full px-7 md:px-14 bg-light dark:bg-dark z-50;
   }
 
   main {
@@ -42,7 +46,40 @@
     @apply bg-slate-100;
   }
 
+  .bg-dark {
+    @apply bg-zinc-800;
+  }
+
   .text-theme {
     @apply text-red-400;
+  }
+
+  .text-light {
+    @apply text-zinc-800;
+  }
+
+  .text-dark {
+    @apply text-slate-100;
+  }
+
+  .btn-dark-mode {
+    @apply h-6 aspect-[2] px-0 bg-theme rounded-md shadow-inner;
+    transition: background-color 500ms ease;
+  }
+
+  .btn-dark-mode:hover {
+    @apply landscape:bg-dark landscape:dark:bg-light;
+  }
+
+  .dark-mode-ball {
+    @apply h-[calc(100%-4px)] aspect-square mx-0.5 bg-light dark:bg-dark rounded-md;
+  }
+
+  .dark-mode-ball {
+    transition: transform 750ms ease;
+  }
+
+  .dark-mode-ball.dark {
+    @apply translate-x-[calc(100%+4px)];
   }
 }

@@ -1,4 +1,5 @@
 import "./style.css";
 import "./js/image";
+import { darkMode } from "./js/dark-mode";
 
-console.log("test");
+darkMode.init();

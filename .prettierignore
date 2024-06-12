@@ -1,0 +1,15 @@
+# Ignore folder
+.vscode/
+dist/
+
+#Ignore plain text
+.prettierrc
+
+# Ignore package
+package-lock.json
+package.json
+
+# Ignore config
+postcss.config.js
+tailwind.config.js
+webpack.config.js

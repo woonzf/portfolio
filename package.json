@@ -1,0 +1,36 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "build-w": "webpack --watch",
+    "prettier-c": "prettier --check",
+    "prettier-w": "prettier --write",
+    "push gh-pages": "git subtree push --prefix dist origin gh-pages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/woonzf/portfolio.git"
+  },
+  "author": "woonzf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/woonzf/portfolio/issues"
+  },
+  "homepage": "https://github.com/woonzf/portfolio#readme",
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.0",
+    "postcss": "^8.4.38",
+    "postcss-loader": "^8.1.1",
+    "postcss-preset-env": "^9.5.14",
+    "prettier": "3.3.2",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^3.4.4",
+    "webpack": "^5.92.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

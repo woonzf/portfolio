@@ -8,10 +8,41 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-light;
+  }
+
+  header,
+  footer {
+    @apply h-14 w-full px-7 md:px-14 bg-light;
+  }
+
+  main {
+    @apply w-full px-7 md:px-14 pb-14 mt-14;
+  }
+
+  section {
+    @apply h-[calc(100vh-2*56px)];
+  }
+}
+
 @layer components {
   .montserrat {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+  }
+
+  .bg-theme {
+    @apply bg-red-400;
+  }
+
+  .bg-light {
+    @apply bg-slate-100;
+  }
+
+  .text-theme {
+    @apply text-red-400;
   }
 }

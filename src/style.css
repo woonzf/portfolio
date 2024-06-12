@@ -37,6 +37,10 @@
   h1 {
     @apply text-[10vw] portrait:text-[15vw];
   }
+
+  a {
+    transition: transform 500ms ease;
+  }
 }
 
 @layer components {
@@ -91,12 +95,21 @@
     @apply translate-x-[calc(100%+4px)];
   }
 
+  .icon-mode-dark,
+  .icon-mode {
+    transition: opacity 75ms ease;
+  }
+
   .icon-mode-dark {
     @apply opacity-0 dark:opacity-100 absolute;
   }
 
   .icon-mode {
     @apply opacity-100 dark:opacity-0 absolute;
+  }
+
+  .icon-contact-link {
+    @apply h-[30px] sm:h-[40px] text-[30px] sm:text-[40px] aspect-square;
   }
 
   .underline-h,
@@ -115,13 +128,13 @@
   }
 
   .highlight-h:after {
-    @apply h-[40%] w-0 bg-theme opacity-80 absolute top-[30%] left-[-10%] -z-10;
+    @apply h-[40%] w-0 bg-theme opacity-80 absolute top-[30%] left-[-15px] -z-10;
     content: "";
     transition: width 500ms ease;
   }
 
   button:hover .highlight-h:after {
-    @apply w-[120%];
+    @apply w-[calc(100%+30px)];
   }
 
   /* Animation */

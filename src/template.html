@@ -5,68 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WZF | Web Developer</title>
     <link rel="icon" type="image/png" href="873f3c305999838ffcd7.png" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
   </head>
-  <body class="text-sm md:text-lg overflow-x-hidden">
+  <body class="montserrat text-sm md:text-lg overflow-x-hidden">
     <header class="flex justify-between items-center fixed top-0">
-      <div class="text-xl md:text-2xl text-theme montserrat font-extrabold">
-        WZF
-      </div>
-      <button class="btn-dark-mode portrait:hidden">
+      <div class="text-xl md:text-2xl text-theme font-extrabold">WZF</div>
+      <button class="btn-dark-mode portrait:hidden" title="Dark Mode">
         <div class="dark-mode-ball"></div>
       </button>
     </header>
     <div class="fixed top-[50vh] left-[-156px] animate-menu z-50">
       <button class="show" id="btn-menu-l">
         <div class="flex flex-col items-center gap-5">
-          <div class="h-10 w-7 aspect-square -scale-x-100 relative">
-            <img
-              class="h-10 w-7 icon-mode-dark"
-              src="4d8aed824bc8afe6bca7.png"
-            />
-            <img class="h-10 w-7 icon-mode" src="f20aa6171e22e91ae131.png" />
+          <div class="h-10 aspect-square rotate-90 relative">
+            <img class="icon-mode-dark" src="411474f5f58f97694d9f.png" />
+            <img class="icon-mode" src="5f0b7a27840f468f6fcd.png" />
           </div>
-          <div class="montserrat font-bold underline-h">MENU</div>
+          <div class="font-bold underline-h">MENU</div>
         </div>
       </button>
     </div>
     <div class="fixed top-[50vh] left-[-120px] -translate-y-1/2 z-50">
       <div class="flex items-center">
-        <button id="btn-menu-l-close">
+        <button id="btn-menu-l-close" title="Close">
           <div class="h-10 aspect-square relative">
-            <img
-              class="h-10 aspect-square icon-mode-dark"
-              src="30385db2f1e6e679c9a3.png"
-            />
-            <img
-              class="h-10 aspect-square icon-mode"
-              src="374c99d734a5edb033d5.png"
-            />
+            <img class="icon-mode-dark" src="30385db2f1e6e679c9a3.png" />
+            <img class="icon-mode" src="374c99d734a5edb033d5.png" />
           </div>
         </button>
       </div>
     </div>
     <aside
-      class="flex items-center fixed top-0 translate-x-[-800px] z-40"
-      id="bg-aside"
+      class="flex flex-col justify-evenly fixed top-0 translate-x-[-800px] z-40"
     >
-      <nav class="flex flex-col gap-5 monserrat font-extrabold text-4xl">
-        <button class="text-start">
+      <div class="font-extrabold text-6xl">
+        MENU<span class="text-theme">.</span>
+      </div>
+      <nav class="flex flex-col gap-5 font-bold text-4xl">
+        <button class="w-fit text-start">
           <span class="highlight-h">ABOUT</span>
         </button>
-        <button class="text-start">
+        <button class="w-fit text-start">
           <span class="highlight-h">PROJECTS</span>
         </button>
-        <button class="text-start">
-          <span class="highlight-h">CONTACT</span>
-        </button>
       </nav>
+      <section class="h-fit">
+        <div class="font-extrabold text-2xl">
+          CONTACT<span class="text-theme">.</span>
+        </div>
+        <div>WOON ZHEN FEI</div>
+        <address>woonzf@gmail.com</address>
+        <div class="mt-2 flex gap-2">
+          <a
+            class="hover:scale-110"
+            href="https://github.com/woonzf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="icon-contact-link relative">
+              <i class="devicon-github-original icon-mode-dark absolute"></i>
+              <i
+                class="devicon-github-original colored icon-mode absolute"
+                title="GitHub"
+              ></i>
+            </div>
+          </a>
+          <a
+            class="hover:scale-110"
+            href="https://www.linkedin.com/in/woonzf/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="icon-contact-link relative">
+              <i class="devicon-linkedin-plain icon-mode-dark absolute"></i>
+              <img
+                class="icon-mode absolute"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain.svg"
+                alt="LinkedIn"
+                title="LinkedIn"
+              />
+            </div>
+          </a>
+        </div>
+      </section>
+      <small>
+        Inspired by
+        <a
+          class="underline"
+          href="https://www.awwwards.com/sites/wokine"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Wokine
+        </a>
+      </small>
     </aside>
     <main class="flex flex-col gap-14">
       <section class="flex relative">
         <div class="h-full w-full bg-theme"></div>
         <div class="h-full w-full bg-light dark:bg-dark"></div>
         <div
-          class="montserrat font-extrabold leading-[0.8] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          class="font-extrabold leading-[0.8] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         >
           <div class="overflow-hidden">
             <h1 class="animate-slide-up">HE</h1>
@@ -80,20 +123,9 @@
       </section>
       <section class="bg-theme">test</section>
     </main>
-    <footer class="flex justify-center items-center gap-5 fixed bottom-0">
-      <small>
-        Inspired by
-        <a
-          class="underline"
-          href="https://www.awwwards.com/sites/wokine"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Wokine
-        </a>
-      </small>
+    <footer class="flex justify-center items-center fixed bottom-0">
       <small class="italic">
-        Copyright &copy; 2024 |
+        &copy; 2024 |
         <a
           class="underline"
           href="https://github.com/woonzf"

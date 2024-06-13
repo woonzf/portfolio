@@ -2,7 +2,6 @@ const scroll = (() => {
   const main = document.querySelector("main");
   const home = document.querySelector("#home");
 
-  const brand = document.querySelector("#brand");
   const btnDarkMode = document.querySelectorAll(".btn-dark-mode");
   const spanMenu = document.querySelector("#menu-text > span");
   const spanContact = document.querySelector("#contact-text > span");
@@ -49,16 +48,14 @@ const scroll = (() => {
   }
 
   function _changeTheme(theme) {
-    brand.classList.remove(`text-theme-${currentTheme}`);
     spanMenu.classList.remove(`text-theme-${currentTheme}`);
     spanContact.classList.remove(`text-theme-${currentTheme}`);
 
     btnDarkMode.forEach((btn) => {
-      btn.classList.remove(`bg-theme-${currentTheme}`);
-      btn.classList.add(`bg-theme-${theme}`);
+      btn.classList.remove(`theme-${currentTheme}`);
+      btn.classList.add(`theme-${theme}`);
     });
 
-    brand.classList.add(`text-theme-${theme}`);
     spanMenu.classList.add(`text-theme-${theme}`);
     spanContact.classList.add(`text-theme-${theme}`);
 

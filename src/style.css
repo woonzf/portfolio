@@ -23,7 +23,7 @@
   }
 
   aside {
-    @apply h-[calc(100vh-2*56px)] w-[800px] mt-14 pl-[200px];
+    @apply h-[calc(100vh-2*56px)] mt-14 pl-[200px];
   }
 
   main {
@@ -43,7 +43,11 @@
   }
 
   h1 {
-    @apply text-[10vw] portrait:text-[15vw];
+    @apply text-[10vw] portrait:text-[15vw] leading-[0.8] font-extrabold;
+  }
+
+  h2 {
+    @apply text-[7vw] portrait:text-[12vw] leading-[0.8] font-extrabold;
   }
 
   a {
@@ -112,8 +116,16 @@
     transition: background-color 500ms ease;
   }
 
-  .btn-dark-mode:hover {
-    @apply landscape:bg-dark landscape:dark:bg-light;
+  .btn-dark-mode.theme-1:hover {
+    @apply bg-theme-1;
+  }
+
+  .btn-dark-mode.theme-2:hover {
+    @apply bg-theme-2;
+  }
+
+  .btn-dark-mode.theme-3:hover {
+    @apply bg-theme-3;
   }
 
   .dark-mode-ball {
@@ -170,7 +182,7 @@
   }
 
   .highlight-h:after {
-    @apply h-[40%] w-0 opacity-80 absolute top-[30%] left-[-15px] -z-10;
+    @apply h-[50%] w-0 opacity-80 absolute top-[25%] left-[-15px] -z-10;
     content: "";
     transition: width 500ms ease;
   }
@@ -241,7 +253,7 @@
   }
 
   main.move {
-    @apply translate-x-[800px];
+    @apply translate-x-[40vw];
   }
 
   aside.move {
@@ -258,5 +270,10 @@
 
   #btn-menu-l-close:hover > div {
     @apply rotate-180;
+  }
+
+  /* Menu dot */
+  button:disabled > div > span {
+    @apply opacity-100;
   }
 }

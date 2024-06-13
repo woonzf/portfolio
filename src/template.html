@@ -13,8 +13,13 @@
   </head>
   <body class="montserrat text-sm md:text-lg overflow-x-hidden">
     <header class="flex justify-between items-center fixed top-0">
-      <div class="text-xl md:text-2xl text-theme font-extrabold">WZF</div>
-      <button class="btn-dark-mode portrait:hidden" title="Dark Mode">
+      <div class="text-xl md:text-2xl text-theme-1 font-extrabold" id="brand">
+        WZF
+      </div>
+      <button
+        class="btn-dark-mode bg-theme-1 portrait:hidden"
+        title="Dark Mode"
+      >
         <div class="dark-mode-ball"></div>
       </button>
     </header>
@@ -42,26 +47,37 @@
     <aside
       class="flex flex-col justify-evenly fixed top-0 translate-x-[-800px] z-40"
     >
-      <div class="font-extrabold text-6xl">
-        MENU<span class="text-theme">.</span>
+      <div class="font-extrabold text-6xl" id="menu-text">
+        <span class="text-theme-1">M</span>ENU
       </div>
       <nav class="font-bold text-4xl">
         <ul class="w-fit text-start flex flex-col gap-5">
           <li>
-            <button>
-              <span class="highlight-h after:bg-theme-2">ABOUT</span>
+            <button id="btn-home-l" disabled>
+              <div class="highlight-h after:bg-theme-1">
+                HOME<span class="text-theme-1">.</span>
+              </div>
             </button>
           </li>
           <li>
-            <button>
-              <span class="highlight-h after:bg-theme-3">PROJECTS</span>
+            <button id="btn-about-l">
+              <div class="highlight-h after:bg-theme-2">
+                ABOUT<span class="text-theme-2">.</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button id="btn-projects-l">
+              <div class="highlight-h after:bg-theme-3">
+                PROJECTS<span class="text-theme-3">.</span>
+              </div>
             </button>
           </li>
         </ul>
       </nav>
       <section class="h-fit">
-        <div class="font-extrabold text-2xl">
-          CONTACT<span class="text-theme">.</span>
+        <div class="font-extrabold text-2xl" id="contact-text">
+          <span class="text-theme-1">C</span>ONTACT
         </div>
         <div>WOON ZHEN FEI</div>
         <address>woonzf@gmail.com</address>
@@ -110,9 +126,9 @@
         </a>
       </small>
     </aside>
-    <main class="flex flex-col gap-14">
-      <section class="flex relative">
-        <div class="h-full w-full bg-theme"></div>
+    <main>
+      <section class="flex relative" id="home">
+        <div class="h-full w-full bg-theme-1"></div>
         <div class="h-full w-full bg-light dark:bg-dark"></div>
         <div
           class="font-extrabold leading-[0.8] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -122,7 +138,7 @@
           </div>
           <div class="overflow-hidden">
             <h1 class="animate-slide-up">
-              LLO<span class="text-theme">.</span>
+              LLO<span class="text-theme-1">.</span>
             </h1>
           </div>
         </div>
@@ -135,10 +151,16 @@
           </div>
         </button>
       </section>
-      <section class="bg-theme-2 flex justify-center items-center">
+      <section
+        class="bg-theme-2 flex justify-center items-center mt-14"
+        id="about"
+      >
         <span class="font-extrabold text-9xl">ABOUT</span>
       </section>
-      <section class="bg-theme-3 flex justify-center items-center">
+      <section
+        class="bg-theme-3 flex justify-center items-center mt-14"
+        id="projects"
+      >
         <span class="font-extrabold text-9xl">PROJECTS</span>
       </section>
     </main>

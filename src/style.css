@@ -27,11 +27,19 @@
   }
 
   main {
-    @apply w-full px-7 md:px-14 mt-14;
+    @apply h-[calc(100vh-2*56px)] w-full px-7 md:px-14 mt-14 overflow-y-scroll snap-y scroll-smooth;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  main::-webkit-scrollbar {
+    @apply hidden;
   }
 
   section {
-    @apply h-[calc(100vh-2*56px)];
+    @apply h-[calc(100vh-2*56px)] snap-center;
   }
 
   h1 {
@@ -40,6 +48,11 @@
 
   a {
     transition: transform 500ms ease;
+  }
+
+  button:disabled {
+    @apply text-disabled;
+    pointer-events: none;
   }
 }
 
@@ -50,16 +63,16 @@
     font-style: normal;
   }
 
-  .bg-theme {
+  .bg-theme-1 {
     @apply bg-red-400;
   }
 
   .bg-theme-2 {
-    @apply bg-yellow-300;
+    @apply bg-yellow-400;
   }
 
   .bg-theme-3 {
-    @apply bg-gray-400;
+    @apply bg-sky-500;
   }
 
   .bg-light {
@@ -70,8 +83,16 @@
     @apply bg-zinc-800;
   }
 
-  .text-theme {
+  .text-theme-1 {
     @apply text-red-400;
+  }
+
+  .text-theme-2 {
+    @apply text-yellow-400;
+  }
+
+  .text-theme-3 {
+    @apply text-sky-500;
   }
 
   .text-light {
@@ -82,8 +103,12 @@
     @apply text-slate-100;
   }
 
+  .text-disabled {
+    @apply text-zinc-400 dark:text-zinc-500;
+  }
+
   .btn-dark-mode {
-    @apply h-6 aspect-[2] px-0 bg-theme rounded-md shadow-inner;
+    @apply h-6 aspect-[2] px-0 rounded-md shadow-inner;
     transition: background-color 500ms ease;
   }
 

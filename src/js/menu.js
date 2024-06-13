@@ -5,8 +5,17 @@ const menu = (() => {
   const aside = document.querySelector("aside");
   const main = document.querySelector("main");
 
+  const btnHomeL = document.querySelector("#btn-home-l");
+  const btnAboutL = document.querySelector("#btn-about-l");
+  const btnProjectsL = document.querySelector("#btn-projects-l");
+
+  const home = document.querySelector("#home");
+  const about = document.querySelector("#about");
+  const projects = document.querySelector("#projects");
+
   function init() {
     _initBtnMenuL();
+    _initBtnNavL();
   }
 
   function _initBtnMenuL() {
@@ -24,6 +33,29 @@ const menu = (() => {
     btnMenuLClose.classList.toggle("show");
     aside.classList.toggle("move");
     main.classList.toggle("move");
+  }
+
+  function _initBtnNavL() {
+    btnHomeL.onclick = () => {
+      btnMenuLClose.click();
+      setTimeout(() => {
+        home.scrollIntoView();
+      }, 500);
+    };
+
+    btnAboutL.onclick = () => {
+      btnMenuLClose.click();
+      setTimeout(() => {
+        about.scrollIntoView();
+      }, 500);
+    };
+
+    btnProjectsL.onclick = () => {
+      btnMenuLClose.click();
+      setTimeout(() => {
+        projects.scrollIntoView();
+      }, 500);
+    };
   }
 
   return { init };

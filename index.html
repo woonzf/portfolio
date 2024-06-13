@@ -13,11 +13,11 @@
   <script defer src="bundle.js"></script></head>
   <body class="montserrat text-sm md:text-lg overflow-x-hidden">
     <header class="flex justify-between items-center fixed top-0">
-      <div class="text-xl md:text-2xl text-theme-1 font-extrabold" id="brand">
+      <div class="text-xl md:text-2xl text-light dark:text-dark font-extrabold">
         WZF
       </div>
       <button
-        class="btn-dark-mode bg-theme-1 portrait:hidden"
+        class="btn-dark-mode theme-1 bg-dark dark:bg-light portrait:hidden"
         title="Dark Mode"
       >
         <div class="dark-mode-ball"></div>
@@ -45,31 +45,31 @@
       </div>
     </div>
     <aside
-      class="flex flex-col justify-evenly fixed top-0 translate-x-[-800px] z-40"
+      class="flex flex-col justify-evenly fixed top-0 translate-x-[-40vw] z-40"
     >
       <div class="font-extrabold text-6xl" id="menu-text">
         <span class="text-theme-1">M</span>ENU
       </div>
       <nav class="font-bold text-4xl">
-        <ul class="w-fit text-start flex flex-col gap-5">
+        <ul class="w-fit text-start flex flex-col gap-3">
           <li>
             <button id="btn-home-l" disabled>
               <div class="highlight-h after:bg-theme-1">
-                HOME<span class="text-theme-1">.</span>
+                HOME<span class="text-theme-1 opacity-0">.</span>
               </div>
             </button>
           </li>
           <li>
             <button id="btn-about-l">
               <div class="highlight-h after:bg-theme-2">
-                ABOUT<span class="text-theme-2">.</span>
+                ABOUT<span class="text-theme-2 opacity-0">.</span>
               </div>
             </button>
           </li>
           <li>
             <button id="btn-projects-l">
               <div class="highlight-h after:bg-theme-3">
-                PROJECTS<span class="text-theme-3">.</span>
+                PROJECTS<span class="text-theme-3 opacity-0">.</span>
               </div>
             </button>
           </li>
@@ -131,7 +131,7 @@
         <div class="h-full w-full bg-theme-1"></div>
         <div class="h-full w-full bg-light dark:bg-dark"></div>
         <div
-          class="font-extrabold leading-[0.8] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         >
           <div class="overflow-hidden">
             <h1 class="animate-slide-up">HE</h1>
@@ -151,11 +151,38 @@
           </div>
         </button>
       </section>
-      <section
-        class="bg-theme-2 flex justify-center items-center mt-14"
-        id="about"
-      >
-        <span class="font-extrabold text-9xl">ABOUT</span>
+      <section class="mt-14" id="about">
+        <article class="h-full flex">
+          <div class="w-[20%] relative"></div>
+          <div class="w-[80%] bg-theme-2 text-light flex flex-col">
+            <div class="h-full relative">
+              <div class="flex gap-10 absolute top-[10%] left-[-12.5%]">
+                <div class="w-[400px]">
+                  <img class="rounded-full" src="b40f80520c50455cb41c.jpg" />
+                </div>
+                <div class="w-[50%] flex flex-col justify-evenly">
+                  <h2>ABOUT.</h2>
+                  <p class="text-pretty text-justify">
+                    Hi, I am Woon Zhen Fei. I have been actively learning and
+                    coding since June 2023. Since then, I have completed CS50:
+                    Introduction to Computer Science and The Odin Project
+                    Foundation. I am currently on the Full Stack path of The
+                    Odin Project and also looking for a job opportunity in web
+                    development.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="h-full flex flex-col justify-center items-center gap-5">
+              <div>FRONT END - INTERACTIVE - RESPONSIVE DESIGN</div>
+              <div>
+                HTML - CSS - JAVASCRIPT - WEBPACK - JEST - TAILWIND CSS - C -
+                PYTHON - SQLITE - FLASK - BOOTSTRAP - VISUAL STUDIO CODE - GIT -
+                GITHUB
+              </div>
+            </div>
+          </div>
+        </article>
       </section>
       <section
         class="bg-theme-3 flex justify-center items-center mt-14"

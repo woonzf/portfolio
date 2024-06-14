@@ -7,15 +7,33 @@ const menu = (() => {
 
   const btnHomeL = document.querySelector("#btn-home-l");
   const btnAboutL = document.querySelector("#btn-about-l");
+  const btnAboutMoreL = document.querySelector("#btn-about-more-l");
   const btnProjectsL = document.querySelector("#btn-projects-l");
 
   const home = document.querySelector("#home");
   const about = document.querySelector("#about");
+  const articleAbout = document.querySelector("#article-about");
+  const articleAboutMore = document.querySelector("#article-about-more");
   const projects = document.querySelector("#projects");
+
+  let isOpenAboutMore = 0;
 
   function init() {
     _initBtnMenuL();
     _initBtnNavL();
+    _initBtnAboutMoreL();
+
+    // For testing
+    btnMenuL.click();
+    btnAboutL.click();
+  }
+
+  function _initBtnAboutMoreL() {
+    btnAboutMoreL.onclick = () => {
+      if (isOpenAboutMore === 1) articleAbout.scrollIntoView();
+      else articleAboutMore.scrollIntoView();
+      isOpenAboutMore = +!isOpenAboutMore;
+    };
   }
 
   function _initBtnMenuL() {

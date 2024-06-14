@@ -134,16 +134,16 @@
           class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         >
           <div class="overflow-hidden">
-            <h1 class="animate-slide-up">HE</h1>
+            <h1 class="animate-hello">HE</h1>
           </div>
           <div class="overflow-hidden">
-            <h1 class="animate-slide-up">
+            <h1 class="animate-hello">
               LLO<span class="text-theme-1">.</span>
             </h1>
           </div>
         </div>
         <button
-          class="absolute bottom-0 left-1/2 -translate-x-1/2 btn-next animate-chevron-down"
+          class="absolute bottom-0 left-1/2 btn-next animate-chevron-down"
         >
           <div class="icon-next relative">
             <img class="icon-mode-dark img-next-dark" />
@@ -151,38 +151,74 @@
           </div>
         </button>
       </section>
-      <section class="mt-14" id="about">
-        <article class="h-full flex">
-          <div class="w-[20%] relative"></div>
-          <div class="w-[80%] bg-theme-2 text-light flex flex-col">
-            <div class="h-full relative">
-              <div class="flex gap-10 absolute top-[10%] left-[-12.5%]">
-                <div class="w-[400px]">
-                  <img class="rounded-full" src="b40f80520c50455cb41c.jpg" />
-                </div>
-                <div class="w-[50%] flex flex-col justify-evenly">
-                  <h2>ABOUT.</h2>
-                  <p class="text-pretty text-justify">
-                    Hi, I am Woon Zhen Fei. I have been actively learning and
-                    coding since June 2023. Since then, I have completed CS50:
-                    Introduction to Computer Science and The Odin Project
-                    Foundation. I am currently on the Full Stack path of The
-                    Odin Project and also looking for a job opportunity in web
-                    development.
-                  </p>
-                </div>
+      <section class="mt-14 pl-0 flex flex-row relative" id="about">
+        <article
+          class="h-full min-w-full pl-7 md:pl-14 flex"
+          id="article-about"
+        >
+          <div class="w-[40%] dark:bg-theme-2 relative">
+            <div
+              class="flex flex-col justify-center absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2"
+            >
+              <div class="overflow-hidden">
+                <h1>AB</h1>
+              </div>
+              <div class="overflow-hidden">
+                <h1>OUT<span class="text-dark dark:text-theme-2">.</span></h1>
               </div>
             </div>
-            <div class="h-full flex flex-col justify-center items-center gap-5">
-              <div>FRONT END - INTERACTIVE - RESPONSIVE DESIGN</div>
+          </div>
+          <div
+            class="w-full bg-theme-2 dark:bg-transparent flex justify-center items-center"
+          >
+            <div
+              class="h-[calc(20vw*0.8)] w-fit text-xl md:text-2xl font-semibold flex flex-col justify-evenly"
+            >
+              <div class="w-fit italic font-bold uppercase">Hi, I am</div>
+              <h2>Woon Zhen Fei</h2>
               <div>
-                HTML - CSS - JAVASCRIPT - WEBPACK - JEST - TAILWIND CSS - C -
-                PYTHON - SQLITE - FLASK - BOOTSTRAP - VISUAL STUDIO CODE - GIT -
-                GITHUB
+                <div class="flex justify-between">
+                  <p>Front End</p>
+                  <span>.</span>
+                  <p>Interactive</p>
+                  <span>.</span>
+                  <p>Responsive Design</p>
+                </div>
+                <div class="flex justify-between">
+                  <p>HTML</p>
+                  <span>.</span>
+                  <p>CSS</p>
+                  <span>.</span>
+                  <p>JavaScript</p>
+                </div>
               </div>
             </div>
           </div>
         </article>
+        <article class="h-full min-w-[70%] flex" id="article-about-more">
+          <img src="e10112625a73d7322ecc.jpg" />
+          <div
+            class="px-14 bg-theme-2 dark:bg-dark flex flex-col justify-evenly"
+          >
+            <p class="text-pretty text-justify">
+              Hi, I am Woon Zhen Fei, a web developer in Malaysia. I have been
+              actively learning coding and web development since June 2023.
+              Since then, I have completed CS50: Introduction to Computer
+              Science and The Odin Project - Foundation. I am currently on the
+              Full Stack JavaScript path of The Odin Project and looking for a
+              job opportunity in web development.
+            </p>
+          </div>
+        </article>
+        <button
+          class="absolute top-1/2 right-14 btn-next animate-chevron-right"
+          id="btn-about-more-l"
+        >
+          <div class="icon-next relative">
+            <img class="icon-mode-dark img-next-dark" />
+            <img class="icon-mode img-next" />
+          </div>
+        </button>
       </section>
       <section
         class="bg-theme-3 flex justify-center items-center mt-14"

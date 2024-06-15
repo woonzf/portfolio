@@ -28,10 +28,10 @@ const scroll = (() => {
 
     main.onscrollend = () => {
       const scroll = main.scrollTop;
-      if (scroll >= 0 && scroll <= scrollHeightHome) {
+      if (scroll >= 0 && scroll < scrollHeightHome) {
         _changeTheme(1);
         _disableBtn(1);
-      } else if (scroll > scrollHeightHome && scroll <= scrollHeightAbout) {
+      } else if (scroll >= scrollHeightHome && scroll < scrollHeightAbout) {
         _changeTheme(2);
         _disableBtn(2);
       } else {

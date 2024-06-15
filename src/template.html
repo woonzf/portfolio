@@ -13,9 +13,7 @@
   </head>
   <body class="montserrat text-sm md:text-lg overflow-x-hidden">
     <header class="flex justify-between items-center fixed top-0">
-      <div class="text-xl md:text-2xl text-light dark:text-dark font-extrabold">
-        WZF
-      </div>
+      <div class="text-xl md:text-2xl font-extrabold">WZF</div>
       <button
         class="btn-dark-mode theme-1 bg-dark dark:bg-light portrait:hidden"
         title="Dark Mode"
@@ -151,9 +149,12 @@
           </div>
         </button>
       </section>
-      <section class="mt-14 px-0 flex flex-row relative" id="about">
+      <section
+        class="mt-14 px-0 flex flex-row relative overflow-x-scroll snap-x scroll-smooth"
+        id="about"
+      >
         <article
-          class="h-full min-w-full px-7 md:px-14 flex"
+          class="h-full min-w-full px-7 md:px-14 flex snap-center"
           id="article-about"
         >
           <div class="w-[40%] dark:bg-theme-2 relative">
@@ -164,7 +165,7 @@
                 <h1>AB</h1>
               </div>
               <div class="overflow-hidden">
-                <h1>OUT<span class="text-dark dark:text-theme-2">.</span></h1>
+                <h1>OUT<span class="text-light dark:text-theme-2">.</span></h1>
               </div>
             </div>
           </div>
@@ -198,7 +199,7 @@
           </div>
         </article>
         <article
-          class="h-full px-7 md:px-14 min-w-[70%] flex"
+          class="h-full px-7 md:px-14 min-w-[70%] flex snap-center"
           id="article-about-more"
         >
           <div

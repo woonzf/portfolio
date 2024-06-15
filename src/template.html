@@ -75,7 +75,7 @@
           </li>
         </ul>
       </nav>
-      <section class="h-fit">
+      <div>
         <div class="font-extrabold text-2xl" id="contact-text">
           <span class="text-theme-1">C</span>ONTACT
         </div>
@@ -113,7 +113,7 @@
             </div>
           </a>
         </div>
-      </section>
+      </div>
       <small>
         Inspired by
         <a
@@ -151,9 +151,9 @@
           </div>
         </button>
       </section>
-      <section class="mt-14 pl-0 flex flex-row relative" id="about">
+      <section class="mt-14 px-0 flex flex-row relative" id="about">
         <article
-          class="h-full min-w-full pl-7 md:pl-14 flex"
+          class="h-full min-w-full px-7 md:px-14 flex"
           id="article-about"
         >
           <div class="w-[40%] dark:bg-theme-2 relative">
@@ -174,40 +174,180 @@
             <div
               class="h-[calc(20vw*0.8)] w-fit text-xl md:text-2xl font-semibold flex flex-col justify-evenly"
             >
-              <div class="w-fit italic font-bold uppercase">Hi, I am</div>
+              <div class="w-fit italic font-bold uppercase">
+                Hi<span class="about-span">,</span> I am
+              </div>
               <h2>Woon Zhen Fei</h2>
               <div>
                 <div class="flex justify-between">
                   <p>Front End</p>
-                  <span>.</span>
+                  <span class="about-span">.</span>
                   <p>Interactive</p>
-                  <span>.</span>
+                  <span class="about-span">.</span>
                   <p>Responsive Design</p>
                 </div>
                 <div class="flex justify-between">
                   <p>HTML</p>
-                  <span>.</span>
+                  <span class="about-span">.</span>
                   <p>CSS</p>
-                  <span>.</span>
+                  <span class="about-span">.</span>
                   <p>JavaScript</p>
                 </div>
               </div>
             </div>
           </div>
         </article>
-        <article class="h-full min-w-[70%] flex" id="article-about-more">
-          <img src="e10112625a73d7322ecc.jpg" />
+        <article
+          class="h-full px-7 md:px-14 min-w-[70%] flex"
+          id="article-about-more"
+        >
           <div
-            class="px-14 bg-theme-2 dark:bg-dark flex flex-col justify-evenly"
+            class="min-w-[30%] flex flex-col justify-center items-center gap-14"
           >
-            <p class="text-pretty text-justify">
-              Hi, I am Woon Zhen Fei, a web developer in Malaysia. I have been
-              actively learning coding and web development since June 2023.
-              Since then, I have completed CS50: Introduction to Computer
-              Science and The Odin Project - Foundation. I am currently on the
-              Full Stack JavaScript path of The Odin Project and looking for a
-              job opportunity in web development.
-            </p>
+            <div
+              class="w-full aspect-square border-2 border-theme-2 rounded-full flex justify-center items-center"
+            >
+              <img
+                class="w-[calc(100%-16px)] rounded-full"
+                src="0575d19b2088e83eb7ce.jpg"
+              />
+            </div>
+            <div class="flex flex-col">
+              <h2>MORE</h2>
+              <h2>ABOUT<span class="text-theme-2">.</span></h2>
+            </div>
+          </div>
+          <div class="px-14 flex justify-center items-center">
+            <div class="py-14 border-y-2 border-theme-2 flex flex-col gap-14">
+              <p class="text-pretty text-justify">
+                Hi, I am Woon Zhen Fei, a web developer in Malaysia. I have been
+                actively coding and learning web development since June 2023.
+                Since then, I have completed CS50: Introduction to Computer
+                Science and The Odin Project - Foundation. I am currently on The
+                Odin Project - Full Stack JavaScript path learning React and
+                looking for a job opportunity in web development.
+              </p>
+              <div class="flex flex-col gap-5">
+                <div class="flex flex-col gap-1">
+                  <div class="font-bold flex items-center">
+                    Languages & Frameworks
+                  </div>
+                  <div class="flex gap-1">
+                    <div class="icon-about-tool relative">
+                      <img
+                        class="absolute"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+                        alt="HTML"
+                        title="HTML"
+                      />
+                    </div>
+                    <div class="icon-about-tool relative">
+                      <img
+                        class="absolute"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+                        alt="CSS"
+                        title="CSS"
+                      />
+                    </div>
+                    <div class="icon-about-tool relative">
+                      <img
+                        class="absolute"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                        alt="JavaScript"
+                        title="JavaScript"
+                      />
+                    </div>
+                    <div class="icon-about-tool relative">
+                      <img
+                        class="absolute"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/webpack/webpack-original.svg"
+                        alt="Webpack"
+                        title="Webpack"
+                      />
+                    </div>
+                    <div class="icon-about-tool relative">
+                      <img
+                        class="absolute"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg"
+                        alt="Jest"
+                        title="Jest"
+                      />
+                    </div>
+                    <div class="icon-about-tool relative">
+                      <img
+                        class="absolute"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+                        alt="Tailwind CSS"
+                        title="Tailwind CSS"
+                      />
+                    </div>
+                    <div class="icon-about-tool relative">
+                      <img
+                        class="absolute"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"
+                        alt="C"
+                        title="C"
+                      />
+                    </div>
+                    <div class="icon-about-tool relative">
+                      <img
+                        class="absolute"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                        alt="Python"
+                        title="Python"
+                      />
+                    </div>
+                    <div class="icon-about-tool relative">
+                      <i
+                        class="devicon-flask-original icon-mode-dark absolute"
+                      ></i>
+                      <i
+                        class="devicon-flask-original colored icon-mode absolute"
+                        title="Flask"
+                      ></i>
+                    </div>
+                    <div class="icon-about-tool relative">
+                      <img
+                        class="absolute"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
+                        alt="Bootstrap"
+                        title="Bootstrap"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <div class="font-bold flex items-center">Tools</div>
+                  <div class="flex gap-1">
+                    <div class="icon-about-tool relative">
+                      <img
+                        class="absolute"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"
+                        alt="Visual Studio Code"
+                        title="Visual Studio Code"
+                      />
+                    </div>
+                    <div class="icon-about-tool relative">
+                      <img
+                        class="absolute"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+                        alt="Git"
+                        title="Git"
+                      />
+                    </div>
+                    <div class="icon-about-tool relative">
+                      <i
+                        class="devicon-github-original icon-mode-dark absolute"
+                      ></i>
+                      <i
+                        class="devicon-github-original colored icon-mode absolute"
+                        title="GitHub"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </article>
         <button
@@ -216,7 +356,7 @@
         >
           <div class="icon-next relative">
             <img class="icon-mode-dark img-next-dark" />
-            <img class="icon-mode img-next" />
+            <img class="icon-mode img-next" title="Toggle About" />
           </div>
         </button>
       </section>

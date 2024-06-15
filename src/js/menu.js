@@ -26,22 +26,32 @@ const menu = (() => {
     // For testing
     btnMenuL.click();
     btnAboutL.click();
+    btnAboutMoreL.click();
   }
 
   function _initBtnAboutMoreL() {
     btnAboutMoreL.onclick = () => {
-      if (isOpenAboutMore === 1) articleAbout.scrollIntoView();
-      else articleAboutMore.scrollIntoView();
+      if (isOpenAboutMore === 1) {
+        articleAbout.classList.toggle("opacity-50");
+        about.scrollTo(0, 0);
+      } else {
+        articleAbout.classList.toggle("opacity-50");
+        about.scrollTo(articleAbout.clientWidth + 1, 0);
+      }
+      btnAboutMoreL.classList.toggle("animate-chevron-right");
+      btnAboutMoreL.classList.toggle("animate-chevron-left");
       isOpenAboutMore = +!isOpenAboutMore;
     };
   }
 
   function _initBtnMenuL() {
     btnMenuL.onclick = () => {
+      main.classList.toggle("opacity-50");
       _toggleMenuL();
     };
 
     btnMenuLClose.onclick = () => {
+      main.classList.toggle("opacity-50");
       _toggleMenuL();
     };
   }

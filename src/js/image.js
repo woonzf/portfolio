@@ -5,7 +5,7 @@ import close50w from "../img/icons/close-50w.png";
 import closeW50w from "../img/icons/close-w-50w.png";
 import chevron100w from "../img/icons/chevron-100w.png";
 import chevronW100w from "../img/icons/chevron-w-100w.png";
-import profileP1000w from "../img/profile-p-1000w.jpg";
+import profile1000w from "../img/profile-1000w.jpg";
 
 const imgNextDark = document.querySelectorAll(".img-next-dark");
 const imgNext = document.querySelectorAll(".img-next");

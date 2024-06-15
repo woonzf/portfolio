@@ -116,6 +116,10 @@
     @apply text-zinc-400 dark:text-zinc-500;
   }
 
+  .border-theme-2 {
+    @apply border-yellow-400;
+  }
+
   .btn-dark-mode {
     @apply h-5 md:h-6 aspect-[2] rounded-md shadow-inner;
     transition: background-color 500ms ease;
@@ -158,6 +162,7 @@
     @apply opacity-100 dark:opacity-0 absolute;
   }
 
+  .icon-about-tool,
   .icon-contact-link {
     @apply h-[30px] sm:h-[40px] text-[30px] sm:text-[40px] aspect-square;
   }
@@ -196,6 +201,14 @@
     @apply w-[calc(100%+30px)];
   }
 
+  .about-span {
+    @apply text-dark dark:text-theme-2;
+  }
+
+  .tool:hover .icon-about-tool {
+    @apply block;
+  }
+
   /* Animation */
   [class^="animate-"] {
     will-change: animation;
@@ -203,7 +216,6 @@
 }
 
 @layer utilities {
-  main,
   aside,
   #btn-menu-l,
   #btn-menu-l-close,
@@ -229,6 +241,16 @@
 
   #btn-menu-l-close:hover > div {
     @apply rotate-180;
+  }
+
+  main {
+    transition:
+      transform 500ms ease,
+      opacity 500ms ease;
+  }
+
+  #article-about {
+    transition: opacity 500ms ease;
   }
 
   /* Menu dot */

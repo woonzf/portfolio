@@ -1,6 +1,8 @@
 const scroll = (() => {
   const main = document.querySelector("main");
   const home = document.querySelector("#home");
+  const about = document.querySelector("#about");
+  const projects = document.querySelector("#projects");
 
   const btnDarkMode = document.querySelectorAll(".btn-dark-mode");
   const spanMenu = document.querySelector("#menu-text > span");
@@ -13,8 +15,8 @@ const scroll = (() => {
   ];
 
   const marginTop = 56;
-  let heightSection = 0;
-  let scrollHeightSection = 0;
+  let scrollHeightHome = 0;
+  let scrollHeightAbout = 0;
   let currentTheme = 1;
 
   function init() {
@@ -26,13 +28,10 @@ const scroll = (() => {
 
     main.onscrollend = () => {
       const scroll = main.scrollTop;
-      if (scroll >= 0 && scroll < scrollHeightSection) {
+      if (scroll >= 0 && scroll <= scrollHeightHome) {
         _changeTheme(1);
         _disableBtn(1);
-      } else if (
-        scroll >= scrollHeightSection &&
-        scroll < scrollHeightSection * 2
-      ) {
+      } else if (scroll > scrollHeightHome && scroll <= scrollHeightAbout) {
         _changeTheme(2);
         _disableBtn(2);
       } else {
@@ -43,8 +42,8 @@ const scroll = (() => {
   }
 
   function _getScrollHeightSection() {
-    heightSection = home.clientHeight;
-    scrollHeightSection = heightSection + marginTop;
+    scrollHeightHome = home.clientHeight + marginTop;
+    scrollHeightAbout = about.clientHeight + marginTop + scrollHeightHome;
   }
 
   function _changeTheme(theme) {

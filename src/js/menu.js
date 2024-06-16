@@ -25,8 +25,7 @@ const menu = (() => {
 
     // For testing
     btnMenuL.click();
-    btnAboutL.click();
-    btnAboutMoreL.click();
+    btnProjectsL.click();
   }
 
   function _initBtnAboutMoreL() {
@@ -34,9 +33,11 @@ const menu = (() => {
       if (isOpenAboutMore === 1) {
         articleAbout.classList.toggle("opacity-50");
         about.scrollTo(0, 0);
+        btnAboutMoreL.querySelector("div").textContent = "MORE";
       } else {
         articleAbout.classList.toggle("opacity-50");
         about.scrollTo(articleAbout.clientWidth + 1, 0);
+        btnAboutMoreL.querySelector("div").textContent = "BACK";
       }
       btnAboutMoreL.classList.toggle("animate-chevron-right");
       btnAboutMoreL.classList.toggle("animate-chevron-left");

@@ -47,14 +47,6 @@
     @apply h-[calc(100vh-2*56px)] px-7 md:px-14 snap-center;
   }
 
-  h1 {
-    @apply text-[10vw] portrait:text-[15vw] leading-[0.8] font-extrabold;
-  }
-
-  h2 {
-    @apply text-6xl md:text-7xl leading-[0.8] font-extrabold;
-  }
-
   a {
     transition: transform 500ms ease;
   }
@@ -70,6 +62,14 @@
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+  }
+
+  .text-hello {
+    @apply text-[10vw] portrait:text-[15vw] leading-[0.8] font-extrabold;
+  }
+
+  .text-big {
+    @apply text-6xl md:text-7xl leading-[0.8] font-extrabold;
   }
 
   .text-disabled {
@@ -130,6 +130,29 @@
 
   button:hover .icon-next {
     @apply scale-110;
+  }
+
+  .mini-tab {
+    @apply h-3 aspect-[4] border border-light dark:border-theme-3 rounded-md;
+  }
+
+  .project-card > img,
+  .project-card > button,
+  .project-card > div {
+    transition: opacity 500ms ease;
+  }
+
+  .project-card:hover > img:nth-child(1) {
+    @apply opacity-100;
+  }
+
+  .project-card:hover .project-card-expand,
+  .project-card:hover .project-card-next {
+    @apply opacity-50;
+  }
+
+  .project-card:hover .project-card-detail {
+    @apply opacity-0;
   }
 
   .underline-h,

@@ -6,6 +6,10 @@ import closeW50w from "../img/icons/close-w-50w.png";
 import chevron100w from "../img/icons/chevron-100w.png";
 import chevronW100w from "../img/icons/chevron-w-100w.png";
 import profile1000w from "../img/profile-1000w.jpg";
+import ypet from "../img/projects/ypet.png";
+import weatherApp from "../img/projects/weather.png";
+import homepage from "../img/projects/homepage.png";
+import plus from "../img/icons/plus-100w.png";
 
 const imgNextDark = document.querySelectorAll(".img-next-dark");
 const imgNext = document.querySelectorAll(".img-next");

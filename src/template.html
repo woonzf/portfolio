@@ -129,15 +129,15 @@
         <div class="h-full w-full bg-theme-1"></div>
         <div class="h-full w-full bg-light dark:bg-dark"></div>
         <div
-          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          class="text-hello absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         >
           <div class="overflow-hidden">
-            <h1 class="animate-hello">HE</h1>
+            <div class="animate-hello">HE</div>
           </div>
           <div class="overflow-hidden">
-            <h1 class="animate-hello">
+            <div class="animate-hello">
               LLO<span class="text-theme-1">.</span>
-            </h1>
+            </div>
           </div>
         </div>
         <button
@@ -159,13 +159,15 @@
         >
           <div class="w-[40%] dark:bg-theme-2 relative">
             <div
-              class="flex flex-col justify-center absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2"
+              class="text-hello absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2"
             >
               <div class="overflow-hidden">
-                <h1>AB</h1>
+                <div>AB</div>
               </div>
               <div class="overflow-hidden">
-                <h1>OUT<span class="text-light dark:text-theme-2">.</span></h1>
+                <div>
+                  OUT<span class="text-light dark:text-theme-2">.</span>
+                </div>
               </div>
             </div>
           </div>
@@ -178,7 +180,7 @@
               <div class="italic font-bold uppercase">
                 Hi<span class="about-span">,</span> I am
               </div>
-              <h2>Woon Zhen Fei</h2>
+              <div class="text-big">Woon Zhen Fei</div>
               <div>
                 <div class="flex justify-between">
                   <p>Front End</p>
@@ -213,9 +215,9 @@
                 src="0575d19b2088e83eb7ce.jpg"
               />
             </div>
-            <div class="flex flex-col">
-              <h2>MORE</h2>
-              <h2>ABOUT<span class="text-theme-2">.</span></h2>
+            <div class="text-big">
+              <div>MORE</div>
+              <div>ABOUT<span class="text-theme-2">.</span></div>
             </div>
           </div>
           <div class="px-14 flex justify-center items-center">
@@ -360,20 +362,90 @@
           </div>
         </article>
         <button
-          class="absolute top-1/2 right-14 btn-next animate-chevron-right"
+          class="flex flex-col items-center absolute top-1/2 right-14 btn-next animate-chevron-right"
           id="btn-about-more-l"
         >
+          <div class="w-fit font-bold rotate-180 underline-h">MORE</div>
           <div class="icon-next relative">
             <img class="icon-mode-dark img-next-dark" />
-            <img class="icon-mode img-next" title="Toggle About" />
+            <img class="icon-mode img-next" />
           </div>
         </button>
       </section>
-      <section
-        class="bg-theme-3 flex justify-center items-center mt-14"
-        id="projects"
-      >
-        <span class="font-extrabold text-9xl">PROJECTS</span>
+      <section class="mt-14 flex flex-row-reverse" id="projects">
+        <div class="w-[20%] dark:bg-theme-3 flex relative">
+          <div
+            class="text-hello absolute top-1/2 -translate-y-1/2 -translate-x-1/2 rotate-90"
+          >
+            <div class="overflow-hidden">
+              <div>PRO</div>
+            </div>
+            <div class="overflow-hidden">
+              <div>
+                JECTS<span class="text-light dark:text-theme-3">.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="w-full bg-theme-3 dark:bg-transparent flex flex-col justify-center items-center gap-5"
+        >
+          <div
+            class="w-[60%] p-4 bg-light dark:bg-transparent dark:border dark:border-theme-3 rounded-md flex gap-4 overflow-x-scroll snap-x scroll-smooth"
+          >
+            <div
+              class="min-w-full flex justify-center items-center snap-center relative"
+            >
+              <div class="relative project-card">
+                <img
+                  class="rounded-md opacity-50"
+                  src="e96583a17bd8e335c774.png"
+                />
+                <div
+                  class="text-8xl leading-[0.8] font-extrabold absolute top-0 left-0"
+                >
+                  01
+                </div>
+                <div
+                  class="project-card-detail w-full text-4xl font-bold text-center absolute top-1/2 -translate-y-1/2"
+                >
+                  Your Personal Expense Tracker
+                </div>
+                <div
+                  class="project-card-detail w-full font-bold text-center absolute top-3/4 -translate-y-1/2"
+                >
+                  Full Stack
+                </div>
+                <button
+                  class="project-card-expand opacity-0 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+                >
+                  <img src="7d4cda50db213a77936b.png" />
+                </button>
+                <div
+                  class="h-full w-14 flex items-center absolute top-0 right-0"
+                >
+                  <button
+                    class="project-card-next bg-light bg-opacity-50 -rotate-90"
+                  >
+                    <img src="8d43e0481e790ecacd50.png" />
+                  </button>
+                </div>
+                <div></div>
+              </div>
+            </div>
+            <div class="min-w-full snap-center">
+              <img class="rounded-sm" src="c94210ae721539184bb7.png" />
+            </div>
+            <div class="min-w-full snap-center">
+              <img class="rounded-sm" src="9fc0e11067e75e008e11.png" />
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <div class="mini-tab"></div>
+            <div class="mini-tab"></div>
+            <div class="mini-tab"></div>
+          </div>
+        </div>
       </section>
     </main>
     <footer class="flex justify-center items-center">

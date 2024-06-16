@@ -172,27 +172,46 @@
           <div
             class="w-full bg-theme-2 dark:bg-transparent flex justify-center items-center"
           >
-            <div
-              class="h-[calc(20vw*0.8)] w-fit text-xl md:text-2xl font-semibold flex flex-col justify-evenly"
-            >
-              <div class="w-fit italic font-bold uppercase">
-                Hi<span class="about-span">,</span> I am
-              </div>
-              <h2>Woon Zhen Fei</h2>
-              <div>
-                <div class="flex justify-between">
-                  <p>Front End</p>
-                  <span class="about-span">.</span>
-                  <p>Interactive</p>
-                  <span class="about-span">.</span>
-                  <p>Responsive Design</p>
+            <div class="w-fit flex flex-col gap-10">
+              <div
+                class="h-[calc(20vw*0.8)] text-xl md:text-2xl font-semibold flex flex-col justify-evenly"
+              >
+                <div class="w-fit italic font-bold uppercase">
+                  Hi<span class="about-span">,</span> I am
                 </div>
-                <div class="flex justify-between">
-                  <p>HTML</p>
-                  <span class="about-span">.</span>
-                  <p>CSS</p>
-                  <span class="about-span">.</span>
-                  <p>JavaScript</p>
+                <h2>Woon Zhen Fei</h2>
+                <div>
+                  <div class="flex justify-between">
+                    <p>Front End</p>
+                    <span class="about-span">.</span>
+                    <p>Interactive</p>
+                    <span class="about-span">.</span>
+                    <p>Responsive Design</p>
+                  </div>
+                  <div class="flex justify-between">
+                    <p>HTML</p>
+                    <span class="about-span">.</span>
+                    <p>CSS</p>
+                    <span class="about-span">.</span>
+                    <p>JavaScript</p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col gap-5">
+                <div class="flex flex-col items-center gap-3 overflow-x-hidden">
+                  <div
+                    class="w-full overflow-x-hidden"
+                    id="tools-wrapper-outer-about"
+                  >
+                    <div
+                      class="flex items-center"
+                      id="tools-wrapper-about"
+                    ></div>
+                  </div>
+                  <div
+                    class="w-full flex justify-center items-center montserrat"
+                    id="tool-name"
+                  ></div>
                 </div>
               </div>
             </div>
@@ -233,7 +252,7 @@
                   <div class="font-bold flex items-center">
                     Languages & Frameworks
                   </div>
-                  <div class="flex gap-1">
+                  <div class="flex gap-2">
                     <div class="icon-about-tool relative">
                       <img
                         class="absolute"
@@ -299,6 +318,14 @@
                       />
                     </div>
                     <div class="icon-about-tool relative">
+                      <img
+                        class="absolute"
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg"
+                        alt="SQLite"
+                        title="SQLite"
+                      />
+                    </div>
+                    <div class="icon-about-tool relative">
                       <i
                         class="devicon-flask-original icon-mode-dark absolute"
                       ></i>
@@ -319,7 +346,7 @@
                 </div>
                 <div class="flex flex-col gap-1">
                   <div class="font-bold flex items-center">Tools</div>
-                  <div class="flex gap-1">
+                  <div class="flex gap-2">
                     <div class="icon-about-tool relative">
                       <img
                         class="absolute"

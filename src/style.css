@@ -97,25 +97,17 @@
     @apply h-[calc(100%-4px)] aspect-square mx-0.5 bg-light dark:bg-dark rounded-md;
   }
 
-  .tool-about {
-    @apply aspect-square flex justify-center items-center;
-  }
-
-  .tool-about,
   .dark-mode-ball {
     transition: transform 750ms ease;
   }
 
-  .img-tool {
-    transition: transform 1s ease;
-  }
-
-  .img-tool.scaleAbout {
-    transform: scale(1.5);
-  }
-
   .dark-mode-ball.dark {
     @apply translate-x-[calc(100%+4px)];
+  }
+
+  .icon-mode-dark,
+  .icon-mode {
+    transition: opacity 75ms ease;
   }
 
   .icon-mode-dark {
@@ -171,21 +163,6 @@
 
   .tool:hover .icon-about-tool {
     @apply block;
-  }
-
-  .fade-side {
-    -webkit-mask-image: linear-gradient(
-      to right,
-      transparent,
-      white 10% 90%,
-      transparent
-    );
-    mask-image: linear-gradient(
-      to right,
-      transparent,
-      white 10% 90%,
-      transparent
-    );
   }
 
   /* Animation */

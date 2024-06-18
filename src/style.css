@@ -136,22 +136,76 @@
     @apply h-3 aspect-[4] border border-light dark:border-theme-3 rounded-md;
   }
 
-  .project-card > img,
-  .project-card > button,
-  .project-card > div {
+  .project-card-wrapper {
+    @apply w-[60%] p-4 bg-light dark:bg-transparent dark:border dark:border-theme-3 rounded-md flex gap-4 overflow-x-scroll snap-x scroll-smooth relative;
+  }
+
+  .project-card {
+    @apply min-w-full flex justify-center items-center snap-center relative;
+  }
+
+  .project-card-image {
+    @apply rounded-md opacity-50;
+  }
+
+  .project-card-index {
+    @apply text-8xl leading-[0.8] font-extrabold absolute top-0 left-0;
+  }
+
+  .project-card-name {
+    @apply w-full text-4xl font-bold text-center absolute top-1/2 -translate-y-1/2;
+  }
+
+  .project-card-type {
+    @apply w-full font-bold text-center absolute top-3/4 -translate-y-1/2;
+  }
+
+  .project-card-expand-wrapper {
+    @apply h-[100px] aspect-square absolute top-[calc(50%-50px)] left-[calc(50%-50px)];
+  }
+
+  .project-card-expand {
+    @apply opacity-0;
+  }
+
+  .btn-project-card-next-wrapper {
+    @apply h-14 w-14 flex items-center absolute top-[calc(50%-28px)] right-4;
+  }
+
+  .btn-project-card-next {
+    @apply bg-light bg-opacity-50 -rotate-90 opacity-50;
+  }
+
+  .btn-project-card-prev-wrapper {
+    @apply h-14 w-14 flex items-center absolute top-[calc(50%-28px)] left-4;
+  }
+
+  .btn-project-card-prev {
+    @apply bg-light bg-opacity-50 rotate-90 opacity-50;
+  }
+
+  .project-card-image,
+  .project-card > div,
+  .project-card-expand,
+  .btn-project-card-next,
+  .btn-project-card-prev {
     transition: opacity 500ms ease;
   }
 
-  .project-card:hover > img:nth-child(1) {
+  .project-card-wrapper:hover .project-card-image,
+  .project-card-wrapper:hover .project-card-expand:hover,
+  .btn-project-card-next:hover,
+  .btn-project-card-prev:hover {
     @apply opacity-100;
   }
 
-  .project-card:hover .project-card-expand,
-  .project-card:hover .project-card-next {
+  .project-card-wrapper:hover .project-card-expand,
+  .project-card-wrapper:hover .project-card-index {
     @apply opacity-50;
   }
 
-  .project-card:hover .project-card-detail {
+  .project-card-wrapper:hover .project-card-name,
+  .project-card-wrapper:hover .project-card-type {
     @apply opacity-0;
   }
 

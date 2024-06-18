@@ -390,54 +390,40 @@
         <div
           class="w-full bg-theme-3 dark:bg-transparent flex flex-col justify-center items-center gap-5"
         >
-          <div
-            class="w-[60%] p-4 bg-light dark:bg-transparent dark:border dark:border-theme-3 rounded-md flex gap-4 overflow-x-scroll snap-x scroll-smooth"
-          >
-            <div
-              class="min-w-full flex justify-center items-center snap-center relative"
-            >
-              <div class="relative project-card">
-                <img
-                  class="rounded-md opacity-50"
-                  src="e96583a17bd8e335c774.png"
-                />
-                <div
-                  class="text-8xl leading-[0.8] font-extrabold absolute top-0 left-0"
-                >
-                  01
-                </div>
-                <div
-                  class="project-card-detail w-full text-4xl font-bold text-center absolute top-1/2 -translate-y-1/2"
-                >
-                  Your Personal Expense Tracker
-                </div>
-                <div
-                  class="project-card-detail w-full font-bold text-center absolute top-3/4 -translate-y-1/2"
-                >
-                  Full Stack
-                </div>
-                <button
-                  class="project-card-expand opacity-0 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
-                >
-                  <img src="7d4cda50db213a77936b.png" />
-                </button>
-                <div
-                  class="h-full w-14 flex items-center absolute top-0 right-0"
-                >
-                  <button
-                    class="project-card-next bg-light bg-opacity-50 -rotate-90"
-                  >
-                    <img src="8d43e0481e790ecacd50.png" />
-                  </button>
-                </div>
-                <div></div>
-              </div>
+          <div class="project-card-wrapper">
+            <div class="project-card" id="project-card-1">
+              <img class="project-card-image" src="e96583a17bd8e335c774.png" />
+              <div class="project-card-index">01</div>
+              <div class="project-card-name">Your Personal Expense Tracker</div>
+              <div class="project-card-type">Full Stack</div>
             </div>
-            <div class="min-w-full snap-center">
-              <img class="rounded-sm" src="c94210ae721539184bb7.png" />
+            <div class="project-card" id="project-card-2">
+              <img class="project-card-image" src="c94210ae721539184bb7.png" />
+              <div class="project-card-index">02</div>
+              <div class="project-card-name">Weather App</div>
+              <div class="project-card-type">Front End</div>
             </div>
-            <div class="min-w-full snap-center">
-              <img class="rounded-sm" src="9fc0e11067e75e008e11.png" />
+            <div class="project-card" id="project-card-3">
+              <img class="project-card-image" src="9fc0e11067e75e008e11.png" />
+              <div class="project-card-index">03</div>
+              <div class="project-card-name">Portfolio</div>
+              <div class="project-card-type">Front End</div>
+            </div>
+            <!-- Fixed them -->
+            <div class="project-card-expand-wrapper">
+              <button class="project-card-expand">
+                <img src="7d4cda50db213a77936b.png" />
+              </button>
+            </div>
+            <div class="btn-project-card-prev-wrapper">
+              <button class="btn-project-card-prev">
+                <img src="8d43e0481e790ecacd50.png" />
+              </button>
+            </div>
+            <div class="btn-project-card-next-wrapper">
+              <button class="btn-project-card-next">
+                <img src="8d43e0481e790ecacd50.png" />
+              </button>
             </div>
           </div>
           <div class="flex gap-3">

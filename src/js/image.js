@@ -9,7 +9,8 @@ import profile1000w from "../img/profile-1000w.jpg";
 import ypet from "../img/projects/ypet.png";
 import weatherApp from "../img/projects/weather.png";
 import homepage from "../img/projects/homepage.png";
-import plus from "../img/icons/plus-100w.png";
+import expand100w from "../img/icons/expand-100w.png";
+import expandW100w from "../img/icons/expand-w-100w.png";
 
 const imgNextDark = document.querySelectorAll(".img-next-dark");
 const imgNext = document.querySelectorAll(".img-next");

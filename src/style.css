@@ -11,14 +11,16 @@
 @layer base {
   /* Hide scrollbar for IE, Edge and Firefox */
   main,
-  section {
+  section,
+  .project-card-wrapper {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
 
   /* Hide scrollbar for Chrome, Safari and Opera */
   main::-webkit-scrollbar,
-  section::-webkit-scrollbar {
+  section::-webkit-scrollbar,
+  .project-card-wrapper::-webkit-scrollbar {
     @apply hidden;
   }
 
@@ -132,12 +134,21 @@
     @apply scale-110;
   }
 
-  .mini-tab {
+  .btn-mini-tab {
     @apply h-3 aspect-[4] border border-light dark:border-theme-3 rounded-md;
+    transition: background-color 500ms ease;
+  }
+
+  .btn-mini-tab.active {
+    @apply bg-light dark:bg-theme-3;
+  }
+
+  .project-card-outer-wrapper {
+    @apply w-[60%] p-4 bg-light dark:bg-transparent border dark:border-theme-3 rounded-md relative;
   }
 
   .project-card-wrapper {
-    @apply w-[60%] p-4 bg-light dark:bg-transparent dark:border dark:border-theme-3 rounded-md flex gap-4 overflow-x-scroll snap-x scroll-smooth relative;
+    @apply flex gap-4 overflow-x-scroll snap-x scroll-smooth relative;
   }
 
   .project-card {
@@ -160,28 +171,16 @@
     @apply w-full font-bold text-center absolute top-3/4 -translate-y-1/2;
   }
 
-  .project-card-expand-wrapper {
-    @apply h-[100px] aspect-square absolute top-[calc(50%-50px)] left-[calc(50%-50px)];
-  }
-
   .project-card-expand {
-    @apply opacity-0;
-  }
-
-  .btn-project-card-next-wrapper {
-    @apply h-14 w-14 flex items-center absolute top-[calc(50%-28px)] right-4;
+    @apply h-[50px] aspect-square bg-dark dark:bg-light bg-opacity-50 opacity-50 absolute top-4 right-4;
   }
 
   .btn-project-card-next {
-    @apply bg-light bg-opacity-50 -rotate-90 opacity-50;
-  }
-
-  .btn-project-card-prev-wrapper {
-    @apply h-14 w-14 flex items-center absolute top-[calc(50%-28px)] left-4;
+    @apply h-14 aspect-square bg-dark dark:bg-light bg-opacity-50 -rotate-90 opacity-50 absolute top-[calc(50%-28px)] right-4;
   }
 
   .btn-project-card-prev {
-    @apply bg-light bg-opacity-50 rotate-90 opacity-50;
+    @apply h-14 aspect-square bg-dark dark:bg-light bg-opacity-50 rotate-90 opacity-50 absolute top-[calc(50%-28px)] left-4;
   }
 
   .project-card-image,
@@ -193,13 +192,12 @@
   }
 
   .project-card-wrapper:hover .project-card-image,
-  .project-card-wrapper:hover .project-card-expand:hover,
+  .project-card-outer-wrapper:hover .project-card-expand:hover,
   .btn-project-card-next:hover,
   .btn-project-card-prev:hover {
     @apply opacity-100;
   }
 
-  .project-card-wrapper:hover .project-card-expand,
   .project-card-wrapper:hover .project-card-index {
     @apply opacity-50;
   }

@@ -15,7 +15,7 @@ const carousel = (() => {
   let i = 1;
 
   function init() {
-    _getScrollWidthProjectCard();
+    getScrollWidthProjectCard();
 
     btnProjectNext.onclick = () => {
       document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
@@ -56,13 +56,13 @@ const carousel = (() => {
     });
   }
 
-  function _getScrollWidthProjectCard() {
+  function getScrollWidthProjectCard() {
     scrollWidthProjectCard1 = projectCard1.clientWidth + gap;
     scrollWidthProjectCard2 =
       projectCard2.clientWidth + gap + scrollWidthProjectCard1;
   }
 
-  return { init };
+  return { init, getScrollWidthProjectCard };
 })();
 
 export { carousel };

@@ -54,6 +54,10 @@ const carousel = (() => {
         document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
       };
     });
+
+    setInterval(() => {
+      btnProjectNext.click();
+    }, 5000);
   }
 
   function getScrollWidthProjectCard() {

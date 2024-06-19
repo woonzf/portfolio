@@ -17,6 +17,7 @@ module.exports = {
         'chevron-down': 'bounce-chevron-down 1s infinite',
         'chevron-right': 'bounce-chevron-right 1s infinite',
         'chevron-left': 'bounce-chevron-left 1s infinite',
+        'shrink-width': 'shrink-width 5s linear infinite',
       },
       'keyframes': {
         'slide-up': {
@@ -62,6 +63,10 @@ module.exports = {
             transform: 'translateY(-50%) rotate(90deg) translateY(25%)',
             animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
           },
+        },
+        'shrink-width': {
+          '0': { width: '100%' },
+          '100%': { width: '0' },
         },
       },
     },

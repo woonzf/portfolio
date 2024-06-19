@@ -19,9 +19,13 @@ const carousel = (() => {
 
     btnProjectNext.onclick = () => {
       document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
-      if (i === 3) i = 1;
-      else i += 1;
-      document.querySelector(`#project-card-${i}`).scrollIntoView();
+      if (i === 3) {
+        projectCardWrapper.scrollTo(0, 0);
+        i = 1;
+      } else {
+        projectCardWrapper.scrollBy(scrollWidthProjectCard1, 0);
+        i += 1;
+      }
       document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
     };
 

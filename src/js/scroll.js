@@ -41,6 +41,11 @@ const scroll = (() => {
     scrollHeightAbout = about.clientHeight + marginTop + scrollHeightHome;
   }
 
+  function scrollTo(section) {
+    if (section === 1) main.scrollTo(0, scrollHeightHome + 1);
+    else if (section === 2) main.scrollTo(0, scrollHeightAbout + 1);
+  }
+
   function _changeTheme(theme) {
     spanMenu.classList.remove(`text-theme-${currentTheme}`);
     spanContact.classList.remove(`text-theme-${currentTheme}`);
@@ -65,7 +70,7 @@ const scroll = (() => {
     }
   }
 
-  return { init, getScrollHeightSection };
+  return { init, getScrollHeightSection, scrollTo };
 })();
 
 export { scroll };

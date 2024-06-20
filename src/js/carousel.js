@@ -53,7 +53,7 @@ const carousel = (() => {
     btnMiniTabs.forEach((btn) => {
       btn.onclick = () => {
         document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
-        i = btn.id.slice(-1);
+        i = +btn.id.slice(-1);
         document.querySelector(`#project-card-${i}`).scrollIntoView();
         document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
       };

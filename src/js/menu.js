@@ -1,3 +1,5 @@
+import { scroll } from "./scroll";
+
 const menu = (() => {
   const btnMenuL = document.querySelector("#btn-menu-l");
   const btnMenuLClose = document.querySelector("#btn-menu-l-close");
@@ -10,11 +12,8 @@ const menu = (() => {
   const btnAboutMoreL = document.querySelector("#btn-about-more-l");
   const btnProjectsL = document.querySelector("#btn-projects-l");
 
-  const home = document.querySelector("#home");
   const about = document.querySelector("#about");
   const articleAbout = document.querySelector("#article-about");
-  const articleAboutMore = document.querySelector("#article-about-more");
-  const projects = document.querySelector("#projects");
 
   let isOpenAboutMore = 0;
 
@@ -68,21 +67,21 @@ const menu = (() => {
     btnHomeL.onclick = () => {
       btnMenuLClose.click();
       setTimeout(() => {
-        home.scrollIntoView();
+        main.scrollTo(0, 0);
       }, 500);
     };
 
     btnAboutL.onclick = () => {
       btnMenuLClose.click();
       setTimeout(() => {
-        about.scrollIntoView();
+        scroll.scrollTo(1);
       }, 500);
     };
 
     btnProjectsL.onclick = () => {
       btnMenuLClose.click();
       setTimeout(() => {
-        projects.scrollIntoView();
+        scroll.scrollTo(2);
       }, 500);
     };
   }

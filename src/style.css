@@ -135,7 +135,7 @@
   }
 
   .btn-mini-tab {
-    @apply h-3 aspect-[4] border border-light dark:border-theme-3 rounded-md;
+    @apply h-3 aspect-[4] border border-light dark:border-theme-3 hover:bg-light hover:dark:bg-theme-3 hover:bg-opacity-50 hover:dark:bg-opacity-50 rounded-md;
     transition: background-color 500ms ease;
   }
 

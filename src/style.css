@@ -172,11 +172,27 @@
   }
 
   .project-card-link-wrapper {
-    @apply flex gap-2 absolute bottom-0 right-0;
+    @apply w-full px-4 py-2 font-semibold rounded-b-md flex justify-end gap-5 absolute bottom-0 opacity-50;
+    transition:
+      background-color 500ms ease,
+      opacity 500ms ease;
+  }
+
+  .project-card-link-wrapper > a {
+    @apply hover:scale-110;
+    transition: transform 500ms ease;
+  }
+
+  .project-card-wrapper:hover .project-card-link-wrapper {
+    @apply bg-dark bg-opacity-25 dark:bg-opacity-50 opacity-100;
+  }
+
+  .img-open-wrapper {
+    @apply h-[20px] aspect-square relative;
   }
 
   .project-card-expand {
-    @apply px-4 py-2 opacity-50 absolute bottom-4 left-1/2 -translate-x-1/2;
+    @apply px-4 py-2 absolute bottom-0 left-1/2 -translate-x-1/2;
   }
 
   .btn-project-card-next {
@@ -188,15 +204,15 @@
   }
 
   .project-card-image,
-  .project-card > div,
-  .project-card-expand,
+  .project-card-index,
+  .project-card-name,
+  .project-card-type,
   .btn-project-card-next,
   .btn-project-card-prev {
     transition: opacity 500ms ease;
   }
 
   .project-card-wrapper:hover .project-card-image,
-  .project-card-outer-wrapper:hover .project-card-expand:hover,
   .btn-project-card-next:hover,
   .btn-project-card-prev:hover {
     @apply opacity-100;

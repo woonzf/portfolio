@@ -144,7 +144,7 @@
   }
 
   .project-card-outer-wrapper {
-    @apply w-[60%] p-4 bg-light dark:bg-transparent border dark:border-theme-3 rounded-md relative;
+    @apply w-[60%] p-4 bg-light dark:bg-transparent border dark:border-theme-3 rounded-md relative overflow-y-hidden;
   }
 
   .project-card-wrapper {
@@ -168,11 +168,15 @@
   }
 
   .project-card-type {
-    @apply w-full font-bold text-center absolute top-3/4 -translate-y-1/2;
+    @apply w-full font-bold text-center absolute top-2/3 -translate-y-1/2;
+  }
+
+  .project-card-link-wrapper {
+    @apply flex gap-2 absolute bottom-0 right-0;
   }
 
   .project-card-expand {
-    @apply h-[50px] aspect-square bg-dark dark:bg-light bg-opacity-50 opacity-50 absolute top-4 right-4;
+    @apply px-4 py-2 opacity-50 absolute bottom-4 left-1/2 -translate-x-1/2;
   }
 
   .btn-project-card-next {
@@ -250,7 +254,8 @@
   aside,
   #btn-menu-l,
   #btn-menu-l-close,
-  #btn-menu-l-close > div {
+  #btn-menu-l-close > div,
+  #btn-project-detail-close {
     transition: transform 500ms ease;
   }
 

@@ -17,7 +17,7 @@ module.exports = {
         'chevron-down': 'bounce-chevron-down 1s infinite',
         'chevron-right': 'bounce-chevron-right 1s infinite',
         'chevron-left': 'bounce-chevron-left 1s infinite',
-        'shrink-width': 'shrink-width 5s linear infinite',
+        'shrink-width': 'shrink-width 10s linear infinite',
       },
       'keyframes': {
         'slide-up': {

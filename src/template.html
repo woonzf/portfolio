@@ -407,6 +407,10 @@
                   Your Personal Expense Tracker
                 </div>
                 <div class="project-card-type">Full Stack</div>
+                <div class="project-card-link-wrapper">
+                  <a href="">GitHub</a>
+                  <a href="">Demo</a>
+                </div>
               </div>
               <div class="project-card" id="project-card-2">
                 <img
@@ -428,10 +432,7 @@
               </div>
             </div>
             <button class="project-card-expand">
-              <div class="h-full w-full relative">
-                <img class="icon-mode" src="eee61ef56877df7c42c9.png" />
-                <img class="icon-mode-dark" src="35d1f636acb8b7824d6d.png" />
-              </div>
+              <div class="font-bold underline-h">More</div>
             </button>
             <button class="btn-project-card-prev">
               <div class="h-full w-full relative">
@@ -445,6 +446,37 @@
                 <img class="icon-mode-dark img-next" />
               </div>
             </button>
+            <div
+              class="h-[calc(100%-32px)] w-[calc(100%-32px)] p-4 bg-light dark:bg-dark bg-opacity-90 dark:bg-opacity-90 absolute top-[calc(100%+16px)]"
+            >
+              <div class="h-full w-full flex items-center relative">
+                <button
+                  class="absolute bottom-5 left-[calc(50%-20px)] hover:rotate-180"
+                  id="btn-project-detail-close"
+                  title="Close"
+                >
+                  <div class="h-10 aspect-square relative">
+                    <img
+                      class="icon-mode-dark"
+                      src="30385db2f1e6e679c9a3.png"
+                    />
+                    <img class="icon-mode" src="374c99d734a5edb033d5.png" />
+                  </div>
+                </button>
+                <div
+                  class="flex flex-col justify-center gap-10"
+                  id="project-detail-1"
+                >
+                  <h1>01. Your Personal Expense Tracker</h1>
+                  <p class="text-pretty text-justify">
+                    A full stack project that features user creation, login and
+                    logout, store and display expense data and settings that
+                    allow name, password and currency change.
+                  </p>
+                  <div>Tools</div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="btn-mini-tab-wrapper flex gap-3">
             <button class="btn-mini-tab active" id="btn-mini-tab-1"></button>

@@ -31,9 +31,13 @@ const carousel = (() => {
 
     btnProjectPrev.onclick = () => {
       document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
-      if (i === 1) i = 3;
-      else i -= 1;
-      document.querySelector(`#project-card-${i}`).scrollIntoView();
+      if (i === 1) {
+        projectCardWrapper.scrollTo(scrollWidthProjectCard2 + 1, 0);
+        i = 3;
+      } else {
+        projectCardWrapper.scrollBy(-scrollWidthProjectCard1, 0);
+        i -= 1;
+      }
       document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
     };
 
@@ -54,14 +58,17 @@ const carousel = (() => {
       btn.onclick = () => {
         document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
         i = +btn.id.slice(-1);
-        document.querySelector(`#project-card-${i}`).scrollIntoView();
+        if (i === 1) projectCardWrapper.scrollTo(0, 0);
+        else if (i === 2)
+          projectCardWrapper.scrollTo(scrollWidthProjectCard1 + 1, 0);
+        else projectCardWrapper.scrollTo(scrollWidthProjectCard2 + 1, 0);
         document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
       };
     });
 
     setInterval(() => {
       btnProjectNext.click();
-    }, 5000);
+    }, 10000);
   }
 
   function getScrollWidthProjectCard() {

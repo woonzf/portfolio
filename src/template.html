@@ -398,19 +398,21 @@
           <div class="project-card-outer-wrapper">
             <div class="project-card-wrapper">
               <div class="project-card" id="project-card-1">
-                <img
-                  class="project-card-image"
-                  src="e96583a17bd8e335c774.png"
-                />
-                <div class="project-card-index">01</div>
-                <div class="project-card-name">
-                  Your Personal Expense Tracker
+                <div class="project-card-info relative">
+                  <img
+                    class="project-card-image"
+                    src="e96583a17bd8e335c774.png"
+                  />
+                  <div class="project-card-index">01</div>
+                  <div class="project-card-name">
+                    Your Personal Expense Tracker
+                  </div>
+                  <div class="project-card-type">Full Stack</div>
                 </div>
-                <div class="project-card-type">Full Stack</div>
                 <div class="project-card-link-wrapper">
                   <button
                     class="project-card-expand"
-                    id="project-card-expand-1"
+                    id="btn-project-card-expand-1"
                   >
                     <div class="font-semibold underline-h">More</div>
                   </button>
@@ -472,7 +474,8 @@
               </div>
             </button>
             <div
-              class="h-[calc(100%-32px)] w-[calc(100%-32px)] p-4 bg-light dark:bg-dark bg-opacity-90 dark:bg-opacity-90 absolute top-[calc(100%+16px)]"
+              class="h-[calc(100%-32px)] w-[calc(100%-32px)] p-8 bg-light dark:bg-dark bg-opacity-90 dark:bg-opacity-90 rounded-md absolute left-4 top-full"
+              id="project-card-detail-wrapper"
             >
               <div class="h-full w-full flex items-center relative">
                 <button
@@ -488,11 +491,11 @@
                     <img class="icon-mode" src="374c99d734a5edb033d5.png" />
                   </div>
                 </button>
-                <div
-                  class="flex flex-col justify-center gap-10"
-                  id="project-detail-1"
-                >
-                  <h1>01. Your Personal Expense Tracker</h1>
+                <div class="project-detail hidden" id="project-detail-1">
+                  <h1>
+                    <b>01<span class="text-theme-3">.</span></b> Your Personal
+                    Expense Tracker
+                  </h1>
                   <p class="text-pretty text-justify">
                     A full stack project that features user creation, login and
                     logout, store and display expense data and settings that

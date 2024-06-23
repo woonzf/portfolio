@@ -198,9 +198,8 @@
     @apply font-semibold flex justify-end gap-5;
   }
 
-  .project-detail-link-wrapper > a {
+  .project-detail-link-wrapper > a:not([disabled]) {
     @apply hover:scale-110;
-    transition: transform 500ms ease;
   }
 
   .btn-project-card-next {

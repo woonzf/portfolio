@@ -68,7 +68,9 @@ const carousel = (() => {
         if (i === 1) projectCardWrapper.scrollTo(0, 0);
         else if (i === 2)
           projectCardWrapper.scrollTo(scrollWidthProjectCard1 + 1, 0);
-        else projectCardWrapper.scrollTo(scrollWidthProjectCard2 + 1, 0);
+        else if (i === 3)
+          projectCardWrapper.scrollTo(scrollWidthProjectCard2 + 1, 0);
+        else projectCardWrapper.scrollTo(scrollWidthProjectCard3 + 1, 0);
         document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
       };
     });

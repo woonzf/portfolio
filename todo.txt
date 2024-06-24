@@ -1,0 +1,4 @@
+Finalize desktop design
+Scroll sign on each section
+Change Portfolio project img
+Update code for mobile view

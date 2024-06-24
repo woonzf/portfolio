@@ -35,10 +35,6 @@ const menu = (() => {
     _initBtnNavL();
     _initBtnAboutMoreL();
     _initBtnProjectCardExpands();
-
-    // For testing
-    btnMenuL.click();
-    btnProjectsL.click();
   }
 
   function _initBtnProjectCardExpands() {

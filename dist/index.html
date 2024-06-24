@@ -126,7 +126,15 @@
     </aside>
     <main>
       <section class="flex relative" id="home">
-        <div class="h-full w-full bg-theme-1"></div>
+        <div class="h-full w-full bg-theme-1 relative">
+          <div class="scroll-wrapper">
+            <div class="img-arrow-down-wrapper relative rotate-90">
+              <img class="img-arrow-down-dark icon-mode-dark absolute" />
+              <img class="img-arrow-down icon-mode absolute" />
+            </div>
+            <span class="font-medium">scroll</span>
+          </div>
+        </div>
         <div class="h-full w-full bg-light dark:bg-dark"></div>
         <div
           class="text-hello absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -140,14 +148,6 @@
             </div>
           </div>
         </div>
-        <button
-          class="absolute bottom-0 left-1/2 btn-next animate-chevron-down"
-        >
-          <div class="icon-next relative">
-            <img class="icon-mode-dark img-next-dark" />
-            <img class="icon-mode img-next" title="Next" />
-          </div>
-        </button>
       </section>
       <section
         class="mt-14 px-0 flex flex-row relative overflow-x-scroll snap-x scroll-smooth"
@@ -169,6 +169,13 @@
                   OUT<span class="text-light dark:text-theme-2">.</span>
                 </div>
               </div>
+            </div>
+            <div class="scroll-wrapper">
+              <div class="img-arrow-down-wrapper relative rotate-90">
+                <img class="img-arrow-down-dark icon-mode-dark absolute" />
+                <img class="img-arrow-down icon-mode absolute" />
+              </div>
+              <span class="font-medium">scroll</span>
             </div>
           </div>
           <div
@@ -362,7 +369,7 @@
           </div>
         </article>
         <button
-          class="flex flex-col items-center absolute top-1/2 right-14 btn-next animate-chevron-right"
+          class="flex flex-col items-center absolute top-1/2 right-14 animate-chevron-right"
           id="btn-about-more-l"
         >
           <div class="w-fit font-bold rotate-180 underline-h">MORE</div>
@@ -386,6 +393,15 @@
               </div>
             </div>
           </div>
+          <button class="top-wrapper" id="btn-top">
+            <div class="flex items-center gap-2">
+              <div class="img-arrow-down-wrapper relative rotate-90">
+                <img class="img-arrow-down-dark icon-mode-dark absolute" />
+                <img class="img-arrow-down icon-mode absolute" />
+              </div>
+              <span class="font-medium">top</span>
+            </div>
+          </button>
         </div>
         <div
           class="w-full bg-theme-3 dark:bg-transparent flex flex-col justify-center items-center gap-5"

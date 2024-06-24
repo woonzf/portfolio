@@ -13,6 +13,8 @@ const scroll = (() => {
     document.querySelector("#btn-projects-l"),
   ];
 
+  const btnTop = document.querySelector("#btn-top");
+
   const marginTop = 56;
   let scrollHeightHome = 0;
   let scrollHeightAbout = 0;
@@ -33,6 +35,10 @@ const scroll = (() => {
         _changeTheme(3);
         _disableBtn(3);
       }
+    };
+
+    btnTop.onclick = () => {
+      main.scrollTo(0, 0);
     };
   }
 

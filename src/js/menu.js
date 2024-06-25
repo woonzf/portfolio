@@ -9,11 +9,7 @@ const menu = (() => {
 
   const btnHomeL = document.querySelector("#btn-home-l");
   const btnAboutL = document.querySelector("#btn-about-l");
-  const btnAboutMoreL = document.querySelector("#btn-about-more-l");
   const btnProjectsL = document.querySelector("#btn-projects-l");
-
-  const about = document.querySelector("#about");
-  const articleAbout = document.querySelector("#article-about");
 
   const btnsProjectCardExpand = document.querySelectorAll(
     ".project-card-expand",
@@ -26,14 +22,12 @@ const menu = (() => {
     "#project-card-detail-wrapper",
   );
 
-  let isOpenAboutMore = 0;
   let isOpenProjectCard = 0;
   let activeProjectCard = 0;
 
   function init() {
     _initBtnMenuL();
     _initBtnNavL();
-    _initBtnAboutMoreL();
     _initBtnProjectCardExpands();
   }
 
@@ -67,23 +61,6 @@ const menu = (() => {
         .querySelector(`#btn-project-card-expand-${activeProjectCard}`)
         .click();
       isOpenProjectCard = 0;
-    };
-  }
-
-  function _initBtnAboutMoreL() {
-    btnAboutMoreL.onclick = () => {
-      if (isOpenAboutMore === 1) {
-        articleAbout.classList.toggle("opacity-50");
-        about.scrollTo(0, 0);
-        btnAboutMoreL.querySelector("div").textContent = "MORE";
-      } else {
-        articleAbout.classList.toggle("opacity-50");
-        about.scrollTo(articleAbout.clientWidth + 1, 0);
-        btnAboutMoreL.querySelector("div").textContent = "BACK";
-      }
-      btnAboutMoreL.classList.toggle("animate-chevron-right");
-      btnAboutMoreL.classList.toggle("animate-chevron-left");
-      isOpenAboutMore = +!isOpenAboutMore;
     };
   }
 

@@ -2,6 +2,8 @@ const scroll = (() => {
   const main = document.querySelector("main");
   const home = document.querySelector("#home");
   const about = document.querySelector("#about");
+  const articleAbout = document.querySelector("#article-about");
+  const articleAboutMore = document.querySelector("#article-about-more");
 
   const btnDarkMode = document.querySelectorAll(".btn-dark-mode");
   const spanMenu = document.querySelector("#menu-text > span");
@@ -14,11 +16,14 @@ const scroll = (() => {
   ];
 
   const btnTop = document.querySelector("#btn-top");
+  const btnAboutMoreL = document.querySelector("#btn-about-more-l");
 
   const marginTop = 56;
   let scrollHeightHome = 0;
   let scrollHeightAbout = 0;
   let currentTheme = 1;
+  let isOpenAboutMore = 0;
+  let scrollWidthArticleAboutMore = 0;
 
   function init() {
     getScrollHeightSection();
@@ -37,6 +42,34 @@ const scroll = (() => {
       }
     };
 
+    btnAboutMoreL.onclick = () => {
+      if (isOpenAboutMore === 1) about.scrollTo(0, 0);
+      else about.scrollTo(articleAbout.clientWidth + 1, 0);
+    };
+
+    about.onscrollend = () => {
+      const scroll = about.scrollLeft;
+      const wasOpen = isOpenAboutMore;
+
+      if (scroll >= 0 && scroll < scrollWidthArticleAboutMore / 2) {
+        if (isOpenAboutMore === 1) {
+          btnAboutMoreL.querySelector("div").textContent = "MORE";
+          isOpenAboutMore = 0;
+        }
+      } else {
+        if (isOpenAboutMore === 0) {
+          btnAboutMoreL.querySelector("div").textContent = "BACK";
+          isOpenAboutMore = 1;
+        }
+      }
+
+      if (isOpenAboutMore !== wasOpen) {
+        articleAbout.classList.toggle("opacity-50");
+        btnAboutMoreL.classList.toggle("animate-chevron-right");
+        btnAboutMoreL.classList.toggle("animate-chevron-left");
+      }
+    };
+
     btnTop.onclick = () => {
       main.scrollTo(0, 0);
     };
@@ -45,6 +78,7 @@ const scroll = (() => {
   function getScrollHeightSection() {
     scrollHeightHome = home.clientHeight + marginTop;
     scrollHeightAbout = about.clientHeight + marginTop + scrollHeightHome;
+    scrollWidthArticleAboutMore = articleAboutMore.clientWidth;
   }
 
   function scrollTo(section) {

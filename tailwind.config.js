@@ -18,6 +18,8 @@ module.exports = {
         'chevron-right': 'bounce-chevron-right 1s infinite',
         'chevron-left': 'bounce-chevron-left 1s infinite',
         'shrink-width': 'shrink-width 10s linear infinite',
+        'appear-cycle': 'appear-cycle 10s infinite alternate',
+        'appear-cycle-r': 'appear-cycle 10s infinite alternate-reverse',
       },
       'keyframes': {
         'slide-up': {
@@ -67,6 +69,10 @@ module.exports = {
         'shrink-width': {
           '0': { width: '100%' },
           '100%': { width: '0' },
+        },
+        'appear-cycle': {
+          '0%, 40%': { opacity: '1' },
+          '60%, 100%': { opacity: '0' },
         },
       },
     },

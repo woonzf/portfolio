@@ -156,11 +156,11 @@
   }
 
   .project-card-wrapper {
-    @apply bg-light dark:bg-dark rounded-md flex gap-4 overflow-x-scroll snap-x scroll-smooth relative;
+    @apply flex gap-4 overflow-x-scroll snap-x scroll-smooth relative;
   }
 
   .project-card {
-    @apply min-w-full flex justify-center items-center snap-center relative;
+    @apply min-w-full bg-light dark:bg-dark rounded-md flex justify-center items-center snap-center relative;
   }
 
   .project-card-image {

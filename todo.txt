@@ -1,3 +1,1 @@
-Finalize desktop design
-Change Portfolio project img
 Update code for mobile view

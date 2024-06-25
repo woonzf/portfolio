@@ -6,6 +6,7 @@ const menu = (() => {
 
   const aside = document.querySelector("aside");
   const main = document.querySelector("main");
+  const sideLinkWrapper = document.querySelector("#side-link-wrapper");
 
   const btnHomeL = document.querySelector("#btn-home-l");
   const btnAboutL = document.querySelector("#btn-about-l");
@@ -68,11 +69,19 @@ const menu = (() => {
     btnMenuL.onclick = () => {
       main.classList.toggle("opacity-50");
       _toggleMenuL();
+      sideLinkWrapper.classList.toggle("hide");
+      setTimeout(() => {
+        sideLinkWrapper.classList.toggle("hidden");
+      }, 500);
     };
 
     btnMenuLClose.onclick = () => {
       main.classList.toggle("opacity-50");
       _toggleMenuL();
+      sideLinkWrapper.classList.toggle("hidden");
+      requestAnimationFrame(() => {
+        sideLinkWrapper.classList.toggle("hide");
+      });
     };
   }
 

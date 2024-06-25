@@ -129,6 +129,10 @@
     @apply h-[30px] sm:h-[40px] text-[30px] sm:text-[40px] aspect-square;
   }
 
+  .icon-side-link {
+    @apply h-[20px] sm:h-[30px] text-[20px] sm:text-[30px] aspect-square;
+  }
+
   .icon-next {
     @apply h-[70px] aspect-square;
     transition: transform 500ms ease;
@@ -300,6 +304,12 @@
 }
 
 @layer utilities {
+  main {
+    transition:
+      transform 500ms ease,
+      opacity 500ms ease;
+  }
+
   aside,
   #btn-menu-l,
   #btn-menu-l-close,
@@ -328,12 +338,6 @@
     @apply rotate-180;
   }
 
-  main {
-    transition:
-      transform 500ms ease,
-      opacity 500ms ease;
-  }
-
   #article-about {
     transition: opacity 500ms ease;
   }
@@ -344,6 +348,14 @@
 
   #project-card-detail-wrapper.active {
     @apply translate-y-[calc(-100%-15px)];
+  }
+
+  #side-link-wrapper {
+    transition: opacity 500ms ease;
+  }
+
+  #side-link-wrapper.hide {
+    @apply opacity-0;
   }
 
   /* Menu dot */

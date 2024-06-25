@@ -23,13 +23,34 @@ const menu = (() => {
     "#project-card-detail-wrapper",
   );
 
+  const btnMenuP = document.querySelector("#btn-menu-p");
+  const iconMenuOpenP = document.querySelector("#icon-menu-open-p");
+  const iconMenuCloseP = document.querySelector("#icon-menu-close-p");
+
   let isOpenProjectCard = 0;
   let activeProjectCard = 0;
+  let isPortrait = 0;
 
   function init() {
+    getIsPortrait();
     _initBtnMenuL();
     _initBtnNavL();
     _initBtnProjectCardExpands();
+    _initBtnMenuP();
+  }
+
+  function getIsPortrait() {
+    if (window.innerHeight > window.innerWidth) isPortrait = 1;
+    else isPortrait = 0;
+  }
+
+  function _initBtnMenuP() {
+    btnMenuP.onclick = () => {
+      iconMenuOpenP.classList.toggle("hidden");
+      iconMenuCloseP.classList.toggle("hidden");
+      aside.classList.toggle("move-p");
+      main.classList.toggle("move-p");
+    };
   }
 
   function _initBtnProjectCardExpands() {
@@ -94,28 +115,34 @@ const menu = (() => {
 
   function _initBtnNavL() {
     btnHomeL.onclick = () => {
-      btnMenuLClose.click();
+      if (isPortrait === 0) btnMenuLClose.click();
+      else btnMenuP.click();
+
       setTimeout(() => {
         main.scrollTo(0, 0);
       }, 500);
     };
 
     btnAboutL.onclick = () => {
-      btnMenuLClose.click();
+      if (isPortrait === 0) btnMenuLClose.click();
+      else btnMenuP.click();
+
       setTimeout(() => {
         scroll.scrollTo(1);
       }, 500);
     };
 
     btnProjectsL.onclick = () => {
-      btnMenuLClose.click();
+      if (isPortrait === 0) btnMenuLClose.click();
+      else btnMenuP.click();
+
       setTimeout(() => {
         scroll.scrollTo(2);
       }, 500);
     };
   }
 
-  return { init };
+  return { init, getIsPortrait };
 })();
 
 export { menu };

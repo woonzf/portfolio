@@ -38,7 +38,7 @@
   }
 
   aside {
-    @apply h-[calc(100vh-2*56px)] mt-14 pl-[200px];
+    @apply h-[calc(100vh-2*56px)] portrait:w-[60vw] mt-14 landscape:pl-[200px] portrait:pr-7 portrait:md:pr-14;
   }
 
   main {
@@ -280,13 +280,13 @@
   }
 
   .highlight-h:after {
-    @apply h-[50%] w-0 opacity-80 absolute top-[25%] left-[-15px] -z-10;
+    @apply h-[50%] w-0 opacity-80 absolute top-[25%] left-[-15px] portrait:left-[-10px] -z-10;
     content: "";
     transition: width 500ms ease;
   }
 
   button:hover .highlight-h:after {
-    @apply w-[calc(100%+30px)];
+    @apply w-[calc(100%+30px)] portrait:w-[calc(100%+10px)];
   }
 
   .about-span {
@@ -324,6 +324,14 @@
 
   aside.move {
     @apply translate-x-0;
+  }
+
+  main.move-p {
+    @apply translate-x-[-60vw];
+  }
+
+  aside.move-p {
+    @apply -translate-x-full;
   }
 
   #btn-menu-l.show {

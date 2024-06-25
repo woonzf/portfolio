@@ -20,8 +20,23 @@
       >
         <div class="dark-mode-ball"></div>
       </button>
+      <button class="landscape:hidden" id="btn-menu-p">
+        <div class="h-7 md:h-8 aspect-square relative" id="icon-menu-open-p">
+          <img class="icon-mode-dark" src="411474f5f58f97694d9f.png" />
+          <img class="icon-mode" src="5f0b7a27840f468f6fcd.png" />
+        </div>
+        <div
+          class="h-7 md:h-8 aspect-square relative hidden"
+          id="icon-menu-close-p"
+        >
+          <img class="icon-mode-dark" src="30385db2f1e6e679c9a3.png" />
+          <img class="icon-mode" src="374c99d734a5edb033d5.png" />
+        </div>
+      </button>
     </header>
-    <div class="fixed top-[50vh] left-[-156px] animate-menu z-50">
+    <div
+      class="fixed top-[50vh] left-[-156px] animate-menu z-50 portrait:hidden"
+    >
       <button class="show" id="btn-menu-l">
         <div class="flex flex-col items-center gap-5">
           <div class="h-10 aspect-square rotate-90 relative">
@@ -43,13 +58,19 @@
       </div>
     </div>
     <aside
-      class="flex flex-col justify-evenly fixed top-0 translate-x-[-40vw] z-40"
+      class="flex flex-col justify-evenly portrait:items-end fixed top-0 portrait:left-full landscape:translate-x-[-40vw] z-40"
     >
-      <div class="font-extrabold text-6xl" id="menu-text">
+      <button
+        class="btn-dark-mode theme-1 bg-dark dark:bg-light landscape:hidden"
+        title="Dark Mode"
+      >
+        <div class="dark-mode-ball"></div>
+      </button>
+      <div class="font-extrabold text-4xl md:text-6xl" id="menu-text">
         <span class="text-theme-1">M</span>ENU
       </div>
-      <nav class="font-bold text-4xl">
-        <ul class="w-fit text-start flex flex-col gap-3">
+      <nav class="font-bold text-2xl md:text-4xl">
+        <ul class="w-fit text-start portrait:text-end flex flex-col gap-3">
           <li>
             <button id="btn-home-l" disabled>
               <div class="highlight-h after:bg-theme-1">
@@ -73,8 +94,8 @@
           </li>
         </ul>
       </nav>
-      <div>
-        <div class="font-extrabold text-2xl" id="contact-text">
+      <div class="portrait:flex portrait:flex-col portrait:items-end">
+        <div class="font-extrabold text-lg md:text-2xl" id="contact-text">
           <span class="text-theme-1">C</span>ONTACT
         </div>
         <div>WOON ZHEN FEI</div>
@@ -125,7 +146,7 @@
       </small>
     </aside>
     <div
-      class="w-7 md:w-14 fixed top-[50vh] right-0 -translate-y-1/2 z-50"
+      class="w-7 md:w-14 fixed top-[50vh] right-0 -translate-y-1/2 z-50 portrait:hidden"
       id="side-link-wrapper"
     >
       <div class="flex flex-col items-center gap-3">

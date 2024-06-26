@@ -14,7 +14,7 @@ module.exports = {
       'animation': {
         'hello': 'slide-up 1s 1',
         'menu': 'bounce-menu 1.5s infinite',
-        'chevron-down': 'bounce-chevron-down 1s infinite',
+        'bounce-scroll': 'bounce-scroll 1s infinite',
         'chevron-right': 'bounce-chevron-right 1s infinite',
         'chevron-left': 'bounce-chevron-left 1s infinite',
         'shrink-width': 'shrink-width 10s linear infinite',
@@ -36,13 +36,13 @@ module.exports = {
             animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
           },
         },
-        'bounce-chevron-down': {
+        'bounce-scroll': {
           '0%, 100%': {
-            transform: 'translateX(-50%) translateY(-25%)',
+            transform: 'translateY(-150%) translateX(33%) rotate(-90deg)',
             animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)',
            },
           '50%': {
-            transform: 'translateX(-50%) translateY(0)',
+            transform: 'translateY(-100%) translateX(33%) rotate(-90deg)',
             animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
           },
         },

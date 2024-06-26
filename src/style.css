@@ -46,7 +46,7 @@
   }
 
   section {
-    @apply h-[calc(100vh-2*56px)] px-7 md:px-14 snap-center;
+    @apply h-[calc(100vh-2*56px)] px-7 portrait:px-0 md:px-14 snap-center;
   }
 
   a {

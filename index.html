@@ -208,27 +208,30 @@
         </div>
       </section>
       <section
-        class="mt-14 px-0 flex flex-row relative overflow-x-scroll snap-x scroll-smooth"
+        class="portrait:h-fit mt-14 px-0 flex flex-row portrait:flex-col relative overflow-x-scroll snap-x scroll-smooth"
         id="about"
       >
         <article
-          class="h-full min-w-full px-7 md:px-14 flex snap-center"
+          class="h-full min-w-full landscape:px-7 landscape:md:px-14 flex portrait:flex-col snap-center"
           id="article-about"
         >
-          <div class="w-[40%] dark:bg-theme-2 relative">
+          <div class="portrait:h-[20vh] landscape:w-[40%] dark:bg-theme-2 portrait:flex portrait:flex-col relative">
             <div
-              class="text-hello absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2"
+              class="portrait:h-1/2 portrait:px-7 portrait:md:px-14 text-hello landscape:absolute top-1/2 right-0 landscape:-translate-y-1/2 landscape:translate-x-1/2 z-[1]"
             >
-              <div class="overflow-hidden">
-                <div>AB</div>
-              </div>
-              <div class="overflow-hidden">
-                <div>
-                  OUT<span class="text-light dark:text-theme-2">.</span>
+              <div class="portrait:relative portrait:top-full portrait:-translate-y-1/2">
+                <div class="overflow-hidden">
+                  <div>AB</div>
+                </div>
+                <div class="overflow-hidden">
+                  <div>
+                    OUT<span class="text-light dark:text-theme-2">.</span>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="scroll-wrapper">
+            <div class="h-1/2 w-full bg-light dark:bg-dark landscape:hidden z-auto"></div>
+            <div class="scroll-wrapper portrait:hidden">
               <div class="img-arrow-down-wrapper relative rotate-90">
                 <img class="img-arrow-down-dark icon-mode-dark absolute" />
                 <img class="img-arrow-down icon-mode absolute" />
@@ -237,10 +240,10 @@
             </div>
           </div>
           <div
-            class="w-full bg-theme-2 dark:bg-transparent flex justify-center items-center"
+            class="w-full portrait:px-7 portrait:md:px-14 bg-theme-2 dark:bg-transparent flex justify-center items-center"
           >
             <div
-              class="h-[calc(20vw*0.8)] text-xl md:text-2xl font-semibold flex flex-col justify-evenly"
+              class="landscape:h-[calc(20vw*0.8)] text-xl md:text-2xl font-semibold flex flex-col justify-evenly"
             >
               <div class="italic font-bold uppercase">
                 Hi<span class="about-span">,</span> I am
@@ -266,7 +269,7 @@
           </div>
         </article>
         <article
-          class="h-full px-7 md:px-14 min-w-[70%] flex snap-center"
+          class="h-full landscape:min-w-[70%] px-7 md:px-14 flex portrait:flex-col snap-center"
           id="article-about-more"
         >
           <div
@@ -285,7 +288,7 @@
               <div>ABOUT<span class="text-theme-2">.</span></div>
             </div>
           </div>
-          <div class="px-14 flex justify-center items-center">
+          <div class="landscape:px-14 flex justify-center items-center">
             <div class="py-14 border-y-2 border-theme-2 flex flex-col gap-14">
               <p class="text-pretty text-justify">
                 Hi, I am Woon Zhen Fei, a web developer in Malaysia. I have been
@@ -427,7 +430,7 @@
           </div>
         </article>
         <button
-          class="flex flex-col items-center absolute top-1/2 right-14 animate-chevron-right"
+          class="flex flex-col items-center absolute top-1/2 right-14 animate-chevron-right portrait:hidden"
           id="btn-about-more-l"
         >
           <div class="w-fit font-bold rotate-180 underline-h">MORE</div>

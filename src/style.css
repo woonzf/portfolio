@@ -358,14 +358,6 @@
     @apply translate-y-[calc(-100%-15px)];
   }
 
-  #side-link-wrapper {
-    transition: opacity 500ms ease;
-  }
-
-  #side-link-wrapper.hide {
-    @apply opacity-0;
-  }
-
   /* Menu dot */
   button:disabled > div > span {
     @apply opacity-100;

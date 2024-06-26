@@ -1,1 +1,1 @@
-Update code for mobile view
+Update code for portrait mode

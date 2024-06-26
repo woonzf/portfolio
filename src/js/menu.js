@@ -6,7 +6,6 @@ const menu = (() => {
 
   const aside = document.querySelector("aside");
   const main = document.querySelector("main");
-  const sideLinkWrapper = document.querySelector("#side-link-wrapper");
 
   const btnHomeL = document.querySelector("#btn-home-l");
   const btnAboutL = document.querySelector("#btn-about-l");
@@ -42,15 +41,6 @@ const menu = (() => {
   function getIsPortrait() {
     if (window.innerHeight > window.innerWidth) isPortrait = 1;
     else isPortrait = 0;
-  }
-
-  function _initBtnMenuP() {
-    btnMenuP.onclick = () => {
-      iconMenuOpenP.classList.toggle("hidden");
-      iconMenuCloseP.classList.toggle("hidden");
-      aside.classList.toggle("move-p");
-      main.classList.toggle("move-p");
-    };
   }
 
   function _initBtnProjectCardExpands() {
@@ -89,28 +79,25 @@ const menu = (() => {
   function _initBtnMenuL() {
     btnMenuL.onclick = () => {
       main.classList.toggle("opacity-50");
-      _toggleMenuL();
-      sideLinkWrapper.classList.toggle("hide");
-      setTimeout(() => {
-        sideLinkWrapper.classList.toggle("hidden");
-      }, 500);
+      btnMenuL.classList.toggle("show");
+      btnMenuLClose.classList.toggle("show");
+      aside.classList.toggle("move");
+      main.classList.toggle("move");
     };
 
     btnMenuLClose.onclick = () => {
-      main.classList.toggle("opacity-50");
-      _toggleMenuL();
-      sideLinkWrapper.classList.toggle("hidden");
-      requestAnimationFrame(() => {
-        sideLinkWrapper.classList.toggle("hide");
-      });
+      btnMenuL.click();
     };
   }
 
-  function _toggleMenuL() {
-    btnMenuL.classList.toggle("show");
-    btnMenuLClose.classList.toggle("show");
-    aside.classList.toggle("move");
-    main.classList.toggle("move");
+  function _initBtnMenuP() {
+    btnMenuP.onclick = () => {
+      main.classList.toggle("opacity-50");
+      iconMenuOpenP.classList.toggle("hidden");
+      iconMenuCloseP.classList.toggle("hidden");
+      aside.classList.toggle("move-p");
+      main.classList.toggle("move-p");
+    };
   }
 
   function _initBtnNavL() {

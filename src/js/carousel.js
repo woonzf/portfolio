@@ -13,6 +13,7 @@ const carousel = (() => {
   let scrollWidthProjectCard1 = 0;
   let scrollWidthProjectCard2 = 0;
   let scrollWidthProjectCard3 = 0;
+  let scrollWidthProjectCards = [];
 
   let i = 1;
 
@@ -25,7 +26,7 @@ const carousel = (() => {
         projectCardWrapper.scrollTo(0, 0);
         i = 1;
       } else {
-        projectCardWrapper.scrollBy(scrollWidthProjectCard1, 0);
+        projectCardWrapper.scrollTo(scrollWidthProjectCards[i] + 1, 0);
         i += 1;
       }
       document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
@@ -37,7 +38,7 @@ const carousel = (() => {
         projectCardWrapper.scrollTo(scrollWidthProjectCard3 + 1, 0);
         i = 4;
       } else {
-        projectCardWrapper.scrollBy(-scrollWidthProjectCard1, 0);
+        projectCardWrapper.scrollTo(scrollWidthProjectCards[i - 2] + 1, 0);
         i -= 1;
       }
       document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
@@ -65,12 +66,7 @@ const carousel = (() => {
       btn.onclick = () => {
         document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
         i = +btn.id.slice(-1);
-        if (i === 1) projectCardWrapper.scrollTo(0, 0);
-        else if (i === 2)
-          projectCardWrapper.scrollTo(scrollWidthProjectCard1 + 1, 0);
-        else if (i === 3)
-          projectCardWrapper.scrollTo(scrollWidthProjectCard2 + 1, 0);
-        else projectCardWrapper.scrollTo(scrollWidthProjectCard3 + 1, 0);
+        projectCardWrapper.scrollTo(scrollWidthProjectCards[i - 1] + 1, 0);
         document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
       };
     });
@@ -86,6 +82,12 @@ const carousel = (() => {
       projectCard2.clientWidth + gap + scrollWidthProjectCard1;
     scrollWidthProjectCard3 =
       projectCard3.clientWidth + gap + scrollWidthProjectCard2;
+    scrollWidthProjectCards = [
+      -1,
+      scrollWidthProjectCard1,
+      scrollWidthProjectCard2,
+      scrollWidthProjectCard3,
+    ];
   }
 
   return { init, getScrollWidthProjectCard };

@@ -6,8 +6,10 @@ import { scroll } from "./js/scroll";
 import { carousel } from "./js/carousel";
 import { windowResize } from "./js/window-resize";
 
-darkMode.init();
-menu.init();
-scroll.init();
-carousel.init();
-windowResize.init();
+window.onload = () => {
+  darkMode.init();
+  menu.init();
+  scroll.init();
+  carousel.init();
+  windowResize.init();
+};

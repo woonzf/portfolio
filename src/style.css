@@ -78,6 +78,10 @@
     @apply text-6xl md:text-7xl leading-[0.8] font-extrabold;
   }
 
+  .text-title {
+    @apply text-4xl md:text-5xl leading-[0.8] font-extrabold;
+  }
+
   .text-disabled {
     @apply text-zinc-400 dark:text-zinc-500;
   }

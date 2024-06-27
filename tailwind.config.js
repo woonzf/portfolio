@@ -11,6 +11,10 @@ module.exports = {
         'light': '#f1f5f9',
         'dark': '#27272a',
       },
+      'gridTemplateColumns': {
+        'repeat-auto-30': 'repeat(auto-fill, 30px)',
+        'repeat-auto-40': 'repeat(auto-fill, 40px)',
+      },
       'animation': {
         'hello': 'slide-up 1s 1',
         'menu': 'bounce-menu 1.5s infinite',

@@ -208,30 +208,27 @@
         </div>
       </section>
       <section
-        class="portrait:h-fit mt-14 px-0 flex flex-row portrait:flex-col relative overflow-x-scroll snap-x scroll-smooth"
+        class="portrait:h-fit mt-14 px-0 flex flex-row relative overflow-x-scroll snap-x scroll-smooth"
         id="about"
       >
         <article
-          class="h-full min-w-full landscape:px-7 landscape:md:px-14 flex portrait:flex-col snap-center"
+          class="h-full min-w-full px-7 md:px-14 flex snap-center portrait:hidden"
           id="article-about"
         >
-          <div class="portrait:h-[20vh] landscape:w-[40%] dark:bg-theme-2 portrait:flex portrait:flex-col relative">
+          <div class="w-[40%] dark:bg-theme-2 relative">
             <div
-              class="portrait:h-1/2 portrait:px-7 portrait:md:px-14 text-hello landscape:absolute top-1/2 right-0 landscape:-translate-y-1/2 landscape:translate-x-1/2 z-[1]"
+              class="text-hello absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 z-[1]"
             >
-              <div class="portrait:relative portrait:top-full portrait:-translate-y-1/2">
-                <div class="overflow-hidden">
-                  <div>AB</div>
-                </div>
-                <div class="overflow-hidden">
-                  <div>
-                    OUT<span class="text-light dark:text-theme-2">.</span>
-                  </div>
+              <div class="overflow-hidden">
+                <div>AB</div>
+              </div>
+              <div class="overflow-hidden">
+                <div>
+                  OUT<span class="text-light dark:text-theme-2">.</span>
                 </div>
               </div>
             </div>
-            <div class="h-1/2 w-full bg-light dark:bg-dark landscape:hidden z-auto"></div>
-            <div class="scroll-wrapper portrait:hidden">
+            <div class="scroll-wrapper">
               <div class="img-arrow-down-wrapper relative rotate-90">
                 <img class="img-arrow-down-dark icon-mode-dark absolute" />
                 <img class="img-arrow-down icon-mode absolute" />
@@ -240,10 +237,10 @@
             </div>
           </div>
           <div
-            class="w-full portrait:px-7 portrait:md:px-14 bg-theme-2 dark:bg-transparent flex justify-center items-center"
+            class="w-full bg-theme-2 dark:bg-transparent flex justify-center items-center"
           >
             <div
-              class="landscape:h-[calc(20vw*0.8)] text-xl md:text-2xl font-semibold flex flex-col justify-evenly"
+              class="h-[calc(20vw*0.8)] text-xl md:text-2xl font-semibold flex flex-col justify-evenly"
             >
               <div class="italic font-bold uppercase">
                 Hi<span class="about-span">,</span> I am
@@ -269,27 +266,52 @@
           </div>
         </article>
         <article
-          class="h-full landscape:min-w-[70%] px-7 md:px-14 flex portrait:flex-col snap-center"
+          class="h-full min-w-[70%] portrait:w-screen px-7 md:px-14 flex portrait:flex-col portrait:gap-10 snap-center"
           id="article-about-more"
         >
           <div
-            class="min-w-[30%] flex flex-col justify-center items-center gap-14"
+            class="min-w-[30%] flex flex-col portrait:flex-col-reverse justify-center items-center gap-14 portrait:gap-10"
           >
+            <div class="w-fit landscape:hidden">
+              <div class="italic font-bold uppercase">
+                Hi<span class="about-span">,</span> I am
+              </div>
+              <div class="text-title">Woon Zhen Fei</div>
+              <div>
+                <div class="flex justify-between">
+                  <p>Front End</p>
+                  <span class="about-span">.</span>
+                  <p>Interactive</p>
+                  <span class="about-span">.</span>
+                  <p>Responsive Design</p>
+                </div>
+                <div class="flex justify-between">
+                  <p>HTML</p>
+                  <span class="about-span">.</span>
+                  <p>CSS</p>
+                  <span class="about-span">.</span>
+                  <p>JavaScript</p>
+                </div>
+              </div>
+            </div>
             <div
-              class="w-full aspect-square border-2 border-theme-2 rounded-full flex justify-center items-center"
+              class="w-full portrait:w-[75%] portrait:md:w-[50%] aspect-square border-2 border-theme-2 rounded-full flex justify-center items-center"
             >
               <img
                 class="w-[calc(100%-16px)] rounded-full"
                 src="0575d19b2088e83eb7ce.jpg"
               />
             </div>
-            <div class="text-big">
-              <div>MORE</div>
+            <div class="text-big portrait:text-title portrait:self-start">
               <div>ABOUT<span class="text-theme-2">.</span></div>
             </div>
           </div>
-          <div class="landscape:px-14 flex justify-center items-center">
-            <div class="py-14 border-y-2 border-theme-2 flex flex-col gap-14">
+          <div
+            class="portrait:w-full landscape:px-14 flex justify-center items-center"
+          >
+            <div
+              class="portrait:w-full py-14 portrait:py-10 border-y-2 border-theme-2 flex flex-col gap-14 portrait:gap-10"
+            >
               <p class="text-pretty text-justify">
                 Hi, I am Woon Zhen Fei, a web developer in Malaysia. I have been
                 actively coding and learning web development since June 2023.
@@ -299,11 +321,13 @@
                 looking for a job opportunity in web development.
               </p>
               <div class="flex flex-col gap-5">
-                <div class="flex flex-col gap-1">
+                <div class="flex flex-col gap-2">
                   <div class="font-bold flex items-center">
                     Languages & Frameworks
                   </div>
-                  <div class="flex gap-2">
+                  <div
+                    class="grid grid-cols-repeat-auto-30 md:grid-cols-repeat-auto-40 gap-2"
+                  >
                     <div class="icon-about-tool relative">
                       <img
                         class="absolute"
@@ -395,9 +419,11 @@
                     </div>
                   </div>
                 </div>
-                <div class="flex flex-col gap-1">
+                <div class="flex flex-col gap-2">
                   <div class="font-bold flex items-center">Tools</div>
-                  <div class="flex gap-2">
+                  <div
+                    class="grid grid-cols-repeat-auto-30 md:grid-cols-repeat-auto-40 gap-2"
+                  >
                     <div class="icon-about-tool relative">
                       <img
                         class="absolute"

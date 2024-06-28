@@ -15,7 +15,7 @@ const scroll = (() => {
     document.querySelector("#btn-projects-l"),
   ];
 
-  const btnTop = document.querySelector("#btn-top");
+  const btnsTop = document.querySelectorAll(".btn-top");
   const btnAboutMoreL = document.querySelector("#btn-about-more-l");
 
   const marginTop = 56;
@@ -70,9 +70,11 @@ const scroll = (() => {
       }
     };
 
-    btnTop.onclick = () => {
-      main.scrollTo(0, 0);
-    };
+    btnsTop.forEach((btn) => {
+      btn.onclick = () => {
+        main.scrollTo(0, 0);
+      };
+    });
   }
 
   function getScrollHeightSection() {

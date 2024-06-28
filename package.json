@@ -9,7 +9,7 @@
     "build-w": "webpack --watch",
     "prettier-c": "prettier --check",
     "prettier-w": "prettier --write",
-    "push gh-pages": "git subtree push --prefix dist origin gh-pages"
+    "gh-pages-p": "git subtree push --prefix dist origin gh-pages"
   },
   "repository": {
     "type": "git",

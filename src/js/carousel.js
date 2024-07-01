@@ -16,12 +16,13 @@ const carousel = (() => {
   let scrollWidthProjectCards = [];
 
   let i = 1;
+  let iPrev = 0;
 
   function init() {
     getScrollWidthProjectCard();
 
     btnProjectNext.onclick = () => {
-      document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
+      iPrev = i;
       if (i === 4) {
         projectCardWrapper.scrollTo(0, 0);
         i = 1;
@@ -29,11 +30,14 @@ const carousel = (() => {
         projectCardWrapper.scrollTo(scrollWidthProjectCards[i], 0);
         i += 1;
       }
+      document
+        .querySelector(`#btn-mini-tab-${iPrev}`)
+        .classList.toggle("active");
       document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
     };
 
     btnProjectPrev.onclick = () => {
-      document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
+      iPrev = i;
       if (i === 1) {
         projectCardWrapper.scrollTo(scrollWidthProjectCard3, 0);
         i = 4;
@@ -41,11 +45,14 @@ const carousel = (() => {
         projectCardWrapper.scrollTo(scrollWidthProjectCards[i - 2], 0);
         i -= 1;
       }
+      document
+        .querySelector(`#btn-mini-tab-${iPrev}`)
+        .classList.toggle("active");
       document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
     };
 
     projectCardWrapper.onscrollend = () => {
-      document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
+      iPrev = i;
       const scroll = projectCardWrapper.scrollLeft;
       if (scroll >= 0 && scroll < scrollWidthProjectCard1) i = 1;
       else if (
@@ -59,14 +66,20 @@ const carousel = (() => {
       )
         i = 3;
       else i = 4;
+      document
+        .querySelector(`#btn-mini-tab-${iPrev}`)
+        .classList.toggle("active");
       document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
     };
 
     btnMiniTabs.forEach((btn) => {
       btn.onclick = () => {
-        document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
+        iPrev = i;
         i = +btn.id.slice(-1);
         projectCardWrapper.scrollTo(scrollWidthProjectCards[i - 1], 0);
+        document
+          .querySelector(`#btn-mini-tab-${iPrev}`)
+          .classList.toggle("active");
         document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
       };
     });

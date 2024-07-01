@@ -5,7 +5,7 @@ import { menu } from "./menu";
 const windowResize = (() => {
   function init() {
     window.onresize = () => {
-      scroll.getScrollHeightSection();
+      scroll.getThresholds();
       carousel.getScrollWidthProjectCard();
       menu.getIsPortrait();
     };

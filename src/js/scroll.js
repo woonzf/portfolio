@@ -2,8 +2,8 @@ const scroll = (() => {
   const main = document.querySelector("main");
   const home = document.querySelector("#home");
   const about = document.querySelector("#about");
+  const projects = document.querySelector("#projects");
   const articleAbout = document.querySelector("#article-about");
-  const articleAboutMore = document.querySelector("#article-about-more");
 
   const btnDarkMode = document.querySelectorAll(".btn-dark-mode");
   const spanMenu = document.querySelector("#menu-text > span");
@@ -19,21 +19,21 @@ const scroll = (() => {
   const btnAboutMoreL = document.querySelector("#btn-about-more-l");
 
   const marginTop = 56;
-  let scrollHeightHome = 0;
-  let scrollHeightAbout = 0;
+  let thresholdHome = 0;
+  let thresholdAbout = 0;
   let currentTheme = 1;
   let isOpenAboutMore = 0;
-  let scrollWidthArticleAboutMore = 0;
+  let thresholdArticleAbout = 0;
 
   function init() {
-    getScrollHeightSection();
+    getThresholds();
 
     main.onscrollend = () => {
       const scroll = main.scrollTop;
-      if (scroll >= 0 && scroll < scrollHeightHome) {
+      if (scroll >= 0 && scroll < thresholdHome) {
         _changeTheme(1);
         _disableBtn(1);
-      } else if (scroll >= scrollHeightHome && scroll < scrollHeightAbout) {
+      } else if (scroll >= thresholdHome && scroll < thresholdAbout) {
         _changeTheme(2);
         _disableBtn(2);
       } else {
@@ -51,7 +51,7 @@ const scroll = (() => {
       const scroll = about.scrollLeft;
       const wasOpen = isOpenAboutMore;
 
-      if (scroll >= 0 && scroll < scrollWidthArticleAboutMore / 2) {
+      if (scroll >= 0 && scroll < thresholdArticleAbout) {
         if (isOpenAboutMore === 1) {
           btnAboutMoreL.querySelector("div").textContent = "MORE";
           isOpenAboutMore = 0;
@@ -77,15 +77,17 @@ const scroll = (() => {
     });
   }
 
-  function getScrollHeightSection() {
-    scrollHeightHome = home.clientHeight + marginTop;
-    scrollHeightAbout = about.clientHeight + marginTop + scrollHeightHome;
-    scrollWidthArticleAboutMore = articleAboutMore.clientWidth;
+  function getThresholds() {
+    thresholdHome = home.clientHeight - main.clientHeight / 2;
+    thresholdAbout =
+      main.scrollHeight - projects.clientHeight - main.clientHeight / 2;
+    thresholdArticleAbout = articleAbout.clientWidth - about.clientWidth / 2;
   }
 
   function scrollTo(section) {
-    if (section === 1) main.scrollTo(0, scrollHeightHome);
-    else if (section === 2) main.scrollTo(0, scrollHeightAbout);
+    if (section === 1) main.scrollTo(0, home.clientHeight + marginTop);
+    else if (section === 2)
+      main.scrollTo(0, main.scrollHeight - projects.clientHeight);
   }
 
   function _changeTheme(theme) {
@@ -112,7 +114,7 @@ const scroll = (() => {
     }
   }
 
-  return { init, getScrollHeightSection, scrollTo };
+  return { init, getThresholds, scrollTo };
 })();
 
 export { scroll };

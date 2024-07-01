@@ -44,7 +44,7 @@ const scroll = (() => {
 
     btnAboutMoreL.onclick = () => {
       if (isOpenAboutMore === 1) about.scrollTo(0, 0);
-      else about.scrollTo(articleAbout.clientWidth + 1, 0);
+      else about.scrollTo(articleAbout.clientWidth, 0);
     };
 
     about.onscrollend = () => {
@@ -84,8 +84,8 @@ const scroll = (() => {
   }
 
   function scrollTo(section) {
-    if (section === 1) main.scrollTo(0, scrollHeightHome + 1);
-    else if (section === 2) main.scrollTo(0, scrollHeightAbout + 1);
+    if (section === 1) main.scrollTo(0, scrollHeightHome);
+    else if (section === 2) main.scrollTo(0, scrollHeightAbout);
   }
 
   function _changeTheme(theme) {

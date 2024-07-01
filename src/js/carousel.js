@@ -26,7 +26,7 @@ const carousel = (() => {
         projectCardWrapper.scrollTo(0, 0);
         i = 1;
       } else {
-        projectCardWrapper.scrollTo(scrollWidthProjectCards[i] + 1, 0);
+        projectCardWrapper.scrollTo(scrollWidthProjectCards[i], 0);
         i += 1;
       }
       document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
@@ -35,10 +35,10 @@ const carousel = (() => {
     btnProjectPrev.onclick = () => {
       document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
       if (i === 1) {
-        projectCardWrapper.scrollTo(scrollWidthProjectCard3 + 1, 0);
+        projectCardWrapper.scrollTo(scrollWidthProjectCard3, 0);
         i = 4;
       } else {
-        projectCardWrapper.scrollTo(scrollWidthProjectCards[i - 2] + 1, 0);
+        projectCardWrapper.scrollTo(scrollWidthProjectCards[i - 2], 0);
         i -= 1;
       }
       document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
@@ -66,7 +66,7 @@ const carousel = (() => {
       btn.onclick = () => {
         document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
         i = +btn.id.slice(-1);
-        projectCardWrapper.scrollTo(scrollWidthProjectCards[i - 1] + 1, 0);
+        projectCardWrapper.scrollTo(scrollWidthProjectCards[i - 1], 0);
         document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
       };
     });
@@ -83,7 +83,7 @@ const carousel = (() => {
     scrollWidthProjectCard3 =
       projectCard3.clientWidth + gap + scrollWidthProjectCard2;
     scrollWidthProjectCards = [
-      -1,
+      0,
       scrollWidthProjectCard1,
       scrollWidthProjectCard2,
       scrollWidthProjectCard3,

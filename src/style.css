@@ -160,7 +160,7 @@
   }
 
   .project-card-wrapper {
-    @apply flex gap-4 overflow-x-scroll snap-x scroll-smooth relative;
+    @apply flex gap-4 overflow-x-scroll snap-x snap-mandatory scroll-smooth relative;
   }
 
   .project-card {

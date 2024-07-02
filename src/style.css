@@ -176,7 +176,7 @@
   }
 
   .project-card-index {
-    @apply text-6xl md:text-8xl leading-[0.8] font-extrabold absolute top-0 left-0;
+    @apply text-6xl md:text-8xl leading-[0.8] font-extrabold absolute top-0 left-0 md:left-2.5;
   }
 
   .project-card-name {

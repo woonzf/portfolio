@@ -10,7 +10,7 @@ It was created as the final project: [Homepage](https://www.theodinproject.com/l
 
 I did not follow the template provided and try to make it more stylish. It is actually the second iteration as I am not satisfied with the [first one](https://github.com/woonzf/odin-homepage). In my opinion, the first one has better mobile view and this one has better desktop view.
 
-Layout and design based on [Wokine](https://www.awwwards.com/sites/wokine).
+Design inspired by [Wokine](https://www.awwwards.com/sites/wokine).
 
 ### Features:
 

@@ -20,9 +20,9 @@ Design inspired by [Wokine](https://www.awwwards.com/sites/wokine).
 
 ### Screenshots
 
-<img src="./src/img/projects/portfolio.png" height="300">
+<img src="./src/img/projects/portfolio.png" width="500">
 
-<img src="./src/img/projects/portfolio-d.png" height="300">
+<img src="./src/img/projects/portfolio-d.png" width="500">
 
 ### Languages:
 

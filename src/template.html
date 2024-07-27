@@ -458,7 +458,7 @@
             <div>PROJECTS<span class="text-theme-3">.</span></div>
           </div>
           <div
-            class="portrait:h-[calc(100%-20px)] flex flex-col justify-center items-center gap-5"
+            class="portrait:h-[calc(100%-20px)] flex flex-col landscape:justify-center items-center gap-5"
           >
             <div class="h-1 w-[168px] flex justify-center">
               <div
@@ -466,9 +466,7 @@
                 id="carousel-countdown-bar"
               ></div>
             </div>
-            <div
-              class="project-card-outer-wrapper portrait:h-[500px] portrait:w-full"
-            >
+            <div class="project-card-outer-wrapper portrait:w-full">
               <div class="project-card-wrapper portrait:h-full">
                 <div class="project-card" id="project-card-1">
                   <div class="project-card-info relative">
@@ -477,17 +475,58 @@
                       src="e96583a17bd8e335c774.png"
                     />
                     <div class="project-card-index">01</div>
-                    <div class="project-card-name">
-                      Your Personal Expense Tracker
+                    <div class="project-card-name-type">
+                      <div class="project-card-name">
+                        Your Personal Expense Tracker
+                      </div>
+                      <div class="project-card-type">
+                        <img
+                          src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue"
+                          alt="Python"
+                        />
+                        <img
+                          src="https://img.shields.io/badge/Sqlite-003B57?style=for-the-badge&logo=sqlite&logoColor=white"
+                          alt="SQLite"
+                        />
+                        <img
+                          src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"
+                          alt="Flask"
+                        />
+                        <img
+                          src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"
+                          alt="Bootstrap"
+                        />
+                      </div>
                     </div>
-                    <div class="project-card-type">Full Stack</div>
                   </div>
-                  <button
-                    class="project-card-expand"
-                    id="btn-project-card-expand-1"
-                  >
-                    <div class="w-fit font-semibold underline-h">More</div>
-                  </button>
+                  <div class="project-card-expand">
+                    <div class="project-detail-link-wrapper">
+                      <a
+                        class="project-link"
+                        href="https://github.com/woonzf/cs50x-2023-project"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <span>Repo</span>
+                        <div class="img-open-wrapper">
+                          <img class="icon-mode-dark img-open-dark" />
+                          <img class="icon-mode img-open" />
+                        </div>
+                      </a>
+                      <a
+                        class="project-link"
+                        href="https://www.youtube.com/watch?v=l83kys9yJJs"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <span>Demo</span>
+                        <div class="img-open-wrapper">
+                          <img class="icon-mode-dark img-open-dark" />
+                          <img class="icon-mode img-open" />
+                        </div>
+                      </a>
+                    </div>
+                  </div>
                 </div>
                 <div class="project-card" id="project-card-2">
                   <div class="project-card-info relative">
@@ -496,15 +535,44 @@
                       src="c94210ae721539184bb7.png"
                     />
                     <div class="project-card-index">02</div>
-                    <div class="project-card-name">Weather App</div>
-                    <div class="project-card-type">Front End</div>
+                    <div class="project-card-name-type">
+                      <div class="project-card-name">Weather App</div>
+                      <div class="project-card-type">
+                        <img
+                          src="https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=Webpack&logoColor=white"
+                          alt="Webpack"
+                        />
+                      </div>
+                    </div>
                   </div>
-                  <button
-                    class="project-card-expand"
-                    id="btn-project-card-expand-2"
-                  >
-                    <div class="w-fit font-semibold underline-h">More</div>
-                  </button>
+                  <div class="project-card-expand">
+                    <div class="project-detail-link-wrapper">
+                      <a
+                        class="project-link"
+                        href="https://github.com/woonzf/odin-weather-app"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <span>Repo</span>
+                        <div class="img-open-wrapper">
+                          <img class="icon-mode-dark img-open-dark" />
+                          <img class="icon-mode img-open" />
+                        </div>
+                      </a>
+                      <a
+                        class="project-link"
+                        href="https://woonzf.github.io/odin-weather-app/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <span>Demo</span>
+                        <div class="img-open-wrapper">
+                          <img class="icon-mode-dark img-open-dark" />
+                          <img class="icon-mode img-open" />
+                        </div>
+                      </a>
+                    </div>
+                  </div>
                 </div>
                 <div class="project-card" id="project-card-3">
                   <div class="project-card-info h-full w-full relative">
@@ -512,29 +580,62 @@
                       class="project-card-image h-full flex items-center relative"
                     >
                       <img
-                        class="rounded-md absolute animate-appear-cycle"
-                        src="009677c176d35368bc83.png"
+                        class="rounded-sm absolute animate-appear-cycle"
+                        src="98af4b51c1c94302aefb.png"
                       />
                       <img
-                        class="rounded-md absolute animate-appear-cycle-r"
-                        src="c2df9e3d0cd7be928f2c.png"
+                        class="rounded-sm absolute animate-appear-cycle-r"
+                        src="b25d544610e249cf7288.png"
                       />
                     </div>
                     <div class="project-card-index">03</div>
-                    <div class="project-card-name">Portfolio</div>
-                    <div class="project-card-type">Front End</div>
+                    <div class="project-card-name-type">
+                      <div class="project-card-name">Poké Memory Card</div>
+                      <div class="project-card-type">
+                        <img
+                          src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"
+                          alt="React"
+                        />
+                        <img
+                          src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"
+                          alt="Tailwind CSS"
+                        />
+                      </div>
+                    </div>
                   </div>
-                  <button
-                    class="project-card-expand"
-                    id="btn-project-card-expand-3"
-                  >
-                    <div class="w-fit font-semibold underline-h">More</div>
-                  </button>
+                  <div class="project-card-expand">
+                    <div class="project-detail-link-wrapper">
+                      <a
+                        class="project-link"
+                        href="https://github.com/woonzf/odin-memory-card"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <span>Repo</span>
+                        <div class="img-open-wrapper">
+                          <img class="icon-mode-dark img-open-dark" />
+                          <img class="icon-mode img-open" />
+                        </div>
+                      </a>
+                      <a
+                        class="project-link"
+                        href="https://woonzf.github.io/odin-memory-card/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <span>Demo</span>
+                        <div class="img-open-wrapper">
+                          <img class="icon-mode-dark img-open-dark" />
+                          <img class="icon-mode img-open" />
+                        </div>
+                      </a>
+                    </div>
+                  </div>
                 </div>
                 <div class="project-card" id="project-card-4">
                   <div class="project-card-index">04</div>
                   <a
-                    class="text-xl md:text-2xl flex flex-col justify-center gap-1 hover:scale-110"
+                    class="text-lg md:text-2xl flex flex-col justify-center gap-1 hover:scale-110"
                     href="https://github.com/woonzf?tab=repositories"
                     target="_blank"
                     rel="noreferrer"
@@ -542,7 +643,7 @@
                     <span>MORE ON</span>
                     <div class="flex gap-2 items-center">
                       <span class="font-semibold">GITHUB</span>
-                      <div class="icon-about-tool relative">
+                      <div class="icon-contact-link relative">
                         <i
                           class="devicon-github-original icon-mode-dark absolute"
                         ></i>
@@ -570,260 +671,6 @@
                   <img class="icon-mode-dark img-next" />
                 </div>
               </button>
-              <div
-                class="h-[calc(100%-30px)] portrait:h-full w-[calc(100%-30px)] portrait:w-full landscape:p-8 portrait:px-4 bg-light dark:bg-dark bg-opacity-90 dark:bg-opacity-90 rounded-md absolute left-[15px] portrait:left-0 top-full"
-                id="project-card-detail-wrapper"
-              >
-                <div class="h-full w-full flex items-center relative">
-                  <button
-                    class="absolute bottom-[-20px] portrait:bottom-4 left-[calc(50%-20px)] hover:rotate-180"
-                    id="btn-project-detail-close"
-                    title="Close"
-                  >
-                    <div class="h-10 aspect-square relative">
-                      <img
-                        class="icon-mode-dark"
-                        src="30385db2f1e6e679c9a3.png"
-                      />
-                      <img class="icon-mode" src="374c99d734a5edb033d5.png" />
-                    </div>
-                  </button>
-                  <div class="project-detail hidden" id="project-detail-1">
-                    <h1>
-                      <b>01<span class="text-theme-3">.</span></b> Your Personal
-                      Expense Tracker
-                    </h1>
-                    <p class="text-pretty text-justify">
-                      A full stack project that features user creation, login
-                      and logout, store and display expense data and settings
-                      that allow name, password and currency change.
-                    </p>
-                    <div class="project-detail-tool-wrapper">
-                      <div class="icon-about-tool relative">
-                        <img
-                          class="absolute"
-                          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-                          alt="HTML"
-                          title="HTML"
-                        />
-                      </div>
-                      <div class="icon-about-tool relative">
-                        <img
-                          class="absolute"
-                          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-                          alt="CSS"
-                          title="CSS"
-                        />
-                      </div>
-                      <div class="icon-about-tool relative">
-                        <img
-                          class="absolute"
-                          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-                          alt="JavaScript"
-                          title="JavaScript"
-                        />
-                      </div>
-                      <div class="icon-about-tool relative">
-                        <img
-                          class="absolute"
-                          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
-                          alt="Python"
-                          title="Python"
-                        />
-                      </div>
-                      <div class="icon-about-tool relative">
-                        <img
-                          class="absolute"
-                          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg"
-                          alt="SQLite"
-                          title="SQLite"
-                        />
-                      </div>
-                      <div class="icon-about-tool relative">
-                        <i
-                          class="devicon-flask-original icon-mode-dark absolute"
-                        ></i>
-                        <i
-                          class="devicon-flask-original colored icon-mode absolute"
-                          title="Flask"
-                        ></i>
-                      </div>
-                      <div class="icon-about-tool relative">
-                        <img
-                          class="absolute"
-                          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
-                          alt="Bootstrap"
-                          title="Bootstrap"
-                        />
-                      </div>
-                    </div>
-                    <div class="project-detail-link-wrapper">
-                      <a
-                        class="flex items-center gap-1"
-                        href="https://github.com/woonzf/cs50x-2023-project"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <span>GitHub</span>
-                        <div class="img-open-wrapper">
-                          <img class="icon-mode-dark img-open-dark" />
-                          <img class="icon-mode img-open" />
-                        </div>
-                      </a>
-                      <a
-                        class="flex items-center gap-1"
-                        href="https://www.youtube.com/watch?v=l83kys9yJJs"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <span>Demo</span>
-                        <div class="img-open-wrapper">
-                          <img class="icon-mode-dark img-open-dark" />
-                          <img class="icon-mode img-open" />
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="project-detail hidden" id="project-detail-2">
-                    <h1>
-                      <b>02<span class="text-theme-3">.</span></b> Weather App
-                    </h1>
-                    <p class="text-pretty text-justify">
-                      A front end project that retrieves and displays
-                      user-provided location's weather info from WeatherAPI.com
-                    </p>
-                    <div class="project-detail-tool-wrapper">
-                      <div class="icon-about-tool relative">
-                        <img
-                          class="absolute"
-                          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-                          alt="HTML"
-                          title="HTML"
-                        />
-                      </div>
-                      <div class="icon-about-tool relative">
-                        <img
-                          class="absolute"
-                          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-                          alt="CSS"
-                          title="CSS"
-                        />
-                      </div>
-                      <div class="icon-about-tool relative">
-                        <img
-                          class="absolute"
-                          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-                          alt="JavaScript"
-                          title="JavaScript"
-                        />
-                      </div>
-                      <div class="icon-about-tool relative">
-                        <img
-                          class="absolute"
-                          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/webpack/webpack-original.svg"
-                          alt="Webpack"
-                          title="Webpack"
-                        />
-                      </div>
-                    </div>
-                    <div class="project-detail-link-wrapper">
-                      <a
-                        class="flex items-center gap-1"
-                        href="https://github.com/woonzf/odin-weather-app"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <span>GitHub</span>
-                        <div class="img-open-wrapper">
-                          <img class="icon-mode-dark img-open-dark" />
-                          <img class="icon-mode img-open" />
-                        </div>
-                      </a>
-                      <a
-                        class="flex items-center gap-1"
-                        href="https://woonzf.github.io/odin-weather-app/"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <span>Demo</span>
-                        <div class="img-open-wrapper">
-                          <img class="icon-mode-dark img-open-dark" />
-                          <img class="icon-mode img-open" />
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="project-detail hidden" id="project-detail-3">
-                    <h1>
-                      <b>03<span class="text-theme-3">.</span></b> Portfolio
-                    </h1>
-                    <p class="text-pretty text-justify">
-                      Yes, you are viewing it! My first and current portfolio, a
-                      front end project that features interactive layout,
-                      responsive design and dark mode option.
-                    </p>
-                    <div class="project-detail-tool-wrapper">
-                      <div class="icon-about-tool relative">
-                        <img
-                          class="absolute"
-                          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-                          alt="HTML"
-                          title="HTML"
-                        />
-                      </div>
-                      <div class="icon-about-tool relative">
-                        <img
-                          class="absolute"
-                          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-                          alt="CSS"
-                          title="CSS"
-                        />
-                      </div>
-                      <div class="icon-about-tool relative">
-                        <img
-                          class="absolute"
-                          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-                          alt="JavaScript"
-                          title="JavaScript"
-                        />
-                      </div>
-                      <div class="icon-about-tool relative">
-                        <img
-                          class="absolute"
-                          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/webpack/webpack-original.svg"
-                          alt="Webpack"
-                          title="Webpack"
-                        />
-                      </div>
-                      <div class="icon-about-tool relative">
-                        <img
-                          class="absolute"
-                          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
-                          alt="Tailwind CSS"
-                          title="Tailwind CSS"
-                        />
-                      </div>
-                    </div>
-                    <div class="project-detail-link-wrapper">
-                      <a
-                        class="flex items-center gap-1"
-                        href="https://github.com/woonzf/portfolio"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <span>GitHub</span>
-                        <div class="img-open-wrapper">
-                          <img class="icon-mode-dark img-open-dark" />
-                          <img class="icon-mode img-open" />
-                        </div>
-                      </a>
-                      <a class="flex items-center" disabled>
-                        <span class="text-disabled">Viewing</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
             <div class="btn-mini-tab-wrapper flex gap-2">
               <button class="btn-mini-tab active" id="btn-mini-tab-1"></button>

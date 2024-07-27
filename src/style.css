@@ -135,7 +135,6 @@
     @apply opacity-100 dark:opacity-0 absolute;
   }
 
-  .icon-about-tool,
   .icon-contact-link {
     @apply h-[30px] sm:h-[40px] text-[30px] sm:text-[40px] aspect-square;
   }
@@ -163,7 +162,7 @@
   }
 
   .project-card-outer-wrapper {
-    @apply w-[60%] p-4 border-2 border-light portrait:border-theme-3 dark:border-theme-3 rounded-md relative overflow-y-hidden;
+    @apply w-[60%] p-2 md:p-4 border-2 border-light portrait:border-theme-3 dark:border-theme-3 rounded-md relative overflow-y-hidden;
   }
 
   .project-card-wrapper {
@@ -171,7 +170,7 @@
   }
 
   .project-card {
-    @apply min-w-full bg-light dark:bg-dark rounded-md flex justify-center items-center snap-center relative;
+    @apply min-w-full bg-light dark:bg-dark rounded-sm flex justify-center items-center snap-center relative;
   }
 
   .project-card-info {
@@ -179,23 +178,31 @@
   }
 
   .project-card-image {
-    @apply w-full rounded-md opacity-50;
+    @apply w-full rounded-sm opacity-50;
   }
 
   .project-card-index {
-    @apply text-6xl md:text-8xl leading-[0.8] font-extrabold absolute top-0 left-0 md:left-2.5;
+    @apply text-5xl md:text-8xl leading-[0.8] font-extrabold absolute top-0 left-0 md:left-2.5;
+  }
+
+  .project-card-name-type {
+    @apply w-full font-bold text-center flex flex-col absolute top-1/2 -translate-y-1/2;
   }
 
   .project-card-name {
-    @apply w-full text-2xl md:text-4xl font-bold text-center absolute top-1/2 -translate-y-1/2;
+    @apply text-xl md:text-4xl leading-none relative;
   }
 
   .project-card-type {
-    @apply w-full font-bold text-center absolute top-2/3 -translate-y-1/2;
+    @apply h-[15px] md:h-[30px] w-full mt-2 md:mt-5 flex justify-center flex-wrap absolute top-full left-1/2 -translate-x-1/2;
+  }
+
+  .project-card-type > img {
+    @apply h-full opacity-90;
   }
 
   .project-card-expand {
-    @apply w-full py-2 px-4 font-semibold rounded-b-md flex justify-center absolute bottom-0 opacity-50;
+    @apply w-full py-2 px-4 font-semibold rounded-b-sm absolute bottom-0 opacity-50;
     transition:
       background-color 500ms ease,
       opacity 500ms ease;
@@ -210,16 +217,16 @@
     @apply h-[20px] aspect-square relative;
   }
 
-  .project-detail-tool-wrapper {
-    @apply flex gap-2;
-  }
-
   .project-detail-link-wrapper {
-    @apply font-semibold flex justify-end gap-5;
+    @apply w-full font-semibold flex justify-center gap-5 md:gap-10;
   }
 
   .project-detail-link-wrapper > a:not([disabled]) {
     @apply hover:scale-110;
+  }
+
+  .project-link {
+    @apply flex items-center gap-1;
   }
 
   .btn-project-card-next {
@@ -252,15 +259,6 @@
   .project-card-info:hover .project-card-name,
   .project-card-info:hover .project-card-type {
     @apply opacity-0;
-  }
-
-  .project-detail {
-    @apply flex flex-col justify-center gap-10 portrait:gap-5 opacity-0;
-    transition: opacity 1s 1s ease;
-  }
-
-  .project-detail.active {
-    @apply opacity-100;
   }
 
   .scroll-wrapper {
@@ -314,10 +312,6 @@
     @apply text-light portrait:text-theme-2 dark:text-theme-2;
   }
 
-  .tool:hover .icon-about-tool {
-    @apply block;
-  }
-
   /* Animation */
   [class^="animate-"] {
     will-change: animation;
@@ -334,8 +328,7 @@
   aside,
   #btn-menu-l,
   #btn-menu-l-close,
-  #btn-menu-l-close > div,
-  #btn-project-detail-close {
+  #btn-menu-l-close > div {
     transition: transform 500ms ease;
   }
 
@@ -369,14 +362,6 @@
 
   #article-about {
     transition: opacity 500ms ease;
-  }
-
-  #project-card-detail-wrapper {
-    transition: transform 1s ease;
-  }
-
-  #project-card-detail-wrapper.active {
-    @apply translate-y-[calc(-100%-15px)] portrait:-translate-y-full;
   }
 
   /* Menu dot */

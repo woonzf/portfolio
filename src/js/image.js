@@ -10,8 +10,8 @@ import openW50w from "../img/icons/open-w-50w.png";
 import profile1000w from "../img/profile-1000w.jpg";
 import ypet from "../img/projects/ypet.png";
 import weatherApp from "../img/projects/weather.png";
-import portfolio from "../img/projects/portfolio.png";
-import portfolioD from "../img/projects/portfolio-d.png";
+import pokeMemoryCard from "../img/projects/poke-memory-card.png";
+import pokeMemoryCard2 from "../img/projects/poke-memory-card-2.png";
 import arrowDown50w from "../img/icons/arrow-down-50w.png";
 import arrowDownW50w from "../img/icons/arrow-down-w-50w.png";
 

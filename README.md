@@ -8,7 +8,7 @@ Hello, this is my first and current portfolio.
 
 It was created as the final project: [Homepage](https://www.theodinproject.com/lessons/node-path-advanced-html-and-css-homepage) of The Odin Project's Advanced HTML and CSS Course.
 
-I did not follow the template provided and try to make it more stylish. It is actually the second iteration as I am not satisfied with the [first one](https://github.com/woonzf/odin-homepage). In my opinion, the first one has better mobile view and this one has better desktop view.
+I did not follow the template provided and try to make it more stylish. It is actually the second iteration as I am not satisfied with the first one.
 
 Design inspired by [Wokine](https://www.awwwards.com/sites/wokine).
 
@@ -18,26 +18,15 @@ Design inspired by [Wokine](https://www.awwwards.com/sites/wokine).
 - Responsive Design
 - Dark Mode
 
-### Screenshots
+### Screenshots:
 
 <img src="./src/img/projects/portfolio.png" width="500">
 
 <img src="./src/img/projects/portfolio-d.png" width="500">
 
-### Languages:
+### Tech stack:
 
-- HTML
-- CSS
-- JavaScript
-
-### Frameworks:
-
-- Tailwind CSS
-- Prettier
-
-### Module bundler:
-
-- Webpack
+HTML, CSS, JavaScript, Webpack, Tailwind CSS, Prettier
 
 ### Resources:
 
@@ -45,7 +34,3 @@ Design inspired by [Wokine](https://www.awwwards.com/sites/wokine).
 - [GitHub logo](https://github.com/logos)
 - [Icons](https://pictogrammers.com/library/mdi/)
 - [Profile Picture](https://www.pexels.com/photo/man-sitting-on-bench-1666779/)
-
-### Possible Improvements:
-
-- Animation for each section as they are scrolled into view

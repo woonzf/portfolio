@@ -52,6 +52,10 @@
     @apply h-[calc(100vh-2*56px)] w-full mt-14 overflow-y-scroll snap-y scroll-smooth;
   }
 
+  main:focus {
+    @apply outline-none;
+  }
+
   section {
     @apply h-[calc(100vh-2*56px)] px-7 portrait:px-0 md:px-14 landscape:snap-center;
   }
@@ -367,5 +371,26 @@
   /* Menu dot */
   button:disabled > div > span {
     @apply opacity-100;
+  }
+
+  /* Transitions when enter or exit view */
+  .hello {
+    transform: translateY(100%);
+    transition: transform 1s ease;
+  }
+
+  .hello.slide-up {
+    transform: translateY(0);
+  }
+
+  .scroll-wrapper,
+  #side-link-wrapper {
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  .scroll-wrapper.show,
+  #side-link-wrapper.show {
+    opacity: 1;
   }
 }

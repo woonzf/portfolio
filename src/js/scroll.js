@@ -18,6 +18,10 @@ const scroll = (() => {
   const btnsTop = document.querySelectorAll(".btn-top");
   const btnAboutMoreL = document.querySelector("#btn-about-more-l");
 
+  const hello = document.querySelectorAll(".hello");
+  const homeScroll = home.querySelector(".scroll-wrapper");
+  const sideLinkWrapper = document.querySelector("#side-link-wrapper");
+
   const marginTop = 56;
   let thresholdHome = 0;
   let thresholdAbout = 0;
@@ -26,19 +30,24 @@ const scroll = (() => {
   let thresholdArticleAbout = 0;
 
   function init() {
+    main.focus();
     getThresholds();
+    _showHome();
 
     main.onscrollend = () => {
       const scroll = main.scrollTop;
       if (scroll >= 0 && scroll < thresholdHome) {
         _changeTheme(1);
         _disableBtn(1);
+        _showHome();
       } else if (scroll >= thresholdHome && scroll < thresholdAbout) {
         _changeTheme(2);
         _disableBtn(2);
+        _hideHome();
       } else {
         _changeTheme(3);
         _disableBtn(3);
+        _hideHome();
       }
     };
 
@@ -112,6 +121,20 @@ const scroll = (() => {
       if (i === index) btnsMenuL[i].disabled = true;
       else btnsMenuL[i].disabled = false;
     }
+  }
+
+  function _showHome() {
+    hello.forEach((el) => el.classList.add("slide-up"));
+    setTimeout(() => {
+      homeScroll.classList.add("show");
+      sideLinkWrapper.classList.add("show");
+    }, 1000);
+  }
+
+  function _hideHome() {
+    hello.forEach((el) => el.classList.remove("slide-up"));
+    homeScroll.classList.remove("show");
+    sideLinkWrapper.classList.remove("show");
   }
 
   return { init, getThresholds, scrollTo };

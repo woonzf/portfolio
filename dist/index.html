@@ -269,9 +269,9 @@
           id="article-about-more"
         >
           <div
-            class="min-w-[30%] flex flex-col portrait:flex-col-reverse justify-center items-center gap-14 portrait:gap-10"
+            class="min-w-[30%] flex flex-col portrait:flex-col-reverse justify-center items-center gap-14 portrait:gap-10 overflow-hidden"
           >
-            <div class="w-fit landscape:hidden">
+            <div class="w-fit landscape:hidden about-more-element">
               <div class="italic font-bold uppercase">
                 Hi<span class="about-span">,</span> I am
               </div>
@@ -295,21 +295,22 @@
             </div>
             <div
               class="w-full portrait:w-[75%] portrait:md:w-[50%] aspect-square border-2 border-theme-2 rounded-full flex justify-center items-center"
+              id="about-more-photo"
             >
               <img
                 class="w-[calc(100%-16px)] rounded-full"
                 src="0575d19b2088e83eb7ce.jpg"
               />
             </div>
-            <div class="text-big portrait:text-title portrait:self-start">
-              <div>ABOUT<span class="text-theme-2">.</span></div>
+            <div class="text-big portrait:text-title portrait:self-start overflow-hidden">
+              <div class="about-logo about-more-element">ABOUT<span class="text-theme-2">.</span></div>
             </div>
           </div>
           <div
             class="portrait:w-full landscape:px-14 flex justify-center items-center"
           >
             <div
-              class="portrait:w-full py-14 portrait:py-10 border-y-2 border-theme-2 flex flex-col gap-14 portrait:gap-10"
+              class="portrait:w-full py-14 portrait:py-10 border-y-2 border-theme-2 flex flex-col gap-14 portrait:gap-10 about-more-element"
             >
               <div class="flex flex-col gap-3">
                 <p class="text-pretty text-justify">
@@ -453,8 +454,8 @@
         <div
           class="portrait:h-full w-full portrait:py-4 portrait:px-7 portrait:md:px-14 landscape:bg-theme-3 dark:bg-transparent flex flex-col justify-center portrait:gap-5"
         >
-          <div class="text-title self-start landscape:hidden">
-            <div>PROJECTS<span class="text-theme-3">.</span></div>
+          <div class="text-title self-start landscape:hidden overflow-hidden">
+            <div class="projects-logo">PROJECTS<span class="text-theme-3">.</span></div>
           </div>
           <div
             class="portrait:h-[calc(100%-20px)] flex flex-col landscape:justify-center items-center gap-5"

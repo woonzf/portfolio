@@ -25,6 +25,10 @@ const scroll = (() => {
   const aboutLogos = document.querySelectorAll(".about-logo");
   const aboutScroll = about.querySelector(".scroll-wrapper");
   const aboutIntro = document.querySelector("#about-intro");
+
+  const aboutMorePhoto = document.querySelector("#about-more-photo");
+  const aboutMoreEls = document.querySelectorAll(".about-more-element");
+
   const projectsLogos = document.querySelectorAll(".projects-logo");
   const projectsCarousel = document.querySelector("#projects-carousel");
   const topWrapper = document.querySelector(".top-wrapper");
@@ -43,23 +47,28 @@ const scroll = (() => {
 
     main.onscrollend = () => {
       const scroll = main.scrollTop;
+      const isPortrait = Boolean(window.innerHeight > window.innerWidth);
+
       if (scroll >= 0 && scroll < thresholdHome) {
         _changeTheme(1);
         _disableBtn(1);
         _showHome();
         _hideAbout();
+        if (isPortrait) _hideAboutMore();
         _hideProjects();
       } else if (scroll >= thresholdHome && scroll < thresholdAbout) {
         _changeTheme(2);
         _disableBtn(2);
         _hideHome();
         _showAbout();
+        if (isPortrait) _showAboutMore();
         _hideProjects();
       } else {
         _changeTheme(3);
         _disableBtn(3);
         _hideHome();
         _hideAbout();
+        if (isPortrait) _hideAboutMore();
         _showProjects();
       }
     };
@@ -77,11 +86,13 @@ const scroll = (() => {
         if (isOpenAboutMore === 1) {
           btnAboutMoreL.querySelector("div").textContent = "MORE";
           isOpenAboutMore = 0;
+          _hideAboutMore();
         }
       } else {
         if (isOpenAboutMore === 0) {
           btnAboutMoreL.querySelector("div").textContent = "BACK";
           isOpenAboutMore = 1;
+          _showAboutMore();
         }
       }
 
@@ -165,6 +176,18 @@ const scroll = (() => {
     aboutScroll.classList.remove("show");
     btnAboutMoreL.classList.remove("show");
     aboutIntro.classList.remove("show");
+  }
+
+  function _showAboutMore() {
+    aboutMorePhoto.classList.add("expand");
+    setTimeout(() => {
+      aboutMoreEls.forEach((el) => el.classList.add("show"));
+    }, 1000);
+  }
+
+  function _hideAboutMore() {
+    aboutMorePhoto.classList.remove("expand");
+    aboutMoreEls.forEach((el) => el.classList.remove("show"));
   }
 
   function _showProjects() {

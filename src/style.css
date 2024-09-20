@@ -392,7 +392,8 @@
   #btn-about-more-l,
   #about-intro,
   #projects-carousel,
-  .top-wrapper {
+  .top-wrapper,
+  .about-more-element {
     opacity: 0;
     transition: opacity 1s ease;
   }
@@ -402,7 +403,17 @@
   #btn-about-more-l.show,
   #about-intro.show,
   #projects-carousel.show,
-  .top-wrapper.show {
+  .top-wrapper.show,
+  .about-more-element.show {
     opacity: 1;
+  }
+
+  #about-more-photo {
+    transform: scale(0);
+    transition: transform 1s ease;
+  }
+
+  #about-more-photo.expand {
+    transform: scale(1);
   }
 }

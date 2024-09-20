@@ -374,23 +374,35 @@
   }
 
   /* Transitions when enter or exit view */
-  .hello {
+  .hello,
+  .about-logo,
+  .projects-logo {
     transform: translateY(100%);
     transition: transform 1s ease;
   }
 
-  .hello.slide-up {
+  .hello.slide-up,
+  .about-logo.slide-up,
+  .projects-logo.slide-up {
     transform: translateY(0);
   }
 
   .scroll-wrapper,
-  #side-link-wrapper {
+  #side-link-wrapper,
+  #btn-about-more-l,
+  #about-intro,
+  #projects-carousel,
+  .top-wrapper {
     opacity: 0;
     transition: opacity 1s ease;
   }
 
   .scroll-wrapper.show,
-  #side-link-wrapper.show {
+  #side-link-wrapper.show,
+  #btn-about-more-l.show,
+  #about-intro.show,
+  #projects-carousel.show,
+  .top-wrapper.show {
     opacity: 1;
   }
 }

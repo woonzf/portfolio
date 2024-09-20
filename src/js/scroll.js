@@ -22,6 +22,13 @@ const scroll = (() => {
   const homeScroll = home.querySelector(".scroll-wrapper");
   const sideLinkWrapper = document.querySelector("#side-link-wrapper");
 
+  const aboutLogos = document.querySelectorAll(".about-logo");
+  const aboutScroll = about.querySelector(".scroll-wrapper");
+  const aboutIntro = document.querySelector("#about-intro");
+  const projectsLogos = document.querySelectorAll(".projects-logo");
+  const projectsCarousel = document.querySelector("#projects-carousel");
+  const topWrapper = document.querySelector(".top-wrapper");
+
   const marginTop = 56;
   let thresholdHome = 0;
   let thresholdAbout = 0;
@@ -40,14 +47,20 @@ const scroll = (() => {
         _changeTheme(1);
         _disableBtn(1);
         _showHome();
+        _hideAbout();
+        _hideProjects();
       } else if (scroll >= thresholdHome && scroll < thresholdAbout) {
         _changeTheme(2);
         _disableBtn(2);
         _hideHome();
+        _showAbout();
+        _hideProjects();
       } else {
         _changeTheme(3);
         _disableBtn(3);
         _hideHome();
+        _hideAbout();
+        _showProjects();
       }
     };
 
@@ -123,6 +136,7 @@ const scroll = (() => {
     }
   }
 
+  // Transition
   function _showHome() {
     hello.forEach((el) => el.classList.add("slide-up"));
     setTimeout(() => {
@@ -135,6 +149,36 @@ const scroll = (() => {
     hello.forEach((el) => el.classList.remove("slide-up"));
     homeScroll.classList.remove("show");
     sideLinkWrapper.classList.remove("show");
+  }
+
+  function _showAbout() {
+    aboutLogos.forEach((el) => el.classList.add("slide-up"));
+    setTimeout(() => {
+      aboutScroll.classList.add("show");
+      btnAboutMoreL.classList.add("show");
+      aboutIntro.classList.add("show");
+    }, 1000);
+  }
+
+  function _hideAbout() {
+    aboutLogos.forEach((el) => el.classList.remove("slide-up"));
+    aboutScroll.classList.remove("show");
+    btnAboutMoreL.classList.remove("show");
+    aboutIntro.classList.remove("show");
+  }
+
+  function _showProjects() {
+    projectsLogos.forEach((el) => el.classList.add("slide-up"));
+    setTimeout(() => {
+      projectsCarousel.classList.add("show");
+      topWrapper.classList.add("show");
+    }, 1000);
+  }
+
+  function _hideProjects() {
+    projectsLogos.forEach((el) => el.classList.remove("slide-up"));
+    projectsCarousel.classList.remove("show");
+    topWrapper.classList.remove("show");
   }
 
   return { init, getThresholds, scrollTo };

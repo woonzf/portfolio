@@ -1,5 +1,4 @@
 const scroll = (() => {
-  const main = document.querySelector("main");
   const home = document.querySelector("#home");
   const about = document.querySelector("#about");
   const projects = document.querySelector("#projects");
@@ -34,6 +33,9 @@ const scroll = (() => {
   const topWrapper = document.querySelector(".top-wrapper");
 
   const marginTop = 56;
+  const isPortrait = Boolean(window.innerHeight > window.innerWidth);
+  let homeHeight = 0;
+  let aboutHeight = 0;
   let thresholdHome = 0;
   let thresholdAbout = 0;
   let currentTheme = 1;
@@ -41,13 +43,11 @@ const scroll = (() => {
   let thresholdArticleAbout = 0;
 
   function init() {
-    main.focus();
     getThresholds();
     _showHome();
 
-    main.onscrollend = () => {
-      const scroll = main.scrollTop;
-      const isPortrait = Boolean(window.innerHeight > window.innerWidth);
+    window.onscroll = () => {
+      const scroll = window.scrollY;
 
       if (scroll >= 0 && scroll < thresholdHome) {
         _changeTheme(1);
@@ -105,22 +105,45 @@ const scroll = (() => {
 
     btnsTop.forEach((btn) => {
       btn.onclick = () => {
-        main.scrollTo(0, 0);
+        scrollTo(0);
       };
     });
   }
 
   function getThresholds() {
-    thresholdHome = home.clientHeight - main.clientHeight / 2;
+    homeHeight = home.clientHeight + marginTop;
+    aboutHeight = homeHeight + about.clientHeight + marginTop;
+    thresholdHome = (homeHeight + marginTop) / 2;
     thresholdAbout =
-      main.scrollHeight - projects.clientHeight - main.clientHeight / 2;
+      document.body.clientHeight -
+      (projects.clientHeight + marginTop * 2) * 1.5;
     thresholdArticleAbout = articleAbout.clientWidth - about.clientWidth / 2;
+    console.log(
+      document.body.clientHeight,
+      home.clientHeight,
+      about.clientHeight,
+      projects.clientHeight,
+    );
   }
 
   function scrollTo(section) {
-    if (section === 1) main.scrollTo(0, home.clientHeight + marginTop);
-    else if (section === 2)
-      main.scrollTo(0, main.scrollHeight - projects.clientHeight);
+    let scrollY = 0;
+
+    switch (section) {
+      case 0:
+        break;
+      case 1:
+        scrollY = homeHeight;
+        break;
+      case 2:
+        scrollY = aboutHeight;
+        break;
+    }
+
+    window.scrollTo({
+      top: scrollY,
+      behavior: "smooth",
+    });
   }
 
   function _changeTheme(theme) {

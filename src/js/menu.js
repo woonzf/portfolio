@@ -59,7 +59,7 @@ const menu = (() => {
       else btnMenuP.click();
 
       setTimeout(() => {
-        main.scrollTo(0, 0);
+        scroll.scrollTo(0);
       }, 500);
     };
 

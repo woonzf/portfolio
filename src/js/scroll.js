@@ -113,17 +113,9 @@ const scroll = (() => {
   function getThresholds() {
     homeHeight = home.clientHeight + marginTop;
     aboutHeight = homeHeight + about.clientHeight + marginTop;
-    thresholdHome = (homeHeight + marginTop) / 2;
-    thresholdAbout =
-      document.body.clientHeight -
-      (projects.clientHeight + marginTop * 2) * 1.5;
+    thresholdHome = homeHeight + marginTop - window.innerHeight / 2;
+    thresholdAbout = aboutHeight + marginTop - window.innerHeight / 2;
     thresholdArticleAbout = articleAbout.clientWidth - about.clientWidth / 2;
-    console.log(
-      document.body.clientHeight,
-      home.clientHeight,
-      about.clientHeight,
-      projects.clientHeight,
-    );
   }
 
   function scrollTo(section) {

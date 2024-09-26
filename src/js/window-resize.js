@@ -6,7 +6,7 @@ const windowResize = (() => {
   function init() {
     window.onresize = () => {
       scroll.getThresholds();
-      carousel.getScrollWidthProjectCard();
+      carousel.getProjectCardWidth();
       menu.getIsPortrait();
     };
   }

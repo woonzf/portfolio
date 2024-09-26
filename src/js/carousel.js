@@ -8,22 +8,20 @@ const carousel = (() => {
     "#carousel-countdown-bar",
   );
 
-  let scrollWidthProjectCards = null;
+  let projectCardWidth = null;
 
   const slide = 3;
   let i = 1;
   let iPrev = 0;
 
   function init() {
-    getScrollWidthProjectCard();
+    getProjectCardWidth();
 
     btnProjectNext.onclick = () => {
       iPrev = i;
       if (i === slide) i = 1;
       else i += 1;
-      projectCardWrapper.scrollTo({
-        left: (scrollWidthProjectCards * (i - 1)) / slide,
-      });
+      _scrollToSlide(i);
       _toggleBtnMiniTabs(iPrev, i);
     };
 
@@ -31,21 +29,17 @@ const carousel = (() => {
       iPrev = i;
       if (i === 1) i = slide;
       else i -= 1;
-      projectCardWrapper.scrollTo({
-        left: (scrollWidthProjectCards * (i - 1)) / slide,
-      });
+      _scrollToSlide(i);
       _toggleBtnMiniTabs(iPrev, i);
     };
 
     projectCardWrapper.onscrollend = () => {
       iPrev = i;
       const scroll = projectCardWrapper.scrollLeft;
-      if (scroll >= 0 && scroll < scrollWidthProjectCards / slide) i = 1;
-      else if (
-        scroll >= scrollWidthProjectCards / slide &&
-        scroll < (scrollWidthProjectCards * 2) / slide
-      )
-        i = 2;
+      const threshold1 = projectCardWidth + 16;
+      const threshold2 = projectCardWidth * 2 + 32;
+      if (scroll >= 0 && scroll < threshold1) i = 1;
+      else if (scroll >= threshold1 && scroll < threshold2) i = 2;
       else i = slide;
       _toggleBtnMiniTabs(iPrev, i);
     };
@@ -54,9 +48,7 @@ const carousel = (() => {
       btn.onclick = () => {
         iPrev = i;
         i = +btn.id.slice(-1);
-        projectCardWrapper.scrollTo({
-          left: (scrollWidthProjectCards * (i - 1)) / slide,
-        });
+        _scrollToSlide(i);
         _toggleBtnMiniTabs(iPrev, i);
       };
     });
@@ -65,8 +57,17 @@ const carousel = (() => {
     carouselCountdownBar.onanimationiteration = () => btnProjectNext.click();
   }
 
-  function getScrollWidthProjectCard() {
-    scrollWidthProjectCards = projectCardWrapper.scrollWidth;
+  function getProjectCardWidth() {
+    setTimeout(() => {
+      const projectCard = document.querySelector("#project-card-1");
+      projectCardWidth = projectCard.clientWidth;
+    }, 1);
+  }
+
+  function _scrollToSlide(i) {
+    projectCardWrapper.scrollTo({
+      left: projectCardWidth * (i - 1) + 16 * (i - 1),
+    });
   }
 
   function _toggleBtnMiniTabs(iPrev, i) {
@@ -74,7 +75,7 @@ const carousel = (() => {
     document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
   }
 
-  return { init, getScrollWidthProjectCard };
+  return { init, getProjectCardWidth };
 })();
 
 export { carousel };

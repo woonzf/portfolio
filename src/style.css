@@ -395,7 +395,8 @@
   #btn-about-more-l,
   #about-intro,
   #projects-carousel,
-  .top-wrapper,
+  #projects-end,
+  .btn-top,
   .about-more-element {
     opacity: 0;
     transition: opacity 1s ease;
@@ -406,7 +407,8 @@
   #btn-about-more-l.show,
   #about-intro.show,
   #projects-carousel.show,
-  .top-wrapper.show,
+  #projects-end.show,
+  .btn-top.show,
   .about-more-element.show {
     opacity: 1;
   }

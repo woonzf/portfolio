@@ -1,7 +1,6 @@
 const scroll = (() => {
   const home = document.querySelector("#home");
   const about = document.querySelector("#about");
-  const projects = document.querySelector("#projects");
   const articleAbout = document.querySelector("#article-about");
 
   const btnDarkMode = document.querySelectorAll(".btn-dark-mode");
@@ -30,7 +29,7 @@ const scroll = (() => {
 
   const projectsLogos = document.querySelectorAll(".projects-logo");
   const projectsCarousel = document.querySelector("#projects-carousel");
-  const topWrapper = document.querySelector(".top-wrapper");
+  const projectsEnd = document.querySelector("#projects-end");
 
   const marginTop = 56;
   const isPortrait = Boolean(window.innerHeight > window.innerWidth);
@@ -209,14 +208,16 @@ const scroll = (() => {
     projectsLogos.forEach((el) => el.classList.add("slide-up"));
     setTimeout(() => {
       projectsCarousel.classList.add("show");
-      topWrapper.classList.add("show");
+      projectsEnd.classList.add("show");
+      btnsTop.forEach((el) => el.classList.add("show"));
     }, 1000);
   }
 
   function _hideProjects() {
     projectsLogos.forEach((el) => el.classList.remove("slide-up"));
     projectsCarousel.classList.remove("show");
-    topWrapper.classList.remove("show");
+    projectsEnd.classList.remove("show");
+    btnsTop.forEach((el) => el.classList.remove("show"));
   }
 
   return { init, getThresholds, scrollTo };

@@ -10,6 +10,9 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
+    <script>
+      history.scrollRestoration = "manual";
+    </script>
   </head>
   <body class="montserrat text-sm md:text-lg overflow-x-hidden">
     <header class="flex justify-between items-center fixed top-0">
@@ -314,28 +317,29 @@
             class="portrait:w-full landscape:px-14 flex justify-center items-center"
           >
             <div
-              class="portrait:w-full py-14 portrait:py-10 border-y-2 border-theme-2 flex flex-col gap-14 portrait:gap-10 about-more-element"
+              class="portrait:w-full py-14 portrait:py-10 border-y-2 border-theme-2 flex flex-col gap-10 about-more-element"
             >
               <div class="flex flex-col gap-3">
-                <p class="text-pretty text-justify">
-                  Hi, I am Woon Zhen Fei, a web developer in Malaysia.
+                <p class="text-pretty text-justify font-bold">
+                  Hello world! I make creative, interactive and responsive web
+                  application!
                 </p>
+                <p class="text-title text-pretty text-justify">How I started</p>
                 <p class="text-pretty text-justify">
-                  I have been actively coding and learning web development since
-                  June 2023. Since then, I have completed CS50x: Introduction to
-                  Computer Science and The Odin Project - Foundations. I am
-                  currently taking The Odin Project - Full Stack JavaScript
-                  course.
-                </p>
-                <p class="text-pretty text-justify">
-                  I am learning React and also looking for a job opportunity in
-                  web development!
+                  I worked as a Service Technician and Operation Executive but I
+                  realized I would really like to have a job that allows me to
+                  spend more time working on a computer. And so I decided to
+                  start looking for online courses. I found Harvard's CS50x and
+                  took the course. I have some experience in programming with C
+                  and Matlab during my time in the university so I finished
+                  CS50x quite quickly. Then I learnt about and started The Odin
+                  Project.
                 </p>
               </div>
               <div class="flex flex-col gap-5">
                 <div class="flex flex-col gap-2">
                   <div class="font-bold">Languages</div>
-                  <div class="flex gap-2 flex-wrap">
+                  <div class="tech-stack">
                     <img
                       src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"
                       alt="HTML"
@@ -349,6 +353,10 @@
                       alt="JavaScript"
                     />
                     <img
+                      src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"
+                      alt="TypeScript"
+                    />
+                    <img
                       src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white"
                       alt="C"
                     />
@@ -360,7 +368,7 @@
                 </div>
                 <div class="flex flex-col gap-2">
                   <div class="font-bold">Frameworks & Library</div>
-                  <div class="flex gap-2 flex-wrap">
+                  <div class="tech-stack">
                     <img
                       src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"
                       alt="React"
@@ -389,7 +397,11 @@
                 </div>
                 <div class="flex flex-col gap-2">
                   <div class="font-bold">Others</div>
-                  <div class="flex gap-2 flex-wrap">
+                  <div class="tech-stack">
+                    <img
+                      src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white"
+                      alt="MySQL"
+                    />
                     <img
                       src="https://img.shields.io/badge/Sqlite-003B57?style=for-the-badge&logo=sqlite&logoColor=white"
                       alt="SQLite"
@@ -405,14 +417,6 @@
                     <img
                       src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white"
                       alt="Git"
-                    />
-                    <img
-                      src="https://img.shields.io/badge/VirtualBox-21416b?style=for-the-badge&logo=VirtualBox&logoColor=white"
-                      alt="VirtualBox"
-                    />
-                    <img
-                      src="https://img.shields.io/badge/gimp-5C5543?style=for-the-badge&logo=gimp&logoColor=white"
-                      alt="GIMP"
                     />
                   </div>
                 </div>
@@ -498,31 +502,32 @@
                 <button class="btn-mini-tab" id="btn-mini-tab-3"></button>
               </div>
             </div>
-            <div class="flex flex-col items-center gap-2" id="projects-end">
-              <div class="flex items-center">
-                More on&nbsp;
-                <a
-                  class="flex"
-                  href="https://github.com/woonzf?tab=repositories"
-                  target="_blank"
-                  rel="noreferrer"
+            <div class="flex items-center" id="projects-end">
+              More on&nbsp;
+              <a
+                class="flex"
+                href="https://github.com/woonzf?tab=repositories"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span class="underline">GitHub</span>
+                <span>&nbsp;</span>
+                <div
+                  class="h-[18px] md:h-[24px] aspect-square text-[18px] md:text-[24px] relative"
                 >
-                  <span class="underline">GitHub</span>
-                  <span>&nbsp;</span>
-                  <div
-                    class="h-[18px] md:h-[24px] aspect-square text-[18px] md:text-[24px] relative"
-                  >
-                    <i
-                      class="devicon-github-original icon-mode-dark absolute"
-                    ></i>
-                    <i
-                      class="devicon-github-original colored icon-mode absolute"
-                    ></i>
-                  </div>
-                </a>
-              </div>
-              <div>Thank you for viewing my portfolio!</div>
+                  <i
+                    class="devicon-github-original icon-mode-dark absolute"
+                  ></i>
+                  <i
+                    class="devicon-github-original colored icon-mode absolute"
+                  ></i>
+                </div>
+              </a>
             </div>
+            <small class="text-center"
+              >Thank you if you're one of the fellow TOP student that gave a
+              &#10084; !</small
+            >
           </div>
         </div>
         <button class="btn-top top-wrapper-p landscape:hidden">

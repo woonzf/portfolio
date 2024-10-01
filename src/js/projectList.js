@@ -1,9 +1,46 @@
 import ypet from "../img/projects/ypet.png";
-import weatherApp from "../img/projects/weather.png";
 import pokeMemoryCard from "../img/projects/poke-memory-card.png";
 import pokeMemoryCard2 from "../img/projects/poke-memory-card-2.png";
+import shoppingCart from "../img/projects/sc-1.png";
+import shoppingCart2 from "../img/projects/sc-2.png";
 
 export const projectList = [
+  {
+    name: "Mizu Store",
+    src: [shoppingCart, shoppingCart2],
+    stack: [
+      {
+        alt: "TypeScript",
+        src: "https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white",
+      },
+      {
+        alt: "React",
+        src: "https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB",
+      },
+      {
+        alt: "Tailwind CSS",
+        src: "https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white",
+      },
+    ],
+    repo: "https://github.com/woonzf/odin-shopping-cart",
+    demo: "https://woonzf.github.io/odin-shopping-cart/",
+  },
+  {
+    name: "Poké Memory Card",
+    src: [pokeMemoryCard, pokeMemoryCard2],
+    stack: [
+      {
+        alt: "React",
+        src: "https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB",
+      },
+      {
+        alt: "Tailwind CSS",
+        src: "https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white",
+      },
+    ],
+    repo: "https://github.com/woonzf/odin-memory-card",
+    demo: "https://woonzf.github.io/odin-memory-card/",
+  },
   {
     name: "Your Personal Expense Tracker",
     src: ypet,
@@ -27,33 +64,5 @@ export const projectList = [
     ],
     repo: "https://github.com/woonzf/cs50x-2023-project",
     demo: "https://www.youtube.com/watch?v=l83kys9yJJs",
-  },
-  {
-    name: "Weather App",
-    src: weatherApp,
-    stack: [
-      {
-        alt: "Webpack",
-        src: "https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=Webpack&logoColor=white",
-      },
-    ],
-    repo: "https://github.com/woonzf/odin-weather-app",
-    demo: "https://woonzf.github.io/odin-weather-app/",
-  },
-  {
-    name: "Poké Memory Card",
-    src: [pokeMemoryCard, pokeMemoryCard2],
-    stack: [
-      {
-        alt: "React",
-        src: "https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB",
-      },
-      {
-        alt: "Tailwind CSS",
-        src: "https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white",
-      },
-    ],
-    repo: "https://github.com/woonzf/odin-memory-card",
-    demo: "https://woonzf.github.io/odin-memory-card/",
   },
 ];

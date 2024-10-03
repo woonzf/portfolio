@@ -1,3 +1,5 @@
+import { navDot } from "./nav-dot";
+
 const scroll = (() => {
   const home = document.querySelector("#home");
   const about = document.querySelector("#about");
@@ -18,7 +20,6 @@ const scroll = (() => {
 
   const hello = document.querySelectorAll(".hello");
   const homeScroll = home.querySelector(".scroll-wrapper");
-  const sideLinkWrapper = document.querySelector("#side-link-wrapper");
 
   const aboutLogos = document.querySelectorAll(".about-logo");
   const aboutScroll = about.querySelector(".scroll-wrapper");
@@ -30,6 +31,7 @@ const scroll = (() => {
   const projectsLogos = document.querySelectorAll(".projects-logo");
   const projectsCarousel = document.querySelector("#projects-carousel");
   const projectsEnd = document.querySelector("#projects-end");
+  const thankYou = document.querySelector("#thank-you");
 
   const marginTop = 56;
   const isPortrait = Boolean(window.innerHeight > window.innerWidth);
@@ -70,6 +72,15 @@ const scroll = (() => {
         if (isPortrait) _hideAboutMore();
         _showProjects();
       }
+    };
+
+    window.onscrollend = () => {
+      const scroll = window.scrollY;
+
+      if (scroll >= 0 && scroll < thresholdHome) navDot.toggleNavDot(0);
+      else if (scroll >= thresholdHome && scroll < thresholdAbout)
+        navDot.toggleNavDot(1);
+      else navDot.toggleNavDot(2);
     };
 
     btnAboutMoreL.onclick = () => {
@@ -166,14 +177,12 @@ const scroll = (() => {
     hello.forEach((el) => el.classList.add("slide-up"));
     setTimeout(() => {
       homeScroll.classList.add("show");
-      sideLinkWrapper.classList.add("show");
     }, 1000);
   }
 
   function _hideHome() {
     hello.forEach((el) => el.classList.remove("slide-up"));
     homeScroll.classList.remove("show");
-    sideLinkWrapper.classList.remove("show");
   }
 
   function _showAbout() {
@@ -210,6 +219,7 @@ const scroll = (() => {
       projectsCarousel.classList.add("show");
       projectsEnd.classList.add("show");
       btnsTop.forEach((el) => el.classList.add("show"));
+      thankYou.classList.add("show");
     }, 1000);
   }
 
@@ -218,6 +228,7 @@ const scroll = (() => {
     projectsCarousel.classList.remove("show");
     projectsEnd.classList.remove("show");
     btnsTop.forEach((el) => el.classList.remove("show"));
+    thankYou.classList.remove("show");
   }
 
   return { init, getThresholds, scrollTo };

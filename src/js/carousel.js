@@ -15,7 +15,7 @@ const carousel = (() => {
   let iPrev = 0;
 
   function init() {
-    getProjectCardWidth();
+    setTimeout(getProjectCardWidth, 0);
 
     btnProjectNext.onclick = () => {
       iPrev = i;
@@ -58,10 +58,8 @@ const carousel = (() => {
   }
 
   function getProjectCardWidth() {
-    setTimeout(() => {
-      const projectCard = document.querySelector("#project-card-1");
-      projectCardWidth = projectCard.clientWidth;
-    }, 1);
+    const projectCard = document.querySelector("#project-card-1");
+    projectCardWidth = projectCard.clientWidth;
   }
 
   function _scrollToSlide(i) {

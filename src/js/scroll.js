@@ -32,7 +32,6 @@ const scroll = (() => {
   const projectsLogos = document.querySelectorAll(".projects-logo");
   const projectsCarousel = document.querySelector("#projects-carousel");
   const projectsEnd = document.querySelector("#projects-end");
-  const thankYou = document.querySelector("#thank-you");
 
   const marginTop = 56;
   const isPortrait = Boolean(window.innerHeight > window.innerWidth);
@@ -206,15 +205,16 @@ const scroll = (() => {
 
   function _showAboutMore() {
     aboutMorePhoto.classList.add("expand");
-    aboutMoreLogo.classList.add("expand");
+    if (!isPortrait) aboutMoreLogo.classList.add("expand");
     setTimeout(() => {
-      aboutMoreEls.forEach((el) => el.classList.add("show"));
+      if (currentTheme === 2)
+        aboutMoreEls.forEach((el) => el.classList.add("show"));
     }, 1000);
   }
 
   function _hideAboutMore() {
     aboutMorePhoto.classList.remove("expand");
-    aboutMoreLogo.classList.remove("expand");
+    if (!isPortrait) aboutMoreLogo.classList.remove("expand");
     aboutMoreEls.forEach((el) => el.classList.remove("show"));
   }
 
@@ -225,7 +225,6 @@ const scroll = (() => {
         projectsCarousel.classList.add("show");
         projectsEnd.classList.add("show");
         btnsTop.forEach((el) => el.classList.add("show"));
-        thankYou.classList.add("show");
       }
     }, 1000);
   }
@@ -235,7 +234,6 @@ const scroll = (() => {
     projectsCarousel.classList.remove("show");
     projectsEnd.classList.remove("show");
     btnsTop.forEach((el) => el.classList.remove("show"));
-    thankYou.classList.remove("show");
   }
 
   return { init, getThresholds, scrollTo };

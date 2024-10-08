@@ -76,8 +76,8 @@ const projects = (() => {
       const projectDetailLinkWrapper = document.createElement("div");
       projectDetailLinkWrapper.classList.add("project-detail-link-wrapper");
 
-      const repo = createLink("Repo", project.repo);
-      const demo = createLink("Demo", project.demo);
+      const repo = _createLink("Repo", project.repo);
+      const demo = _createLink("Demo", project.demo);
 
       projectDetailLinkWrapper.append(repo, demo);
       projectCardExpand.append(projectDetailLinkWrapper);
@@ -92,7 +92,7 @@ const projects = (() => {
     }
   }
 
-  function createLink(name, src) {
+  function _createLink(name, src) {
     const a = document.createElement("a");
     a.classList.add("project-link");
     a.href = src;

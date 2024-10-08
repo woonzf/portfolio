@@ -26,6 +26,7 @@ const scroll = (() => {
   const aboutIntro = document.querySelector("#about-intro");
 
   const aboutMorePhoto = document.querySelector("#about-more-photo");
+  const aboutMoreLogo = document.querySelector("#about-more-logo");
   const aboutMoreEls = document.querySelectorAll(".about-more-element");
 
   const projectsLogos = document.querySelectorAll(".projects-logo");
@@ -176,7 +177,7 @@ const scroll = (() => {
   function _showHome() {
     hello.forEach((el) => el.classList.add("slide-up"));
     setTimeout(() => {
-      homeScroll.classList.add("show");
+      if (currentTheme === 1) homeScroll.classList.add("show");
     }, 1000);
   }
 
@@ -188,9 +189,11 @@ const scroll = (() => {
   function _showAbout() {
     aboutLogos.forEach((el) => el.classList.add("slide-up"));
     setTimeout(() => {
-      aboutScroll.classList.add("show");
-      btnAboutMoreL.classList.add("show");
-      aboutIntro.classList.add("show");
+      if (currentTheme === 2) {
+        aboutScroll.classList.add("show");
+        btnAboutMoreL.classList.add("show");
+        aboutIntro.classList.add("show");
+      }
     }, 1000);
   }
 
@@ -203,6 +206,7 @@ const scroll = (() => {
 
   function _showAboutMore() {
     aboutMorePhoto.classList.add("expand");
+    aboutMoreLogo.classList.add("expand");
     setTimeout(() => {
       aboutMoreEls.forEach((el) => el.classList.add("show"));
     }, 1000);
@@ -210,16 +214,19 @@ const scroll = (() => {
 
   function _hideAboutMore() {
     aboutMorePhoto.classList.remove("expand");
+    aboutMoreLogo.classList.remove("expand");
     aboutMoreEls.forEach((el) => el.classList.remove("show"));
   }
 
   function _showProjects() {
     projectsLogos.forEach((el) => el.classList.add("slide-up"));
     setTimeout(() => {
-      projectsCarousel.classList.add("show");
-      projectsEnd.classList.add("show");
-      btnsTop.forEach((el) => el.classList.add("show"));
-      thankYou.classList.add("show");
+      if (currentTheme === 3) {
+        projectsCarousel.classList.add("show");
+        projectsEnd.classList.add("show");
+        btnsTop.forEach((el) => el.classList.add("show"));
+        thankYou.classList.add("show");
+      }
     }, 1000);
   }
 

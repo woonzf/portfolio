@@ -428,12 +428,14 @@
     opacity: 1;
   }
 
-  #about-more-photo {
+  #about-more-photo,
+  #about-more-logo {
     transform: scale(0);
     transition: transform 1s ease;
   }
 
-  #about-more-photo.expand {
+  #about-more-photo.expand,
+  #about-more-logo.expand {
     transform: scale(1);
   }
 }

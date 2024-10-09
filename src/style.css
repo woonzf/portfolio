@@ -412,7 +412,8 @@
   #projects-end,
   #thank-you,
   .btn-top,
-  .about-more-element {
+  .about-more-element,
+  #about-photo {
     opacity: 0;
     transition: opacity 1s ease;
   }
@@ -424,18 +425,31 @@
   #projects-end.show,
   #thank-you.show,
   .btn-top.show,
-  .about-more-element.show {
+  .about-more-element.show,
+  #about-photo.show {
     opacity: 1;
   }
 
-  #about-more-photo,
-  #about-more-logo {
+  #about-logo-wrapper {
+    transition: opacity 1s ease;
+  }
+
+  #about-logo-wrapper.hide {
+    opacity: 0;
+  }
+
+  #about-more-photo {
     transform: scale(0);
     transition: transform 1s ease;
   }
 
-  #about-more-photo.expand,
-  #about-more-logo.expand {
+  #about-more-photo.expand {
     transform: scale(1);
+  }
+
+  @media only screen and (orientation: landscape) and (max-width: 1500px) {
+    #about-intro {
+      @apply scale-75;
+    }
   }
 }

@@ -22,11 +22,12 @@ const scroll = (() => {
   const homeScroll = home.querySelector(".scroll-wrapper");
 
   const aboutLogos = document.querySelectorAll(".about-logo");
+  const aboutLogoWrapper = document.querySelector("#about-logo-wrapper");
   const aboutScroll = about.querySelector(".scroll-wrapper");
   const aboutIntro = document.querySelector("#about-intro");
+  const aboutPhoto = document.querySelector("#about-photo");
 
   const aboutMorePhoto = document.querySelector("#about-more-photo");
-  const aboutMoreLogo = document.querySelector("#about-more-logo");
   const aboutMoreEls = document.querySelectorAll(".about-more-element");
 
   const projectsLogos = document.querySelectorAll(".projects-logo");
@@ -194,10 +195,19 @@ const scroll = (() => {
         aboutIntro.classList.add("show");
       }
     }, 1000);
+
+    setTimeout(() => {
+      if (currentTheme === 2) {
+        aboutLogoWrapper.classList.add("hide");
+        aboutPhoto.classList.add("show");
+      }
+    }, 1500);
   }
 
   function _hideAbout() {
     aboutLogos.forEach((el) => el.classList.remove("slide-up"));
+    aboutLogoWrapper.classList.remove("hide");
+    aboutPhoto.classList.remove("show");
     aboutScroll.classList.remove("show");
     btnAboutMoreL.classList.remove("show");
     aboutIntro.classList.remove("show");
@@ -205,16 +215,18 @@ const scroll = (() => {
 
   function _showAboutMore() {
     aboutMorePhoto.classList.add("expand");
-    if (!isPortrait) aboutMoreLogo.classList.add("expand");
-    setTimeout(() => {
+
+    function _showElements() {
       if (currentTheme === 2)
         aboutMoreEls.forEach((el) => el.classList.add("show"));
-    }, 1000);
+    }
+
+    if (!isPortrait) _showElements();
+    else setTimeout(_showElements, 1000);
   }
 
   function _hideAboutMore() {
     aboutMorePhoto.classList.remove("expand");
-    if (!isPortrait) aboutMoreLogo.classList.remove("expand");
     aboutMoreEls.forEach((el) => el.classList.remove("show"));
   }
 

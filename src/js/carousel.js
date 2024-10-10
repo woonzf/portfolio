@@ -8,14 +8,14 @@ const carousel = (() => {
     "#carousel-countdown-bar",
   );
 
-  let projectCardWidth = null;
+  let projectCardWidth = 0;
 
   const slide = 3;
   let i = 1;
   let iPrev = 0;
 
   function init() {
-    setTimeout(getProjectCardWidth, 0);
+    getProjectCardWidth();
 
     btnProjectNext.onclick = () => {
       iPrev = i;

@@ -8,12 +8,14 @@ import { projects } from "./js/projects";
 import { carousel } from "./js/carousel";
 import { windowResize } from "./js/window-resize";
 
+// Load projects first to avoid incorrect projectCardWidth
+projects.init();
+
 window.onload = () => {
   darkMode.init();
   menu.init();
   navDot.init();
   scroll.init();
-  projects.init();
   carousel.init();
   windowResize.init();
 };

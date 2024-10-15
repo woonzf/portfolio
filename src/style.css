@@ -17,7 +17,6 @@
 
 @layer base {
   /* Hide scrollbar for IE, Edge and Firefox */
-  main,
   section,
   .project-card-wrapper {
     -ms-overflow-style: none; /* IE and Edge */
@@ -25,10 +24,18 @@
   }
 
   /* Hide scrollbar for Chrome, Safari and Opera */
-  main::-webkit-scrollbar,
   section::-webkit-scrollbar,
   .project-card-wrapper::-webkit-scrollbar {
     @apply hidden;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-b from-theme-1 to-theme-3;
   }
 
   body {
@@ -44,16 +51,16 @@
     @apply h-14 w-full px-7 md:px-14 bg-light dark:bg-dark z-50;
   }
 
-  aside {
+  aside#menu {
     @apply h-[calc(100vh-2*56px)] portrait:w-[60vw] mt-14 landscape:pl-[200px] portrait:pr-7 portrait:md:pr-14;
   }
 
   main {
-    @apply h-[calc(100vh-2*56px)] w-full mt-14 overflow-y-scroll snap-y scroll-smooth;
+    @apply w-full my-14;
   }
 
   section {
-    @apply h-[calc(100vh-2*56px)] px-7 portrait:px-0 md:px-14 landscape:snap-center;
+    @apply h-[calc(100vh-2*56px)] px-7 portrait:px-0 md:px-14;
   }
 
   a {
@@ -139,10 +146,6 @@
     @apply h-[30px] sm:h-[40px] text-[30px] sm:text-[40px] aspect-square;
   }
 
-  .icon-side-link {
-    @apply h-[20px] sm:h-[30px] text-[20px] sm:text-[30px] aspect-square;
-  }
-
   .icon-next {
     @apply h-[70px] aspect-square;
     transition: transform 500ms ease;
@@ -152,13 +155,30 @@
     @apply scale-110;
   }
 
+  .btn-nav-dot {
+    @apply w-1/6 aspect-square rounded-full flex justify-center items-center;
+  }
+
+  .btn-nav-dot > div {
+    @apply w-2/3 aspect-square rounded-full opacity-75;
+    transition: width 250ms ease;
+  }
+
+  .btn-nav-dot.active > div {
+    @apply w-full opacity-100;
+  }
+
+  .tech-stack {
+    @apply flex gap-1 flex-wrap;
+  }
+
   .btn-mini-tab {
-    @apply h-3 aspect-[4] border border-light portrait:border-theme-3 dark:border-theme-3 landscape:hover:bg-light landscape:hover:dark:bg-theme-3 hover:bg-opacity-50 hover:dark:bg-opacity-50 rounded-md;
+    @apply h-3 aspect-[4] border border-light portrait:border-theme-3 dark:border-theme-3 landscape:hover:bg-light landscape:hover:dark:bg-theme-3 opacity-75 rounded-md;
     transition: background-color 500ms ease;
   }
 
   .btn-mini-tab.active {
-    @apply bg-light portrait:bg-theme-3 dark:bg-theme-3;
+    @apply bg-light portrait:bg-theme-3 dark:bg-theme-3 opacity-100;
   }
 
   .project-card-outer-wrapper {
@@ -325,18 +345,20 @@
       opacity 500ms ease;
   }
 
-  aside,
+  aside#menu,
+  aside#nav-dot,
   #btn-menu-l,
   #btn-menu-l-close,
   #btn-menu-l-close > div {
     transition: transform 500ms ease;
   }
 
+  aside#nav-dot.move,
   main.move {
     @apply translate-x-[40vw];
   }
 
-  aside.move {
+  aside#menu.move {
     @apply translate-x-0;
   }
 
@@ -344,7 +366,7 @@
     @apply translate-x-[-60vw];
   }
 
-  aside.move-p {
+  aside#menu.move-p {
     @apply -translate-x-full;
   }
 
@@ -367,5 +389,67 @@
   /* Menu dot */
   button:disabled > div > span {
     @apply opacity-100;
+  }
+
+  /* Transitions when enter or exit view */
+  .hello,
+  .about-logo,
+  .projects-logo {
+    transform: translateY(100%);
+    transition: transform 1s ease;
+  }
+
+  .hello.slide-up,
+  .about-logo.slide-up,
+  .projects-logo.slide-up {
+    transform: translateY(0);
+  }
+
+  .scroll-wrapper,
+  #btn-about-more-l,
+  #about-intro,
+  #projects-carousel,
+  #projects-end,
+  #thank-you,
+  .btn-top,
+  .about-more-element,
+  #about-photo {
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  .scroll-wrapper.show,
+  #btn-about-more-l.show,
+  #about-intro.show,
+  #projects-carousel.show,
+  #projects-end.show,
+  #thank-you.show,
+  .btn-top.show,
+  .about-more-element.show,
+  #about-photo.show {
+    opacity: 1;
+  }
+
+  #about-logo-wrapper {
+    transition: opacity 1s ease;
+  }
+
+  #about-logo-wrapper.hide {
+    opacity: 0;
+  }
+
+  #about-more-photo {
+    transform: scale(0);
+    transition: transform 1s ease;
+  }
+
+  #about-more-photo.expand {
+    transform: scale(1);
+  }
+
+  @media only screen and (orientation: landscape) and (max-width: 1500px) {
+    #about-intro {
+      @apply scale-75;
+    }
   }
 }

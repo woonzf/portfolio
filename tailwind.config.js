@@ -16,7 +16,6 @@ module.exports = {
         'repeat-auto-40': 'repeat(auto-fill, 40px)',
       },
       'animation': {
-        'hello': 'slide-up 1s 1',
         'menu': 'bounce-menu 1.5s infinite',
         'bounce-scroll': 'bounce-scroll 1s infinite',
         'chevron-right': 'bounce-chevron-right 1s infinite',
@@ -26,10 +25,6 @@ module.exports = {
         'appear-cycle-r': 'appear-cycle 10s infinite alternate-reverse',
       },
       'keyframes': {
-        'slide-up': {
-          '0%': { transform: 'translateY(100%)' },
-          '100%': { transform: 'translateY(0)' },
-        },
         'bounce-menu': {
           '0%, 100%': {
             transform: 'translateY(-50%) rotate(-90deg) translateY(0)',

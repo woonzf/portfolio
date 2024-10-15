@@ -1,0 +1,125 @@
+import { projectList } from "./projectList";
+
+import open50w from "../img/icons/open-50w.png";
+import openW50w from "../img/icons/open-w-50w.png";
+
+const projects = (() => {
+  const projectCardWrapper = document.querySelector(".project-card-wrapper");
+
+  function init() {
+    for (let i = 0; i < projectList.length; i++) {
+      const project = projectList[i];
+
+      const projectCard = document.createElement("div");
+      projectCard.classList.add("project-card");
+      projectCard.id = `project-card-${i + 1}`;
+
+      const projectCardInfo = document.createElement("div");
+      projectCardInfo.classList.add(
+        "project-card-info",
+        "h-full",
+        "w-full",
+        "relative",
+      );
+
+      let projectCardImage = null;
+
+      if (!Array.isArray(project.src)) {
+        projectCardImage = document.createElement("img");
+        projectCardImage.classList.add("project-card-image");
+        projectCardImage.src = project.src;
+      } else {
+        projectCardImage = document.createElement("div");
+        projectCardImage.classList.add(
+          "project-card-image",
+          "h-full",
+          "flex",
+          "items-center",
+          "relative",
+        );
+
+        const img1 = document.createElement("img");
+        img1.classList.add("rounded-sm", "absolute", "animate-appear-cycle");
+        img1.src = project.src[0];
+
+        const img2 = document.createElement("img");
+        img2.classList.add("rounded-sm", "absolute", "animate-appear-cycle-r");
+        img2.src = project.src[1];
+
+        projectCardImage.append(img1, img2);
+      }
+
+      const projectCardIndex = document.createElement("div");
+      projectCardIndex.classList.add("project-card-index");
+      projectCardIndex.textContent = `0${i + 1}`;
+
+      const projectCardNameType = document.createElement("div");
+      projectCardNameType.classList.add("project-card-name-type");
+
+      const projectCardName = document.createElement("div");
+      projectCardName.classList.add("project-card-name");
+      projectCardName.textContent = project.name;
+
+      const projectCardType = document.createElement("div");
+      projectCardType.classList.add("project-card-type");
+
+      for (const stack of project.stack) {
+        const img = document.createElement("img");
+        img.src = stack.src;
+        img.alt = stack.alt;
+        projectCardType.append(img);
+      }
+
+      const projectCardExpand = document.createElement("div");
+      projectCardExpand.classList.add("project-card-expand");
+
+      const projectDetailLinkWrapper = document.createElement("div");
+      projectDetailLinkWrapper.classList.add("project-detail-link-wrapper");
+
+      const repo = _createLink("Repo", project.repo);
+      const demo = _createLink("Demo", project.demo);
+
+      projectDetailLinkWrapper.append(repo, demo);
+      projectCardExpand.append(projectDetailLinkWrapper);
+      projectCardNameType.append(projectCardName, projectCardType);
+      projectCardInfo.append(
+        projectCardImage,
+        projectCardIndex,
+        projectCardNameType,
+      );
+      projectCard.append(projectCardInfo, projectCardExpand);
+      projectCardWrapper.append(projectCard);
+    }
+  }
+
+  function _createLink(name, src) {
+    const a = document.createElement("a");
+    a.classList.add("project-link");
+    a.href = src;
+    a.target = "_blank";
+    a.rel = "noreferrer";
+
+    const span = document.createElement("span");
+    span.textContent = name;
+
+    const imgOpenWrapper = document.createElement("div");
+    imgOpenWrapper.classList.add("img-open-wrapper");
+
+    const imgDark = document.createElement("img");
+    imgDark.classList.add("icon-mode-dark");
+    imgDark.src = openW50w;
+
+    const imgLight = document.createElement("img");
+    imgLight.classList.add("icon-mode");
+    imgLight.src = open50w;
+
+    imgOpenWrapper.append(imgDark, imgLight);
+    a.append(span, imgOpenWrapper);
+
+    return a;
+  }
+
+  return { init };
+})();
+
+export { projects };

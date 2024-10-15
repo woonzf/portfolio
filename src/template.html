@@ -10,6 +10,9 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
+    <script>
+      history.scrollRestoration = "manual";
+    </script>
   </head>
   <body class="montserrat text-sm md:text-lg overflow-x-hidden">
     <header class="flex justify-between items-center fixed top-0">
@@ -59,6 +62,7 @@
     </div>
     <aside
       class="flex flex-col justify-evenly portrait:items-end fixed top-0 portrait:left-full landscape:translate-x-[-40vw] z-40"
+      id="menu"
     >
       <button
         class="btn-dark-mode theme-1 bg-dark dark:bg-light landscape:hidden"
@@ -145,6 +149,20 @@
         </a>
       </small>
     </aside>
+    <aside
+      class="h-screen w-7 md:w-14 flex flex-col justify-center items-center gap-4 fixed right-0 portrait:hidden z-50"
+      id="nav-dot"
+    >
+      <button class="btn-nav-dot hover:bg-theme-1" id="nav-dot-home">
+        <div class="bg-theme-1"></div>
+      </button>
+      <button class="btn-nav-dot hover:bg-theme-2" id="nav-dot-about">
+        <div class="bg-theme-2"></div>
+      </button>
+      <button class="btn-nav-dot hover:bg-theme-3" id="nav-dot-projects">
+        <div class="bg-theme-3"></div>
+      </button>
+    </aside>
     <main>
       <section class="flex relative" id="home">
         <div class="h-full w-full bg-theme-1 relative">
@@ -161,49 +179,10 @@
           class="text-hello absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         >
           <div class="overflow-hidden">
-            <div class="animate-hello">HE</div>
+            <div class="hello">HE</div>
           </div>
           <div class="overflow-hidden">
-            <div class="animate-hello">
-              LLO<span class="text-theme-1">.</span>
-            </div>
-          </div>
-        </div>
-        <div
-          class="w-7 md:w-14 absolute landscape:top-1/2 portrait:bottom-1 right-0 portrait:right-7 portrait:md:right-14 landscape:-translate-y-1/2"
-          id="side-link-wrapper"
-        >
-          <div class="flex flex-col items-center gap-3">
-            <a
-              class="hover:scale-110"
-              href="https://github.com/woonzf"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div class="icon-side-link relative">
-                <i class="devicon-github-original icon-mode-dark absolute"></i>
-                <i
-                  class="devicon-github-original colored icon-mode absolute"
-                  title="GitHub"
-                ></i>
-              </div>
-            </a>
-            <a
-              class="hover:scale-110"
-              href="https://www.linkedin.com/in/woonzf/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div class="icon-side-link relative">
-                <i class="devicon-linkedin-plain icon-mode-dark absolute"></i>
-                <img
-                  class="icon-mode absolute"
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain.svg"
-                  alt="LinkedIn"
-                  title="LinkedIn"
-                />
-              </div>
-            </a>
+            <div class="hello">LLO<span class="text-theme-1">.</span></div>
           </div>
         </div>
       </section>
@@ -218,15 +197,25 @@
           <div class="w-[40%] dark:bg-theme-2 relative">
             <div
               class="text-hello absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 z-[1]"
+              id="about-logo-wrapper"
             >
               <div class="overflow-hidden">
-                <div>AB</div>
+                <div class="about-logo">AB</div>
               </div>
               <div class="overflow-hidden">
-                <div>
+                <div class="about-logo">
                   OUT<span class="text-light dark:text-theme-2">.</span>
                 </div>
               </div>
+            </div>
+            <div
+              class="w-full portrait:w-[75%] portrait:md:w-[50%] aspect-square bg-light dark:bg-dark border-2 border-theme-2 rounded-full flex justify-center items-center absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2"
+              id="about-photo"
+            >
+              <img
+                class="w-[calc(100%-16px)] aspect-square rounded-full"
+                src="0575d19b2088e83eb7ce.jpg"
+              />
             </div>
             <div class="scroll-wrapper">
               <div class="img-arrow-down-wrapper relative rotate-90">
@@ -240,28 +229,14 @@
             class="w-full bg-theme-2 dark:bg-transparent flex justify-center items-center"
           >
             <div
-              class="h-[calc(20vw*0.8)] text-xl md:text-2xl font-semibold flex flex-col justify-evenly"
+              class="h-[calc(20vw*0.8)] text-xl md:text-2xl font-semibold flex flex-col justify-center gap-4 uppercase"
+              id="about-intro"
             >
-              <div class="italic font-bold uppercase">
+              <div class="font-bold">
                 Hi<span class="about-span">,</span> I am
               </div>
               <div class="text-big">Woon Zhen Fei</div>
-              <div>
-                <div class="flex justify-between">
-                  <p>Front End</p>
-                  <span class="about-span">.</span>
-                  <p>Interactive</p>
-                  <span class="about-span">.</span>
-                  <p>Responsive Design</p>
-                </div>
-                <div class="flex justify-between">
-                  <p>HTML</p>
-                  <span class="about-span">.</span>
-                  <p>CSS</p>
-                  <span class="about-span">.</span>
-                  <p>JavaScript</p>
-                </div>
-              </div>
+              <div class="font-bold">Frontend Web Developer</div>
             </div>
           </div>
         </article>
@@ -270,68 +245,60 @@
           id="article-about-more"
         >
           <div
-            class="min-w-[30%] flex flex-col portrait:flex-col-reverse justify-center items-center gap-14 portrait:gap-10"
+            class="min-w-[30%] flex flex-col portrait:flex-col-reverse justify-center items-center gap-14 portrait:gap-10 overflow-hidden landscape:hidden"
           >
-            <div class="w-fit landscape:hidden">
-              <div class="italic font-bold uppercase">
+            <div class="w-fit about-more-element flex flex-col gap-2 uppercase">
+              <div class="font-bold">
                 Hi<span class="about-span">,</span> I am
               </div>
               <div class="text-title">Woon Zhen Fei</div>
-              <div>
-                <div class="flex justify-between">
-                  <p>Front End</p>
-                  <span class="about-span">.</span>
-                  <p>Interactive</p>
-                  <span class="about-span">.</span>
-                  <p>Responsive Design</p>
-                </div>
-                <div class="flex justify-between">
-                  <p>HTML</p>
-                  <span class="about-span">.</span>
-                  <p>CSS</p>
-                  <span class="about-span">.</span>
-                  <p>JavaScript</p>
-                </div>
-              </div>
+              <div class="font-bold">Frontend Web Developer</div>
             </div>
             <div
               class="w-full portrait:w-[75%] portrait:md:w-[50%] aspect-square border-2 border-theme-2 rounded-full flex justify-center items-center"
+              id="about-more-photo"
             >
               <img
                 class="w-[calc(100%-16px)] rounded-full"
                 src="0575d19b2088e83eb7ce.jpg"
               />
             </div>
-            <div class="text-big portrait:text-title portrait:self-start">
-              <div>ABOUT<span class="text-theme-2">.</span></div>
+            <div
+              class="text-big portrait:text-title portrait:self-start overflow-hidden"
+            >
+              <div class="about-logo">
+                ABOUT<span class="text-theme-2">.</span>
+              </div>
             </div>
           </div>
           <div
-            class="portrait:w-full landscape:px-14 flex justify-center items-center"
+            class="portrait:w-full landscape:px-14 flex justify-center items-center landscape:overflow-y-scroll"
           >
             <div
-              class="portrait:w-full py-14 portrait:py-10 border-y-2 border-theme-2 flex flex-col gap-14 portrait:gap-10"
+              class="portrait:w-full py-14 portrait:py-10 border-y-2 border-theme-2 flex flex-col gap-10 about-more-element"
             >
               <div class="flex flex-col gap-3">
+                <p class="text-title text-pretty text-justify">How I started</p>
                 <p class="text-pretty text-justify">
-                  Hi, I am Woon Zhen Fei, a web developer in Malaysia.
-                </p>
-                <p class="text-pretty text-justify">
-                  I have been actively coding and learning web development since
-                  June 2023. Since then, I have completed CS50x: Introduction to
-                  Computer Science and The Odin Project - Foundations. I am
-                  currently taking The Odin Project - Full Stack JavaScript
-                  course.
-                </p>
-                <p class="text-pretty text-justify">
-                  I am learning React and also looking for a job opportunity in
-                  web development!
+                  During my time as Operation Executive, I had the chance to
+                  make excel formulas such as BOM generator and machine uptime
+                  calculator which eliminate the time needed to calculate them
+                  manually. I enjoyed making and often spent time refining them.
+                  It is when I realized I would really like to have a job that
+                  allows me to solve problems through programming. And so I
+                  decided to look for online programming courses. I found
+                  Harvard's CS50x and took the course. I have some experience in
+                  programming with C and Matlab during my time in the university
+                  so I finished CS50x quite quickly. Then I looked into web
+                  development, found and started The Odin Project. Since then, I
+                  have completed multiple projects. You can check some of them
+                  out down the page or on my GitHub!
                 </p>
               </div>
               <div class="flex flex-col gap-5">
                 <div class="flex flex-col gap-2">
                   <div class="font-bold">Languages</div>
-                  <div class="flex gap-2 flex-wrap">
+                  <div class="tech-stack">
                     <img
                       src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"
                       alt="HTML"
@@ -345,6 +312,10 @@
                       alt="JavaScript"
                     />
                     <img
+                      src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"
+                      alt="TypeScript"
+                    />
+                    <img
                       src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white"
                       alt="C"
                     />
@@ -356,7 +327,7 @@
                 </div>
                 <div class="flex flex-col gap-2">
                   <div class="font-bold">Frameworks & Library</div>
-                  <div class="flex gap-2 flex-wrap">
+                  <div class="tech-stack">
                     <img
                       src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"
                       alt="React"
@@ -385,7 +356,11 @@
                 </div>
                 <div class="flex flex-col gap-2">
                   <div class="font-bold">Others</div>
-                  <div class="flex gap-2 flex-wrap">
+                  <div class="tech-stack">
+                    <img
+                      src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white"
+                      alt="MySQL"
+                    />
                     <img
                       src="https://img.shields.io/badge/Sqlite-003B57?style=for-the-badge&logo=sqlite&logoColor=white"
                       alt="SQLite"
@@ -401,14 +376,6 @@
                     <img
                       src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white"
                       alt="Git"
-                    />
-                    <img
-                      src="https://img.shields.io/badge/VirtualBox-21416b?style=for-the-badge&logo=VirtualBox&logoColor=white"
-                      alt="VirtualBox"
-                    />
-                    <img
-                      src="https://img.shields.io/badge/gimp-5C5543?style=for-the-badge&logo=gimp&logoColor=white"
-                      alt="GIMP"
                     />
                   </div>
                 </div>
@@ -433,10 +400,10 @@
             class="text-hello absolute top-1/2 -translate-y-1/2 -translate-x-1/2 rotate-90"
           >
             <div class="overflow-hidden">
-              <div>PRO</div>
+              <div class="projects-logo">PRO</div>
             </div>
             <div class="overflow-hidden">
-              <div>
+              <div class="projects-logo">
                 JECTS<span class="text-light dark:text-theme-3">.</span>
               </div>
             </div>
@@ -452,231 +419,69 @@
           </button>
         </div>
         <div
-          class="portrait:h-full w-full portrait:py-4 portrait:px-7 portrait:md:px-14 landscape:bg-theme-3 dark:bg-transparent flex flex-col justify-center portrait:gap-5"
+          class="portrait:h-full w-full portrait:py-4 portrait:px-7 portrait:md:px-14 landscape:bg-theme-3 dark:bg-transparent flex flex-col justify-center"
         >
-          <div class="text-title self-start landscape:hidden">
-            <div>PROJECTS<span class="text-theme-3">.</span></div>
+          <div class="min-h-fit text-title landscape:hidden overflow-hidden">
+            <div class="projects-logo">
+              PROJECTS<span class="text-theme-3">.</span>
+            </div>
           </div>
-          <div
-            class="portrait:h-[calc(100%-20px)] flex flex-col landscape:justify-center items-center gap-5"
-          >
-            <div class="h-1 w-[168px] flex justify-center">
-              <div
-                class="h-full w-full bg-light portrait:bg-theme-3 dark:bg-theme-3"
-                id="carousel-countdown-bar"
-              ></div>
-            </div>
-            <div class="project-card-outer-wrapper portrait:w-full">
-              <div class="project-card-wrapper portrait:h-full">
-                <div class="project-card" id="project-card-1">
-                  <div class="project-card-info relative">
-                    <img
-                      class="project-card-image"
-                      src="e96583a17bd8e335c774.png"
-                    />
-                    <div class="project-card-index">01</div>
-                    <div class="project-card-name-type">
-                      <div class="project-card-name">
-                        Your Personal Expense Tracker
-                      </div>
-                      <div class="project-card-type">
-                        <img
-                          src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue"
-                          alt="Python"
-                        />
-                        <img
-                          src="https://img.shields.io/badge/Sqlite-003B57?style=for-the-badge&logo=sqlite&logoColor=white"
-                          alt="SQLite"
-                        />
-                        <img
-                          src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"
-                          alt="Flask"
-                        />
-                        <img
-                          src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"
-                          alt="Bootstrap"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="project-card-expand">
-                    <div class="project-detail-link-wrapper">
-                      <a
-                        class="project-link"
-                        href="https://github.com/woonzf/cs50x-2023-project"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <span>Repo</span>
-                        <div class="img-open-wrapper">
-                          <img class="icon-mode-dark img-open-dark" />
-                          <img class="icon-mode img-open" />
-                        </div>
-                      </a>
-                      <a
-                        class="project-link"
-                        href="https://www.youtube.com/watch?v=l83kys9yJJs"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <span>Demo</span>
-                        <div class="img-open-wrapper">
-                          <img class="icon-mode-dark img-open-dark" />
-                          <img class="icon-mode img-open" />
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="project-card" id="project-card-2">
-                  <div class="project-card-info relative">
-                    <img
-                      class="project-card-image"
-                      src="c94210ae721539184bb7.png"
-                    />
-                    <div class="project-card-index">02</div>
-                    <div class="project-card-name-type">
-                      <div class="project-card-name">Weather App</div>
-                      <div class="project-card-type">
-                        <img
-                          src="https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=Webpack&logoColor=white"
-                          alt="Webpack"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="project-card-expand">
-                    <div class="project-detail-link-wrapper">
-                      <a
-                        class="project-link"
-                        href="https://github.com/woonzf/odin-weather-app"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <span>Repo</span>
-                        <div class="img-open-wrapper">
-                          <img class="icon-mode-dark img-open-dark" />
-                          <img class="icon-mode img-open" />
-                        </div>
-                      </a>
-                      <a
-                        class="project-link"
-                        href="https://woonzf.github.io/odin-weather-app/"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <span>Demo</span>
-                        <div class="img-open-wrapper">
-                          <img class="icon-mode-dark img-open-dark" />
-                          <img class="icon-mode img-open" />
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="project-card" id="project-card-3">
-                  <div class="project-card-info h-full w-full relative">
-                    <div
-                      class="project-card-image h-full flex items-center relative"
-                    >
-                      <img
-                        class="rounded-sm absolute animate-appear-cycle"
-                        src="98af4b51c1c94302aefb.png"
-                      />
-                      <img
-                        class="rounded-sm absolute animate-appear-cycle-r"
-                        src="b25d544610e249cf7288.png"
-                      />
-                    </div>
-                    <div class="project-card-index">03</div>
-                    <div class="project-card-name-type">
-                      <div class="project-card-name">Poké Memory Card</div>
-                      <div class="project-card-type">
-                        <img
-                          src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"
-                          alt="React"
-                        />
-                        <img
-                          src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"
-                          alt="Tailwind CSS"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="project-card-expand">
-                    <div class="project-detail-link-wrapper">
-                      <a
-                        class="project-link"
-                        href="https://github.com/woonzf/odin-memory-card"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <span>Repo</span>
-                        <div class="img-open-wrapper">
-                          <img class="icon-mode-dark img-open-dark" />
-                          <img class="icon-mode img-open" />
-                        </div>
-                      </a>
-                      <a
-                        class="project-link"
-                        href="https://woonzf.github.io/odin-memory-card/"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <span>Demo</span>
-                        <div class="img-open-wrapper">
-                          <img class="icon-mode-dark img-open-dark" />
-                          <img class="icon-mode img-open" />
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="project-card" id="project-card-4">
-                  <div class="project-card-index">04</div>
-                  <a
-                    class="text-lg md:text-2xl flex flex-col justify-center gap-1 hover:scale-110"
-                    href="https://github.com/woonzf?tab=repositories"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <span>MORE ON</span>
-                    <div class="flex gap-2 items-center">
-                      <span class="font-semibold">GITHUB</span>
-                      <div class="icon-contact-link relative">
-                        <i
-                          class="devicon-github-original icon-mode-dark absolute"
-                        ></i>
-                        <i
-                          class="devicon-github-original colored icon-mode absolute"
-                        ></i>
-                      </div>
-                      <div class="img-open-wrapper">
-                        <img class="icon-mode-dark img-open-dark" />
-                        <img class="icon-mode img-open" />
-                      </div>
-                    </div>
-                  </a>
-                </div>
+          <div class="h-full flex flex-col justify-evenly items-center">
+            <div
+              class="flex flex-col landscape:justify-center items-center gap-5"
+              id="projects-carousel"
+            >
+              <div class="h-1 w-[168px] flex justify-center">
+                <div
+                  class="h-full w-full bg-light portrait:bg-theme-3 dark:bg-theme-3"
+                  id="carousel-countdown-bar"
+                ></div>
               </div>
-              <button class="btn-project-card-prev portrait:hidden">
-                <div class="h-full w-full relative">
-                  <img class="icon-mode img-next-dark" />
-                  <img class="icon-mode-dark img-next" />
-                </div>
-              </button>
-              <button class="btn-project-card-next portrait:hidden">
-                <div class="h-full w-full relative">
-                  <img class="icon-mode img-next-dark" />
-                  <img class="icon-mode-dark img-next" />
-                </div>
-              </button>
+              <div class="project-card-outer-wrapper portrait:w-full">
+                <div class="project-card-wrapper portrait:h-full"></div>
+                <button class="btn-project-card-prev portrait:hidden">
+                  <div class="h-full w-full relative">
+                    <img class="icon-mode img-next-dark" />
+                    <img class="icon-mode-dark img-next" />
+                  </div>
+                </button>
+                <button class="btn-project-card-next portrait:hidden">
+                  <div class="h-full w-full relative">
+                    <img class="icon-mode img-next-dark" />
+                    <img class="icon-mode-dark img-next" />
+                  </div>
+                </button>
+              </div>
+              <div class="btn-mini-tab-wrapper flex gap-2">
+                <button
+                  class="btn-mini-tab active"
+                  id="btn-mini-tab-1"
+                ></button>
+                <button class="btn-mini-tab" id="btn-mini-tab-2"></button>
+                <button class="btn-mini-tab" id="btn-mini-tab-3"></button>
+              </div>
             </div>
-            <div class="btn-mini-tab-wrapper flex gap-2">
-              <button class="btn-mini-tab active" id="btn-mini-tab-1"></button>
-              <button class="btn-mini-tab" id="btn-mini-tab-2"></button>
-              <button class="btn-mini-tab" id="btn-mini-tab-3"></button>
-              <button class="btn-mini-tab" id="btn-mini-tab-4"></button>
+            <div class="flex items-center" id="projects-end">
+              More on&nbsp;
+              <a
+                class="flex"
+                href="https://github.com/woonzf?tab=repositories"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span class="underline">GitHub</span>
+                <span>&nbsp;</span>
+                <div
+                  class="h-[18px] md:h-[24px] aspect-square text-[18px] md:text-[24px] relative"
+                >
+                  <i
+                    class="devicon-github-original icon-mode-dark absolute"
+                  ></i>
+                  <i
+                    class="devicon-github-original colored icon-mode absolute"
+                  ></i>
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -691,7 +496,7 @@
         </button>
       </section>
     </main>
-    <footer class="flex justify-center items-center">
+    <footer class="flex justify-center items-center fixed bottom-0">
       <small class="italic">
         &copy; 2024
         <a

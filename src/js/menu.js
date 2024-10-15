@@ -4,7 +4,8 @@ const menu = (() => {
   const btnMenuL = document.querySelector("#btn-menu-l");
   const btnMenuLClose = document.querySelector("#btn-menu-l-close");
 
-  const aside = document.querySelector("aside");
+  const asideMenu = document.querySelector("#menu");
+  const asideNavDot = document.querySelector("#nav-dot");
   const main = document.querySelector("main");
 
   const btnHomeL = document.querySelector("#btn-home-l");
@@ -34,7 +35,8 @@ const menu = (() => {
       main.classList.toggle("opacity-50");
       btnMenuL.classList.toggle("show");
       btnMenuLClose.classList.toggle("show");
-      aside.classList.toggle("move");
+      asideMenu.classList.toggle("move");
+      asideNavDot.classList.toggle("move");
       main.classList.toggle("move");
     };
 
@@ -48,7 +50,7 @@ const menu = (() => {
       main.classList.toggle("opacity-50");
       iconMenuOpenP.classList.toggle("hidden");
       iconMenuCloseP.classList.toggle("hidden");
-      aside.classList.toggle("move-p");
+      asideMenu.classList.toggle("move-p");
       main.classList.toggle("move-p");
     };
   }
@@ -59,7 +61,7 @@ const menu = (() => {
       else btnMenuP.click();
 
       setTimeout(() => {
-        main.scrollTo(0, 0);
+        scroll.scrollTo(0);
       }, 500);
     };
 

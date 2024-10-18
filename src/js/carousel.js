@@ -8,48 +8,42 @@ const carousel = (() => {
     "#carousel-countdown-bar",
   );
 
+  const SLIDE = 3;
+  let index = 1;
   let projectCardWidth = 0;
-
-  const slide = 3;
-  let i = 1;
-  let iPrev = 0;
 
   function init() {
     getProjectCardWidth();
 
     btnProjectNext.onclick = () => {
-      iPrev = i;
-      if (i === slide) i = 1;
-      else i += 1;
-      _scrollToSlide(i);
-      _toggleBtnMiniTabs(iPrev, i);
+      let newIndex = 0;
+      if (index === SLIDE) newIndex = 1;
+      else newIndex = index + 1;
+      _scrollToSlide(newIndex);
     };
 
     btnProjectPrev.onclick = () => {
-      iPrev = i;
-      if (i === 1) i = slide;
-      else i -= 1;
-      _scrollToSlide(i);
-      _toggleBtnMiniTabs(iPrev, i);
+      let newIndex = 0;
+      if (index === 1) newIndex = SLIDE;
+      else newIndex = index - 1;
+      _scrollToSlide(newIndex);
     };
 
     projectCardWrapper.onscrollend = () => {
-      iPrev = i;
       const scroll = projectCardWrapper.scrollLeft;
       const threshold1 = projectCardWidth + 16;
       const threshold2 = projectCardWidth * 2 + 32;
-      if (scroll >= 0 && scroll < threshold1) i = 1;
-      else if (scroll >= threshold1 && scroll < threshold2) i = 2;
-      else i = slide;
-      _toggleBtnMiniTabs(iPrev, i);
+      if (scroll >= 0 && scroll < threshold1) index = 1;
+      else if (scroll >= threshold1 && scroll < threshold2) index = 2;
+      else index = SLIDE;
+      _toggleBtnMiniTabs(index);
     };
 
     btnMiniTabs.forEach((btn) => {
+      let newIndex = 0;
       btn.onclick = () => {
-        iPrev = i;
-        i = +btn.id.slice(-1);
-        _scrollToSlide(i);
-        _toggleBtnMiniTabs(iPrev, i);
+        newIndex = +btn.id.slice(-1);
+        _scrollToSlide(newIndex);
       };
     });
 
@@ -62,15 +56,19 @@ const carousel = (() => {
     projectCardWidth = projectCard.clientWidth;
   }
 
-  function _scrollToSlide(i) {
+  function _scrollToSlide(index) {
     projectCardWrapper.scrollTo({
-      left: projectCardWidth * (i - 1) + 16 * (i - 1),
+      left: projectCardWidth * (index - 1) + 16 * (index - 1),
     });
   }
 
-  function _toggleBtnMiniTabs(iPrev, i) {
-    document.querySelector(`#btn-mini-tab-${iPrev}`).classList.toggle("active");
-    document.querySelector(`#btn-mini-tab-${i}`).classList.toggle("active");
+  function _toggleBtnMiniTabs(index) {
+    const newIndex = index - 1;
+    const length = btnMiniTabs.length;
+    for (let i = 0; i < length; i++) {
+      if (i === newIndex) btnMiniTabs[i].classList.add("active");
+      else btnMiniTabs[i].classList.remove("active");
+    }
   }
 
   return { init, getProjectCardWidth };

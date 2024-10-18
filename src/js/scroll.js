@@ -34,21 +34,22 @@ const scroll = (() => {
   const projectsCarousel = document.querySelector("#projects-carousel");
   const projectsEnd = document.querySelector("#projects-end");
 
-  const marginTop = 56;
-  const isPortrait = Boolean(window.innerHeight > window.innerWidth);
-  const viewLimit = window.innerHeight * 0.7;
-  const scrollHeight = document.body.scrollHeight;
+  const MARGIN_TOP = 56;
 
+  let isPortrait = _getIsPortrait();
   let homeHeight = 0;
   let aboutHeight = 0;
+  let scrollHeight = 0;
   let thresholdHome = 0;
   let thresholdAbout = 0;
+  let thresholdArticleAbout = 0;
+  let viewLimit = 0;
+
   let currentTheme = 1;
   let isOpenAboutMore = 0;
-  let thresholdArticleAbout = 0;
 
   function init() {
-    getThresholds();
+    getParameters();
     _showHome();
 
     window.onscroll = () => {
@@ -103,42 +104,44 @@ const scroll = (() => {
 
     about.onscrollend = () => {
       const scroll = about.scrollLeft;
-      const wasOpen = isOpenAboutMore;
 
       if (scroll >= 0 && scroll < thresholdArticleAbout) {
-        if (isOpenAboutMore === 1) {
-          btnAboutMoreL.querySelector("div").textContent = "MORE";
-          isOpenAboutMore = 0;
-          _hideAboutMore();
-        }
+        btnAboutMoreL.querySelector("div").textContent = "MORE";
+        _toggleBtnAboutMore();
+        _hideAboutMore();
+        isOpenAboutMore = 0;
       } else {
-        if (isOpenAboutMore === 0) {
-          btnAboutMoreL.querySelector("div").textContent = "BACK";
-          isOpenAboutMore = 1;
-          _showAboutMore();
-        }
-      }
-
-      if (isOpenAboutMore !== wasOpen) {
-        articleAbout.classList.toggle("opacity-50");
-        btnAboutMoreL.classList.toggle("animate-chevron-right");
-        btnAboutMoreL.classList.toggle("animate-chevron-left");
+        btnAboutMoreL.querySelector("div").textContent = "BACK";
+        _toggleBtnAboutMore();
+        _showAboutMore();
+        isOpenAboutMore = 1;
       }
     };
 
     btnsTop.forEach((btn) => {
-      btn.onclick = () => {
-        scrollTo(0);
-      };
+      btn.onclick = () => scrollTo(0);
     });
   }
 
-  function getThresholds() {
-    homeHeight = home.clientHeight + marginTop;
-    aboutHeight = homeHeight + about.clientHeight + marginTop;
-    thresholdHome = homeHeight + marginTop - window.innerHeight / 2;
-    thresholdAbout = aboutHeight + marginTop - window.innerHeight / 2;
+  function _toggleBtnAboutMore() {
+    btnAboutMoreL.classList.toggle("animate-chevron-left");
+    btnAboutMoreL.classList.toggle("animate-chevron-right");
+    articleAbout.classList.toggle("opacity-50");
+  }
+
+  function getParameters() {
+    homeHeight = home.clientHeight + MARGIN_TOP;
+    aboutHeight = homeHeight + about.clientHeight + MARGIN_TOP;
+    scrollHeight = document.body.scrollHeight;
+    thresholdHome = homeHeight + MARGIN_TOP - window.innerHeight / 2;
+    thresholdAbout = aboutHeight + MARGIN_TOP - window.innerHeight / 2;
     thresholdArticleAbout = articleAbout.clientWidth - about.clientWidth / 2;
+    viewLimit = window.innerHeight * 0.7;
+
+    // Reset About More scroll when screen orientation changes
+    let wasPortrait = isPortrait;
+    isPortrait = _getIsPortrait();
+    if (wasPortrait && !isPortrait) btnAboutMoreL.click();
   }
 
   function scrollTo(section) {
@@ -265,7 +268,11 @@ const scroll = (() => {
     btnsTop.forEach((el) => el.classList.remove("show"));
   }
 
-  return { init, getThresholds, scrollTo };
+  function _getIsPortrait() {
+    return Boolean(window.innerHeight > window.innerWidth);
+  }
+
+  return { init, getParameters, scrollTo };
 })();
 
 export { scroll };

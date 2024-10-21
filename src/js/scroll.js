@@ -22,12 +22,9 @@ const scroll = (() => {
   const homeScroll = home.querySelector(".scroll-wrapper");
 
   const aboutLogos = document.querySelectorAll(".about-logo");
-  const aboutLogoWrapper = document.querySelector("#about-logo-wrapper");
   const aboutScroll = about.querySelector(".scroll-wrapper");
   const aboutIntro = document.querySelector("#about-intro");
-  const aboutPhoto = document.querySelector("#about-photo");
 
-  const aboutMorePhoto = document.querySelector("#about-more-photo");
   const aboutMoreEls = document.querySelectorAll(".about-more-element");
 
   const projectsLogos = document.querySelectorAll(".projects-logo");
@@ -212,28 +209,16 @@ const scroll = (() => {
         aboutIntro.classList.add("show");
       }
     }, 1000);
-
-    setTimeout(() => {
-      const scroll = window.scrollY;
-      if (scroll >= homeHeight - viewLimit && scroll < aboutHeight) {
-        aboutLogoWrapper.classList.add("hide");
-        aboutPhoto.classList.add("show");
-      }
-    }, 1500);
   }
 
   function _hideAbout() {
     aboutLogos.forEach((el) => el.classList.remove("slide-up"));
-    aboutLogoWrapper.classList.remove("hide");
-    aboutPhoto.classList.remove("show");
     aboutScroll.classList.remove("show");
     btnAboutMoreL.classList.remove("show");
     aboutIntro.classList.remove("show");
   }
 
   function _showAboutMore() {
-    aboutMorePhoto.classList.add("expand");
-
     function _showElements() {
       const scroll = window.scrollY;
       if (scroll >= homeHeight - viewLimit && scroll < aboutHeight)
@@ -245,7 +230,6 @@ const scroll = (() => {
   }
 
   function _hideAboutMore() {
-    aboutMorePhoto.classList.remove("expand");
     aboutMoreEls.forEach((el) => el.classList.remove("show"));
   }
 

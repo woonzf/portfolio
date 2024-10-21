@@ -5,7 +5,6 @@ import close50w from "../img/icons/close-50w.png";
 import closeW50w from "../img/icons/close-w-50w.png";
 import chevron100w from "../img/icons/chevron-100w.png";
 import chevronW100w from "../img/icons/chevron-w-100w.png";
-import profile1000w from "../img/profile-1000w.jpg";
 import arrowDown50w from "../img/icons/arrow-down-50w.png";
 import arrowDownW50w from "../img/icons/arrow-down-w-50w.png";
 

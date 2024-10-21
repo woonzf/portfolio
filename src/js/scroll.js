@@ -56,6 +56,7 @@ const scroll = (() => {
       if (scroll >= 0 && scroll < thresholdHome && currentTheme !== 1) {
         _changeTheme(1);
         _disableBtn(1);
+        navDot.toggleNavDot(0);
       } else if (
         scroll >= thresholdHome &&
         scroll < thresholdAbout &&
@@ -63,9 +64,11 @@ const scroll = (() => {
       ) {
         _changeTheme(2);
         _disableBtn(2);
+        navDot.toggleNavDot(1);
       } else if (scroll >= thresholdAbout && currentTheme !== 3) {
         _changeTheme(3);
         _disableBtn(3);
+        navDot.toggleNavDot(2);
       }
 
       // Show and hide elements
@@ -85,29 +88,24 @@ const scroll = (() => {
       else _hideProjects();
     };
 
-    window.onscrollend = () => {
-      const scroll = window.scrollY;
-
-      if (scroll >= 0 && scroll < thresholdHome) navDot.toggleNavDot(0);
-      else if (scroll >= thresholdHome && scroll < thresholdAbout)
-        navDot.toggleNavDot(1);
-      else navDot.toggleNavDot(2);
-    };
-
     btnAboutMoreL.onclick = () => {
-      if (isOpenAboutMore === 1) about.scrollTo(0, 0);
-      else about.scrollTo(articleAbout.clientWidth, 0);
+      let x = 0;
+      if (!isOpenAboutMore) x = articleAbout.scrollWidth;
+      about.scrollTo({
+        left: x,
+        behavior: "smooth",
+      });
     };
 
-    about.onscrollend = () => {
+    about.onscroll = () => {
       const scroll = about.scrollLeft;
 
-      if (scroll >= 0 && scroll < thresholdArticleAbout) {
+      if (scroll >= 0 && scroll < thresholdArticleAbout && isOpenAboutMore) {
         btnAboutMoreL.querySelector("div").textContent = "MORE";
         _toggleBtnAboutMore();
         _hideAboutMore();
         isOpenAboutMore = 0;
-      } else {
+      } else if (scroll >= thresholdArticleAbout && !isOpenAboutMore) {
         btnAboutMoreL.querySelector("div").textContent = "BACK";
         _toggleBtnAboutMore();
         _showAboutMore();

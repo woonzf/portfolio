@@ -7,6 +7,7 @@ import shoppingCart2 from "../img/projects/sc-2.png";
 export const projectList = [
   {
     name: "Mizu Store",
+    description: "A mock shopping cart using Fake Store API",
     src: [shoppingCart, shoppingCart2],
     stack: [
       {
@@ -27,6 +28,7 @@ export const projectList = [
   },
   {
     name: "Poké Memory Card",
+    description: "A memory card game powered by PokéAPI",
     src: [pokeMemoryCard, pokeMemoryCard2],
     stack: [
       {
@@ -43,6 +45,8 @@ export const projectList = [
   },
   {
     name: "Your Personal Expense Tracker",
+    description:
+      "A web application that allows users to track their daily expenses",
     src: ypet,
     stack: [
       {

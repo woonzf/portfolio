@@ -182,54 +182,43 @@
   }
 
   .project-card-outer-wrapper {
-    @apply w-[60%] p-2 md:p-4 border-2 border-light portrait:border-theme-3 dark:border-theme-3 rounded-md relative overflow-y-hidden;
+    @apply w-[60%] relative;
   }
 
   .project-card-wrapper {
-    @apply flex gap-4 overflow-x-scroll snap-x snap-mandatory scroll-smooth relative;
+    @apply flex portrait:flex-col gap-4 portrait:gap-10 overflow-x-scroll snap-x snap-mandatory scroll-smooth relative;
   }
 
   .project-card {
     @apply min-w-full bg-light dark:bg-dark rounded-sm flex justify-center items-center snap-center relative;
   }
 
-  .project-card-info {
-    @apply h-full flex items-center;
+  .project-card-content {
+    @apply h-full w-full flex portrait:flex-col items-center portrait:gap-5 relative;
   }
 
   .project-card-image {
-    @apply w-full rounded-sm opacity-50;
+    @apply w-full aspect-video rounded-sm flex items-center relative landscape:opacity-50;
   }
 
   .project-card-index {
     @apply text-5xl md:text-8xl leading-[0.8] font-extrabold absolute top-0 left-0 md:left-2.5;
   }
 
-  .project-card-name-type {
-    @apply w-full font-bold text-center flex flex-col absolute top-1/2 -translate-y-1/2;
+  .project-card-info {
+    @apply w-full font-bold text-center flex flex-col justify-center items-center gap-3 landscape:absolute landscape:top-1/2 landscape:-translate-y-1/4;
   }
 
   .project-card-name {
-    @apply text-xl md:text-4xl leading-none relative;
+    @apply text-xl md:text-4xl leading-none;
   }
 
-  .project-card-type {
-    @apply h-[15px] md:h-[30px] w-full mt-2 md:mt-5 flex justify-center flex-wrap absolute top-full left-1/2 -translate-x-1/2;
+  .project-card-tech {
+    @apply flex justify-center flex-wrap;
   }
 
-  .project-card-type > img {
-    @apply h-full opacity-90;
-  }
-
-  .project-card-expand {
-    @apply w-full py-2 px-4 font-semibold rounded-b-sm absolute bottom-0 opacity-50;
-    transition:
-      background-color 500ms ease,
-      opacity 500ms ease;
-  }
-
-  .project-card-expand:hover {
-    @apply bg-dark bg-opacity-25 dark:bg-opacity-50 opacity-100;
+  .project-card-tech > img {
+    @apply landscape:opacity-90;
   }
 
   .img-arrow-down-wrapper,
@@ -250,35 +239,21 @@
   }
 
   .btn-project-card-next {
-    @apply h-14 aspect-square bg-dark dark:bg-light bg-opacity-50 -rotate-90 opacity-50 absolute top-[calc(50%-28px)] right-4;
+    @apply h-14 aspect-square -rotate-90 opacity-50 absolute top-[calc(50%-28px)] -right-14;
   }
 
   .btn-project-card-prev {
-    @apply h-14 aspect-square bg-dark dark:bg-light bg-opacity-50 rotate-90 opacity-50 absolute top-[calc(50%-28px)] left-4;
+    @apply h-14 aspect-square rotate-90 opacity-50 absolute top-[calc(50%-28px)] -left-14;
   }
 
-  .project-card-image,
-  .project-card-index,
-  .project-card-name,
-  .project-card-type,
   .btn-project-card-next,
   .btn-project-card-prev {
     transition: opacity 500ms ease;
   }
 
-  .project-card-info:hover .project-card-image,
   .btn-project-card-next:hover,
   .btn-project-card-prev:hover {
     @apply opacity-100;
-  }
-
-  .project-card-info:hover .project-card-index {
-    @apply opacity-50;
-  }
-
-  .project-card-info:hover .project-card-name,
-  .project-card-info:hover .project-card-type {
-    @apply opacity-0;
   }
 
   .scroll-wrapper {
@@ -429,7 +404,8 @@
   }
 
   @media only screen and (orientation: landscape) and (max-width: 1500px) {
-    #about-intro {
+    #about-intro,
+    .project-card-info {
       @apply scale-75;
     }
   }

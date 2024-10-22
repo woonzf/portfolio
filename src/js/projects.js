@@ -14,13 +14,8 @@ const projects = (() => {
       projectCard.classList.add("project-card");
       projectCard.id = `project-card-${i + 1}`;
 
-      const projectCardInfo = document.createElement("div");
-      projectCardInfo.classList.add(
-        "project-card-info",
-        "h-full",
-        "w-full",
-        "relative",
-      );
+      const projectCardContent = document.createElement("div");
+      projectCardContent.classList.add("project-card-content");
 
       let projectCardImage = null;
 
@@ -30,13 +25,7 @@ const projects = (() => {
         projectCardImage.src = project.src;
       } else {
         projectCardImage = document.createElement("div");
-        projectCardImage.classList.add(
-          "project-card-image",
-          "h-full",
-          "flex",
-          "items-center",
-          "relative",
-        );
+        projectCardImage.classList.add("project-card-image");
 
         const img1 = document.createElement("img");
         img1.classList.add("rounded-sm", "absolute", "animate-appear-cycle");
@@ -53,25 +42,25 @@ const projects = (() => {
       projectCardIndex.classList.add("project-card-index");
       projectCardIndex.textContent = `0${i + 1}`;
 
-      const projectCardNameType = document.createElement("div");
-      projectCardNameType.classList.add("project-card-name-type");
+      const projectCardInfo = document.createElement("div");
+      projectCardInfo.classList.add("project-card-info");
 
       const projectCardName = document.createElement("div");
       projectCardName.classList.add("project-card-name");
       projectCardName.textContent = project.name;
 
-      const projectCardType = document.createElement("div");
-      projectCardType.classList.add("project-card-type");
+      const projectCardDescription = document.createElement("div");
+      projectCardDescription.textContent = project.description;
+
+      const projectCardTech = document.createElement("div");
+      projectCardTech.classList.add("project-card-tech");
 
       for (const stack of project.stack) {
         const img = document.createElement("img");
         img.src = stack.src;
         img.alt = stack.alt;
-        projectCardType.append(img);
+        projectCardTech.append(img);
       }
-
-      const projectCardExpand = document.createElement("div");
-      projectCardExpand.classList.add("project-card-expand");
 
       const projectDetailLinkWrapper = document.createElement("div");
       projectDetailLinkWrapper.classList.add("project-detail-link-wrapper");
@@ -80,14 +69,18 @@ const projects = (() => {
       const demo = _createLink("Demo", project.demo);
 
       projectDetailLinkWrapper.append(repo, demo);
-      projectCardExpand.append(projectDetailLinkWrapper);
-      projectCardNameType.append(projectCardName, projectCardType);
       projectCardInfo.append(
+        projectCardName,
+        projectCardDescription,
+        projectCardTech,
+        projectDetailLinkWrapper,
+      );
+      projectCardContent.append(
         projectCardImage,
         projectCardIndex,
-        projectCardNameType,
+        projectCardInfo,
       );
-      projectCard.append(projectCardInfo, projectCardExpand);
+      projectCard.append(projectCardContent);
       projectCardWrapper.append(projectCard);
     }
   }

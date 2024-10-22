@@ -256,7 +256,7 @@
             class="w-full landscape:px-14 flex justify-center items-center landscape:overflow-y-scroll"
           >
             <div
-              class="w-full py-14 portrait:py-10 border-y-2 border-theme-2 flex flex-col gap-3 about-more-element"
+              class="w-full py-14 portrait:py-7 border-y-2 border-theme-2 flex flex-col gap-10 portrait:gap-5 about-more-element"
             >
               <div class="flex flex-col gap-3">
                 <p class="text-2xl md:text-3xl font-extrabold text-pretty">
@@ -306,7 +306,10 @@
           </div>
         </button>
       </section>
-      <section class="mt-14 flex flex-row-reverse relative" id="projects">
+      <section
+        class="portrait:h-fit mt-14 flex flex-row-reverse relative"
+        id="projects"
+      >
         <div class="w-[20%] dark:bg-theme-3 flex relative portrait:hidden">
           <div
             class="text-hello absolute top-1/2 -translate-y-1/2 -translate-x-1/2 rotate-90"
@@ -331,19 +334,21 @@
           </button>
         </div>
         <div
-          class="portrait:h-full w-full portrait:py-4 portrait:px-7 portrait:md:px-14 landscape:bg-theme-3 dark:bg-transparent flex flex-col justify-center"
+          class="w-full portrait:py-4 portrait:px-7 portrait:md:px-14 landscape:bg-theme-3 dark:bg-transparent flex flex-col justify-center portrait:gap-10"
         >
           <div class="min-h-fit text-title landscape:hidden overflow-hidden">
             <div class="projects-logo">
               PROJECTS<span class="text-theme-3">.</span>
             </div>
           </div>
-          <div class="h-full flex flex-col justify-evenly items-center">
+          <div
+            class="h-full flex flex-col justify-evenly items-center portrait:gap-10"
+          >
             <div
               class="flex flex-col landscape:justify-center items-center gap-5"
               id="projects-carousel"
             >
-              <div class="h-1 w-[168px] flex justify-center">
+              <div class="h-1 w-[168px] flex justify-center portrait:hidden">
                 <div
                   class="h-full w-full bg-light portrait:bg-theme-3 dark:bg-theme-3"
                   id="carousel-countdown-bar"
@@ -353,18 +358,18 @@
                 <div class="project-card-wrapper portrait:h-full"></div>
                 <button class="btn-project-card-prev portrait:hidden">
                   <div class="h-full w-full relative">
-                    <img class="icon-mode img-next-dark" />
-                    <img class="icon-mode-dark img-next" />
+                    <img class="icon-mode img-next" />
+                    <img class="icon-mode-dark img-next-dark" />
                   </div>
                 </button>
                 <button class="btn-project-card-next portrait:hidden">
                   <div class="h-full w-full relative">
-                    <img class="icon-mode img-next-dark" />
-                    <img class="icon-mode-dark img-next" />
+                    <img class="icon-mode img-next" />
+                    <img class="icon-mode-dark img-next-dark" />
                   </div>
                 </button>
               </div>
-              <div class="btn-mini-tab-wrapper flex gap-2">
+              <div class="btn-mini-tab-wrapper flex gap-2 portrait:hidden">
                 <button
                   class="btn-mini-tab active"
                   id="btn-mini-tab-1"

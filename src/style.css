@@ -202,7 +202,7 @@
   }
 
   .project-card-index {
-    @apply text-5xl md:text-8xl leading-[0.8] font-extrabold absolute top-0 left-0 md:left-2.5 portrait:mix-blend-exclusion;
+    @apply text-5xl md:text-8xl leading-[0.8] font-extrabold absolute top-0 left-0 md:left-2.5 portrait:mix-blend-exclusion portrait:text-light;
   }
 
   .project-card-info {

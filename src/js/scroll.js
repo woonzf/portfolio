@@ -86,7 +86,7 @@ const scroll = (() => {
       else _hideProjects();
 
       // Show and hide Back to Top button
-      if (scroll === document.body.scrollHeight - window.innerHeight)
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2)
         btnsTop.forEach((el) => el.classList.add("show"));
       else btnsTop.forEach((el) => el.classList.remove("show"));
     };

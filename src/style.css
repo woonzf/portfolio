@@ -93,7 +93,7 @@
   }
 
   .text-title {
-    @apply text-4xl md:text-5xl leading-[0.8] font-extrabold;
+    @apply text-4xl md:text-6xl leading-[0.8] font-extrabold;
   }
 
   .text-disabled {
@@ -202,7 +202,7 @@
   }
 
   .project-card-index {
-    @apply text-5xl md:text-8xl leading-[0.8] font-extrabold absolute top-0 left-0 md:left-2.5;
+    @apply text-5xl md:text-8xl leading-[0.8] font-extrabold absolute top-0 left-0 md:left-2.5 portrait:mix-blend-exclusion;
   }
 
   .project-card-info {
@@ -266,16 +266,6 @@
 
   .top-wrapper-p {
     @apply absolute bottom-4 right-3 -translate-y-full rotate-90;
-  }
-
-  .top-wrapper > div,
-  .top-wrapper-p > div {
-    transition: transform 500ms ease;
-  }
-
-  .top-wrapper:hover > div,
-  .top-wrapper-p:hover > div {
-    @apply -translate-x-3;
   }
 
   .underline-h,

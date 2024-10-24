@@ -166,7 +166,7 @@
     <main>
       <section class="flex relative" id="home">
         <div class="h-full w-full bg-theme-1 relative">
-          <div class="scroll-wrapper portrait:animate-bounce-scroll">
+          <div class="scroll-wrapper">
             <div class="img-arrow-down-wrapper relative rotate-90">
               <img class="img-arrow-down-dark icon-mode-dark absolute" />
               <img class="img-arrow-down icon-mode absolute" />
@@ -235,21 +235,23 @@
           id="article-about-more"
         >
           <div
-            class="min-w-[30%] flex flex-col justify-center items-center gap-14 portrait:gap-10 overflow-hidden landscape:hidden"
+            class="min-w-[30%] flex flex-col gap-14 portrait:gap-10 landscape:hidden"
           >
-            <div
-              class="text-big portrait:text-title portrait:self-start overflow-hidden"
-            >
+            <div class="text-title overflow-hidden">
               <div class="about-logo">
                 ABOUT<span class="text-theme-2">.</span>
               </div>
             </div>
             <div class="w-fit about-more-element flex flex-col gap-2 uppercase">
-              <div class="font-bold">
+              <div class="text-base md:text-xl font-bold">
                 Hi<span class="about-span">,</span> I am
               </div>
-              <div class="text-title">Woon Zhen Fei</div>
-              <div class="font-bold">Frontend Developer</div>
+              <div class="text-3xl md:text-5xl leading-[0.8] font-extrabold">
+                Woon Zhen Fei
+              </div>
+              <div class="text-base md:text-xl font-bold">
+                Frontend Developer
+              </div>
             </div>
           </div>
           <div
@@ -259,7 +261,9 @@
               class="w-full py-14 portrait:py-7 border-y-2 border-theme-2 flex flex-col gap-10 portrait:gap-5 about-more-element"
             >
               <div class="flex flex-col gap-3">
-                <p class="text-2xl md:text-3xl font-extrabold text-pretty">
+                <p
+                  class="text-2xl md:text-3xl leading-none font-extrabold text-pretty"
+                >
                   Hello<span class="text-theme-2">,</span> World<span
                     class="text-theme-2"
                     >!</span
@@ -324,12 +328,12 @@
             </div>
           </div>
           <button class="btn-top top-wrapper">
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 animate-bounce-top">
               <div class="img-arrow-down-wrapper relative rotate-90">
                 <img class="img-arrow-down-dark icon-mode-dark absolute" />
                 <img class="img-arrow-down icon-mode absolute" />
               </div>
-              <span class="font-medium">top</span>
+              <div class="font-medium underline-h">top</div>
             </div>
           </button>
         </div>
@@ -403,12 +407,12 @@
           </div>
         </div>
         <button class="btn-top top-wrapper-p landscape:hidden">
-          <div class="flex items-center gap-2">
+          <div class="flex items-center gap-2 animate-bounce-top">
             <div class="img-arrow-down-wrapper relative rotate-90">
               <img class="img-arrow-down-dark icon-mode-dark absolute" />
               <img class="img-arrow-down icon-mode absolute" />
             </div>
-            <span class="font-medium">top</span>
+            <div class="font-medium underline-h">top</div>
           </div>
         </button>
       </section>

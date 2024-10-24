@@ -36,7 +36,6 @@ const scroll = (() => {
   let isPortrait = _getIsPortrait();
   let homeHeight = 0;
   let aboutHeight = 0;
-  let scrollHeight = 0;
   let thresholdHome = 0;
   let thresholdAbout = 0;
   let thresholdArticleAbout = 0;
@@ -72,7 +71,7 @@ const scroll = (() => {
       }
 
       // Show and hide elements
-      if (scroll >= 0 && scroll < homeHeight) _showHome();
+      if (scroll < homeHeight) _showHome();
       else _hideHome();
 
       if (scroll >= homeHeight - viewLimit && scroll < aboutHeight) {
@@ -83,9 +82,13 @@ const scroll = (() => {
         if (isPortrait) _hideAboutMore();
       }
 
-      if (scroll >= aboutHeight - viewLimit && scroll < scrollHeight)
-        _showProjects();
+      if (scroll >= aboutHeight - viewLimit) _showProjects();
       else _hideProjects();
+
+      // Show and hide Back to Top button
+      if (scroll === document.body.scrollHeight - window.innerHeight)
+        btnsTop.forEach((el) => el.classList.add("show"));
+      else btnsTop.forEach((el) => el.classList.remove("show"));
     };
 
     btnAboutMoreL.onclick = () => {
@@ -127,7 +130,6 @@ const scroll = (() => {
   function getParameters() {
     homeHeight = home.clientHeight + MARGIN_TOP;
     aboutHeight = homeHeight + about.clientHeight + MARGIN_TOP;
-    scrollHeight = document.body.scrollHeight;
     thresholdHome = homeHeight + MARGIN_TOP - window.innerHeight / 2;
     thresholdAbout = aboutHeight + MARGIN_TOP - window.innerHeight / 2;
     thresholdArticleAbout = articleAbout.clientWidth - about.clientWidth / 2;
@@ -188,7 +190,7 @@ const scroll = (() => {
     hello.forEach((el) => el.classList.add("slide-up"));
     setTimeout(() => {
       const scroll = window.scrollY;
-      if (scroll >= 0 && scroll < homeHeight) homeScroll.classList.add("show");
+      if (scroll < homeHeight) homeScroll.classList.add("show");
     }, 1000);
   }
 
@@ -235,10 +237,9 @@ const scroll = (() => {
     projectsLogos.forEach((el) => el.classList.add("slide-up"));
     setTimeout(() => {
       const scroll = window.scrollY;
-      if (scroll >= aboutHeight - viewLimit && scroll < scrollHeight) {
+      if (scroll >= aboutHeight - viewLimit) {
         projectsCarousel.classList.add("show");
         projectsEnd.classList.add("show");
-        btnsTop.forEach((el) => el.classList.add("show"));
       }
     }, 1000);
   }
@@ -247,7 +248,6 @@ const scroll = (() => {
     projectsLogos.forEach((el) => el.classList.remove("slide-up"));
     projectsCarousel.classList.remove("show");
     projectsEnd.classList.remove("show");
-    btnsTop.forEach((el) => el.classList.remove("show"));
   }
 
   function _getIsPortrait() {

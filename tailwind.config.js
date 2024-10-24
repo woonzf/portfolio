@@ -17,7 +17,7 @@ module.exports = {
       },
       'animation': {
         'menu': 'bounce-menu 1.5s infinite',
-        'bounce-scroll': 'bounce-scroll 1s infinite',
+        'bounce-top': 'bounce-top 1s infinite',
         'chevron-right': 'bounce-chevron-right 1s infinite',
         'chevron-left': 'bounce-chevron-left 1s infinite',
         'shrink-width': 'shrink-width 10s linear infinite',
@@ -27,21 +27,21 @@ module.exports = {
       'keyframes': {
         'bounce-menu': {
           '0%, 100%': {
-            transform: 'translateY(-50%) rotate(-90deg) translateY(0)',
+            transform: 'translateY(-50%) rotate(-90deg) translateY(25%)',
             animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)',
            },
           '50%': {
-            transform: 'translateY(-50%) rotate(-90deg) translateY(25%)',
+            transform: 'translateY(-50%) rotate(-90deg) translateY(0)',
             animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
           },
         },
-        'bounce-scroll': {
+        'bounce-top': {
           '0%, 100%': {
-            transform: 'translateY(-150%) translateX(33%) rotate(-90deg)',
+            transform: 'translateX(0)',
             animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)',
            },
           '50%': {
-            transform: 'translateY(-100%) translateX(33%) rotate(-90deg)',
+            transform: 'translateX(-25%)',
             animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
           },
         },

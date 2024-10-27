@@ -9,14 +9,17 @@ const projects = (() => {
   function init() {
     for (let i = 0; i < projectList.length; i++) {
       const project = projectList[i];
+      const id = i + 1;
 
+      // Card
       const projectCard = document.createElement("div");
       projectCard.classList.add("project-card");
-      projectCard.id = `project-card-${i + 1}`;
+      projectCard.id = `project-card-${id}`;
 
       const projectCardContent = document.createElement("div");
       projectCardContent.classList.add("project-card-content");
 
+      // Image
       let projectCardImage = null;
 
       if (!Array.isArray(project.src)) {
@@ -38,10 +41,12 @@ const projects = (() => {
         projectCardImage.append(img1, img2);
       }
 
+      // Index
       const projectCardIndex = document.createElement("div");
       projectCardIndex.classList.add("project-card-index");
       projectCardIndex.textContent = `0${i + 1}`;
 
+      // Info
       const projectCardInfo = document.createElement("div");
       projectCardInfo.classList.add("project-card-info");
 
@@ -62,12 +67,14 @@ const projects = (() => {
         projectCardTech.append(img);
       }
 
+      // Link
       const projectDetailLinkWrapper = document.createElement("div");
       projectDetailLinkWrapper.classList.add("project-detail-link-wrapper");
 
       const repo = _createLink("Repo", project.repo);
       const demo = _createLink("Demo", project.demo);
 
+      // Render
       projectDetailLinkWrapper.append(repo, demo);
       projectCardInfo.append(
         projectCardName,
@@ -82,6 +89,18 @@ const projects = (() => {
       );
       projectCard.append(projectCardContent);
       projectCardWrapper.append(projectCard);
+
+      // Divider
+      if (id !== projectList.length) {
+        const divider = document.createElement("div");
+        divider.classList.add(
+          "w-full",
+          "border-b-2",
+          "border-theme-3",
+          "landscape:hidden",
+        );
+        projectCardWrapper.append(divider);
+      }
     }
   }
 

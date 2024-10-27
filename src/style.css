@@ -173,7 +173,7 @@
   }
 
   .btn-mini-tab {
-    @apply h-3 aspect-[4] border border-light portrait:border-theme-3 dark:border-theme-3 landscape:hover:bg-light landscape:hover:dark:bg-theme-3 opacity-75 rounded-md;
+    @apply h-3 aspect-[4] border border-light portrait:border-theme-3 dark:border-theme-3 landscape:hover:bg-light landscape:hover:dark:bg-theme-3 opacity-75 rounded-sm;
     transition: background-color 500ms ease;
   }
 
@@ -186,7 +186,7 @@
   }
 
   .project-card-wrapper {
-    @apply flex portrait:flex-col gap-4 portrait:gap-10 overflow-x-scroll snap-x snap-mandatory scroll-smooth relative;
+    @apply flex portrait:flex-col gap-4 portrait:gap-7 overflow-x-scroll snap-x snap-mandatory scroll-smooth relative;
   }
 
   .project-card {
